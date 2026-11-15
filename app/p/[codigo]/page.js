@@ -1,9 +1,9 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import { supabase } from '../../../lib/supabase';
 
-export default function PlacaPage() {
+function ContenidoPlaca() {
   const { codigo } = useParams();
   const searchParams = useSearchParams();
   const modoEdicionForzado = searchParams.get('editar') === 'true';
@@ -89,7 +89,7 @@ export default function PlacaPage() {
       setMensaje('Error al guardar. Revisa los datos.');
     } else {
       alert('¡Placa configurada con éxito!');
-      window.location.href = /p/${codigo};
+      window.location.href = '/p/' + codigo;
     }
   };
 
@@ -116,7 +116,7 @@ export default function PlacaPage() {
           Copiar contraseña
         </button>
         <div style={{ marginTop: '30px' }}>
-          <a href={/p/${codigo}?editar=true} style={{ fontSize: '0.85rem', color: '#888' }}>Soy el dueño (Editar)</a>
+          <a href={'/p/' + codigo + '?editar=true'} style={{ fontSize: '0.85rem', color: '#888' }}>Soy el dueño (Editar)</a>
         </div>
       </main>
     );
@@ -147,7 +147,7 @@ export default function PlacaPage() {
   return (
     <main style={{ fontFamily: 'sans-serif', maxWidth: '450px', margin: '30px auto', padding: '24px' }}>
       <h2 style={{ textAlign: 'center' }}>
-        {placa.activada ? Configurar placa #${codigo} : ¡Activa tu nueva placa #${codigo}!}
+        {placa.activada ? 'Configurar placa #' + codigo : '¡Activa tu nueva placa #' + codigo + '!'}
       </h2>
       <p style={{ color: '#555', textAlign: 'center', marginBottom: '20px' }}>
         Elige a dónde quieres llevar a tus clientes cuando acerquen su celular o escaneen el QR.
@@ -227,5 +227,13 @@ export default function PlacaPage() {
       </form>
       {mensaje && <p style={{ color: 'red', textAlign: 'center', marginTop: '12px' }}>{mensaje}</p>}
     </main>
+  );
+}
+
+export default function PlacaPage() {
+  return (
+    <Suspense fallback={<div style={{ textAlign: 'center', marginTop: '50px', fontFamily: 'sans-serif' }}>Cargando...</div>}>
+      <ContenidoPlaca />
+    </Suspense>
   );
 }
