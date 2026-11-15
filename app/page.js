@@ -66,7 +66,6 @@ export default function Home() {
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc', color: '#0f172a', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-      {/* Barra superior */}
       <header style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '-0.5px' }}>
           Tap<span style={{ color: '#38bdf8' }}>Plus</span>
@@ -76,7 +75,6 @@ export default function Home() {
         </span>
       </header>
 
-      {/* Sección Principal */}
       <main style={{ maxWidth: '920px', margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h1 style={{ fontSize: '36px', fontWeight: '800', lineHeight: '1.2', marginBottom: '16px', color: '#0f172a' }}>
@@ -86,7 +84,6 @@ export default function Home() {
             Calcos y expositores inteligentes con chip NFC y código QR. Tus clientes acercan su celular y van directo a tus Reseñas de Google, Instagram, WhatsApp, TikTok, Menú o WiFi.
           </p>
 
-          {/* Botones principales */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
             <a
               href="https://mercadopago.com.ar"
@@ -126,7 +123,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Catálogo de Formatos (Clicables) */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '24px' }}>
           <div
             onClick={() => setFormatoActivo(formatoActivo === 'calco' ? null : 'calco')}
@@ -136,8 +132,7 @@ export default function Home() {
               borderRadius: '16px',
               border: formatoActivo === 'calco' ? '2px solid #0284c7' : '1px solid #e2e8f0',
               boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-              cursor: 'pointer',
-              transition: 'all 0.2s'
+              cursor: 'pointer'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
@@ -160,8 +155,7 @@ export default function Home() {
               borderRadius: '16px',
               border: formatoActivo === 'placa' ? '2px solid #0284c7' : '1px solid #e2e8f0',
               boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-              cursor: 'pointer',
-              transition: 'all 0.2s'
+              cursor: 'pointer'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
@@ -177,7 +171,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Galería desplegable de Modelos */}
         {formatoActivo && (
           <div style={{ backgroundColor: '#ffffff', padding: '28px', borderRadius: '18px', border: '2px solid #bae6fd', marginBottom: '40px', boxShadow: '0 8px 24px rgba(2,132,199,0.08)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}>
@@ -200,3 +193,7 @@ export default function Home() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                       <span style={{ fontSize: '26px', backgroundColor: m.fondo, padding: '8px', borderRadius: '10px' }}>{m.icono}</span>
                       <div>
+                        <div style={{ fontSize: '11px', fontWeight: '700', color: '#64748b', textTransform: 'uppercase' }}>{tituloFormato}</div>
+                        <h4 style={{ fontSize: '17px', fontWeight: '800', color: m.color }}>{m.nombre}</h4>
+                      </div>
+                    </div>
