@@ -3,60 +3,117 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function Home() {
-  const [codigoPlaca, setCodigoPlaca] = useState('');
+  const [codigo, setCodigo] = useState('');
   const router = useRouter();
 
-  const irAPlaca = (e) => {
+  const handleConfigurar = (e) => {
     e.preventDefault();
-    if (codigoPlaca.trim()) {
-      router.push('/p/' + codigoPlaca.trim() + '?editar=true');
+    const limpio = codigo.trim();
+    if (limpio) {
+      router.push('/p/' + limpio + '?editar=1');
     }
   };
 
   return (
-    <main style={{ fontFamily: 'sans-serif', maxWidth: '600px', margin: '0 auto', padding: '24px', textAlign: 'center' }}>
-      <h1 style={{ fontSize: '2.2rem', color: '#111' }}>Conecta tu negocio con un toque</h1>
-      <p style={{ fontSize: '1.1rem', color: '#555', lineHeight: '1.5' }}>
-        Expositores inteligentes con tecnología <strong>NFC y Código QR</strong>. Consigue más reseñas en Google, seguidores en Instagram, contactos en WhatsApp o conecta clientes a tu WiFi al instante.
-      </p>
+    <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc', color: '#0f172a', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+      {/* Barra superior */}
+      <header style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '-0.5px' }}>
+          Tap<span style={{ color: '#38bdf8' }}>Plus</span>
+        </div>
+        <span style={{ fontSize: '13px', backgroundColor: '#1e293b', padding: '6px 12px', borderRadius: '20px', color: '#94a3b8' }}>
+          Tecnología NFC + QR
+        </span>
+      </header>
 
-      <div style={{ margin: '30px 0', padding: '20px', backgroundColor: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-        <h2 style={{ fontSize: '1.3rem', marginBottom: '12px' }}>¿Quieres comprar nuestras placas?</h2>
-        <p style={{ color: '#64748b', marginBottom: '20px' }}>Envíos a todo el país. Sin abonos mensuales y 100% configurables.</p>
-        <a
-          href="https://mercadolibre.com.ar"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ display: 'inline-block', backgroundColor: '#ffe600', color: '#2d3277', fontWeight: 'bold', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', marginBottom: '10px' }}
-        >
-          Comprar en MercadoLibre
-        </a>
-        <br />
-        <a
-          href="https://wa.me/5492954535676"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ display: 'inline-block', backgroundColor: '#25D366', color: '#fff', fontWeight: 'bold', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', marginTop: '8px' }}
-        >
-          Consultar por mayor en WhatsApp
-        </a>
-      </div>
+      {/* Sección Principal */}
+      <main style={{ maxWidth: '880px', margin: '0 auto', padding: '40px 20px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h1 style={{ fontSize: '36px', fontWeight: '800', lineHeight: '1.2', marginBottom: '16px', color: '#0f172a' }}>
+            Conecta tu negocio con un simple toque
+          </h1>
+          <p style={{ fontSize: '18px', color: '#475569', maxWidth: '620px', margin: '0 auto 28px' }}>
+            Calcos y expositores inteligentes con chip NFC y código QR. Tus clientes acercan su celular y van directo a tus Reseñas de Google, Instagram, WhatsApp o WiFi.
+          </p>
 
-      <div style={{ marginTop: '40px', padding: '20px', borderTop: '1px solid #eee' }}>
-        <h3 style={{ fontSize: '1.1rem', color: '#333' }}>¿Ya tienes tu placa y quieres cambiar el enlace?</h3>
-        <form onSubmit={irAPlaca} style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '12px' }}>
-          <input
-            type="text"
-            placeholder="Ej: 0001"
-            value={codigoPlaca}
-            onChange={(e) => setCodigoPlaca(e.target.value)}
-            style={{ padding: '10px', borderRadius: '6px', border: '1px solid #ccc', width: '140px' }}
-          />
-          <button type="submit" style={{ padding: '10px 18px', backgroundColor: '#111', color: '#fff', border: 'none', borderRadius: '6px', cursor: 'pointer' }}>
-            Configurar
-          </button>
-        </form>
-      </div>
-    </main>
+          {/* Botones de compra */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
+            <a
+           href="https://link.mercadopago.com.ar/placasycalcosnfc"
+            target="_blank"
+              rel="noopener noreferrer"
+              style={{ backgroundColor: '#009ee3', color: '#ffffff', padding: '14px 26px', borderRadius: '10px', fontWeight: '700', textDecoration: 'none', fontSize: '16px', boxShadow: '0 4px 12px rgba(0,158,227,0.3)' }}
+            >
+              💳 Pagar con Mercado Pago
+            </a>
+
+            <a
+              href="https://mercadolibre.com.ar"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ backgroundColor: '#ffe600', color: '#1e293b', padding: '14px 26px', borderRadius: '10px', fontWeight: '700', textDecoration: 'none', fontSize: '16px', boxShadow: '0 4px 12px rgba(255,230,0,0.3)' }}
+            >
+              🛒 Comprar en MercadoLibre
+            </a>
+
+            <a
+              href="https://wa.me/5492954535676"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ backgroundColor: '#25d366', color: '#ffffff', padding: '14px 26px', borderRadius: '10px', fontWeight: '700', textDecoration: 'none', fontSize: '16px', boxShadow: '0 4px 12px rgba(37,211,102,0.3)' }}
+            >
+              💬 Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        {/* Catálogo de Formatos */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '40px' }}>
+          <div style={{ backgroundColor: '#ffffff', padding: '24px', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+            <div style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase', marginBottom: '8px' }}>Formato Adhesivo</div>
+            <h2 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>Calco NFC + QR (10 × 10 cm)</h2>
+            <p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.5' }}>
+              Ideal para pegar en vidrieras, mostradores, mesas o espejos. Resistente, de lectura instantánea y 100% reprogramable con tu PIN.
+            </p>
+          </div>
+
+          <div style={{ backgroundColor: '#ffffff', padding: '24px', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+            <div style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase', marginBottom: '8px' }}>Formato Mostrador</div>
+            <h2 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>Placa Expositora (10 × 15 cm)</h2>
+            <p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.5' }}>
+              Impresión full color de alto impacto visual para cajas y escritorios. Funciona sin baterías ni abonos mensuales.
+            </p>
+          </div>
+        </div>
+
+        {/* Panel para clientes que ya tienen su placa */}
+        <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '16px', border: '1px solid #cbd5e1', maxWidth: '500px', margin: '0 auto', textAlign: 'center', boxShadow: '0 4px 16px rgba(0,0,0,0.05)' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '8px' }}>¿Ya tienes tu placa TapPlus?</h3>
+          <p style={{ color: '#64748b', fontSize: '14px', marginBottom: '20px' }}>
+            Ingresa el número impreso en tu calco o placa para activarla o cambiar su enlace de destino.
+          </p>
+          <form onSubmit={handleConfigurar} style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+            <input
+              type="text"
+              placeholder="Ej: 0001"
+              value={codigo}
+              onChange={(e) => setCodigo(e.target.value)}
+              style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid #94a3b8', fontSize: '16px', width: '160px', textAlign: 'center', fontWeight: '600' }}
+            />
+            <button
+              type="submit"
+              style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '12px 22px', borderRadius: '8px', fontWeight: '700', border: 'none', cursor: 'pointer', fontSize: '16px' }}
+            >
+              Configurar
+            </button>
+          </form>
+        </div>
+      </main>
+
+      {/* Pie de página */}
+      <footer style={{ textAlign: 'center', padding: '24px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #e2e8f0', marginTop: '40px' }}>
+        © 2026 TapPlus Argentina • tapplus.com.ar
+      </footer>
+    </div>
   );
 }
