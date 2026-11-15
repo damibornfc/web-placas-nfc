@@ -9,7 +9,7 @@ export default function Home() {
   const irAPlaca = (e) => {
     e.preventDefault();
     if (codigoPlaca.trim()) {
-      router.push(/p/${codigoPlaca.trim()}?editar=true);
+      router.push('/p/' + codigoPlaca.trim() + '?editar=true');
     }
   };
 
