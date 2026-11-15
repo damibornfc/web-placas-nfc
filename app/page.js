@@ -33,7 +33,7 @@ export default function Home() {
         </a>
         <br />
         <a
-          href="https://wa.me"
+          href="https://wa.me/5492954535676"
           target="_blank"
           rel="noopener noreferrer"
           style={{ display: 'inline-block', backgroundColor: '#25D366', color: '#fff', fontWeight: 'bold', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', marginTop: '8px' }}
