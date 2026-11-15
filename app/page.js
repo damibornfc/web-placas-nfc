@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [codigo, setCodigo] = useState('');
+  const [formatoActivo, setFormatoActivo] = useState(null);
   const router = useRouter();
 
   const handleConfigurar = (e) => {
@@ -13,6 +14,55 @@ export default function Home() {
       router.push('/p/' + limpio + '?editar=1');
     }
   };
+
+  const modelos = [
+    {
+      nombre: 'Reseñas de Google',
+      icono: '⭐',
+      color: '#ea4335',
+      fondo: '#fef2f2',
+      descripcion: 'Lleva al cliente directo a dejar 5 estrellas en tu perfil de Google Maps.'
+    },
+    {
+      nombre: 'Instagram',
+      icono: '📸',
+      color: '#dc2743',
+      fondo: '#fdf2f8',
+      descripcion: 'Abre tu perfil de Instagram al instante para sumar seguidores reales.'
+    },
+    {
+      nombre: 'WhatsApp Directo',
+      icono: '💬',
+      color: '#16a34a',
+      fondo: '#f0fdf4',
+      descripcion: 'Inicia un chat directo con tu negocio sin tener que agendar el número.'
+    },
+    {
+      nombre: 'TikTok',
+      icono: '🎵',
+      color: '#0f172a',
+      fondo: '#f1f5f9',
+      descripcion: 'Dirige a tus clientes a tu cuenta o video destacado de TikTok.'
+    },
+    {
+      nombre: 'Menú Restaurant',
+      icono: '🍽️',
+      color: '#d97706',
+      fondo: '#fffbeb',
+      descripcion: 'Ideal para mesas y barras: abre tu carta digital o PDF con un toque.'
+    },
+    {
+      nombre: 'Conexión WiFi',
+      icono: '📶',
+      color: '#0284c7',
+      fondo: '#f0f9ff',
+      descripcion: 'Conecta a tus clientes al WiFi del local sin dictar contraseñas.'
+    }
+  ];
+
+  const tituloFormato = formatoActivo === 'calco'
+    ? 'Calco NFC + QR (10 × 10 cm)'
+    : 'Placa Expositora (10 × 15 cm)';
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc', color: '#0f172a', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
@@ -27,16 +77,16 @@ export default function Home() {
       </header>
 
       {/* Sección Principal */}
-      <main style={{ maxWidth: '880px', margin: '0 auto', padding: '40px 20px' }}>
+      <main style={{ maxWidth: '920px', margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h1 style={{ fontSize: '36px', fontWeight: '800', lineHeight: '1.2', marginBottom: '16px', color: '#0f172a' }}>
             Conecta tu negocio con un simple toque
           </h1>
           <p style={{ fontSize: '18px', color: '#475569', maxWidth: '620px', margin: '0 auto 28px' }}>
-            Calcos y expositores inteligentes con chip NFC y código QR. Tus clientes acercan su celular y van directo a tus Reseñas de Google, Instagram, WhatsApp o WiFi.
+            Calcos y expositores inteligentes con chip NFC y código QR. Tus clientes acercan su celular y van directo a tus Reseñas de Google, Instagram, WhatsApp, TikTok, Menú o WiFi.
           </p>
 
-          {/* Botones de compra y contacto */}
+          {/* Botones principales */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
             <a
               href="https://mercadopago.com.ar"
@@ -76,53 +126,77 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Catálogo de Formatos */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '40px' }}>
-          <div style={{ backgroundColor: '#ffffff', padding: '24px', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-            <div style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase', marginBottom: '8px' }}>Formato Adhesivo</div>
+        {/* Catálogo de Formatos (Clicables) */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '24px' }}>
+          <div
+            onClick={() => setFormatoActivo(formatoActivo === 'calco' ? null : 'calco')}
+            style={{
+              backgroundColor: '#ffffff',
+              padding: '24px',
+              borderRadius: '16px',
+              border: formatoActivo === 'calco' ? '2px solid #0284c7' : '1px solid #e2e8f0',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+              cursor: 'pointer',
+              transition: 'all 0.2s'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+              <span style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Formato Adhesivo</span>
+              <span style={{ fontSize: '12px', backgroundColor: '#e0f2fe', color: '#0369a1', padding: '4px 10px', borderRadius: '12px', fontWeight: '700' }}>
+                {formatoActivo === 'calco' ? 'Ocultar modelos ▲' : 'Ver 6 modelos ▼'}
+              </span>
+            </div>
             <h2 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>Calco NFC + QR (10 × 10 cm)</h2>
             <p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.5' }}>
-              Ideal para pegar en vidrieras, mostradores, mesas o espejos. Resistente, de lectura instantánea y 100% reprogramable con tu PIN.
+              Ideal para pegar en vidrieras, mostradores, mesas o espejos. Haz clic aquí para ver los 6 diseños disponibles.
             </p>
           </div>
 
-          <div style={{ backgroundColor: '#ffffff', padding: '24px', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-            <div style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase', marginBottom: '8px' }}>Formato Mostrador</div>
+          <div
+            onClick={() => setFormatoActivo(formatoActivo === 'placa' ? null : 'placa')}
+            style={{
+              backgroundColor: '#ffffff',
+              padding: '24px',
+              borderRadius: '16px',
+              border: formatoActivo === 'placa' ? '2px solid #0284c7' : '1px solid #e2e8f0',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+              cursor: 'pointer',
+              transition: 'all 0.2s'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+              <span style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Formato Mostrador</span>
+              <span style={{ fontSize: '12px', backgroundColor: '#e0f2fe', color: '#0369a1', padding: '4px 10px', borderRadius: '12px', fontWeight: '700' }}>
+                {formatoActivo === 'placa' ? 'Ocultar modelos ▲' : 'Ver 6 modelos ▼'}
+              </span>
+            </div>
             <h2 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>Placa Expositora (10 × 15 cm)</h2>
             <p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.5' }}>
-              Impresión full color de alto impacto visual para cajas y escritorios. Funciona sin baterías ni abonos mensuales.
+              Impresión full color de alto impacto visual para cajas y escritorios. Haz clic aquí para ver los 6 diseños disponibles.
             </p>
           </div>
         </div>
 
-        {/* Panel para clientes que ya tienen su placa */}
-        <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '16px', border: '1px solid #cbd5e1', maxWidth: '500px', margin: '0 auto', textAlign: 'center', boxShadow: '0 4px 16px rgba(0,0,0,0.05)' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '8px' }}>¿Ya tienes tu placa TapPlus?</h3>
-          <p style={{ color: '#64748b', fontSize: '14px', marginBottom: '20px' }}>
-            Ingresa el número impreso en tu calco o placa para activarla o cambiar su enlace de destino.
-          </p>
-          <form onSubmit={handleConfigurar} style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
-            <input
-              type="text"
-              placeholder="Ej: 0001"
-              value={codigo}
-              onChange={(e) => setCodigo(e.target.value)}
-              style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid #94a3b8', fontSize: '16px', width: '160px', textAlign: 'center', fontWeight: '600' }}
-            />
-            <button
-              type="submit"
-              style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '12px 22px', borderRadius: '8px', fontWeight: '700', border: 'none', cursor: 'pointer', fontSize: '16px' }}
-            >
-              Configurar
-            </button>
-          </form>
-        </div>
-      </main>
+        {/* Galería desplegable de Modelos */}
+        {formatoActivo && (
+          <div style={{ backgroundColor: '#ffffff', padding: '28px', borderRadius: '18px', border: '2px solid #bae6fd', marginBottom: '40px', boxShadow: '0 8px 24px rgba(2,132,199,0.08)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}>
+              <div>
+                <span style={{ fontSize: '12px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Catálogo de Diseños</span>
+                <h3 style={{ fontSize: '24px', fontWeight: '800', color: '#0f172a' }}>Modelos para {tituloFormato}</h3>
+              </div>
+              <button
+                onClick={() => setFormatoActivo(null)}
+                style={{ backgroundColor: '#f1f5f9', color: '#475569', border: 'none', padding: '8px 14px', borderRadius: '8px', fontWeight: '700', cursor: 'pointer' }}
+              >
+                ✕ Cerrar
+              </button>
+            </div>
 
-      {/* Pie de página */}
-      <footer style={{ textAlign: 'center', padding: '24px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #e2e8f0', marginTop: '40px' }}>
-        © 2026 TapPlus Argentina • tapplus.com.ar
-      </footer>
-    </div>
-  );
-}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px' }}>
+              {modelos.map((m) => (
+                <div key={m.nombre} style={{ border: '1px solid #e2e8f0', borderRadius: '14px', padding: '18px', backgroundColor: '#f8fafc', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                      <span style={{ fontSize: '26px', backgroundColor: m.fondo, padding: '8px', borderRadius: '10px' }}>{m.icono}</span>
+                      <div>
