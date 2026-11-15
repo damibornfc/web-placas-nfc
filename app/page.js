@@ -36,11 +36,11 @@ export default function Home() {
             Calcos y expositores inteligentes con chip NFC y código QR. Tus clientes acercan su celular y van directo a tus Reseñas de Google, Instagram, WhatsApp o WiFi.
           </p>
 
-          {/* Botones de compra */}
+          {/* Botones de compra y contacto */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
             <a
-           href="https://link.mercadopago.com.ar/placasycalcosnfc"
-            target="_blank"
+              href="https://mercadopago.com.ar"
+              target="_blank"
               rel="noopener noreferrer"
               style={{ backgroundColor: '#009ee3', color: '#ffffff', padding: '14px 26px', borderRadius: '10px', fontWeight: '700', textDecoration: 'none', fontSize: '16px', boxShadow: '0 4px 12px rgba(0,158,227,0.3)' }}
             >
@@ -57,12 +57,21 @@ export default function Home() {
             </a>
 
             <a
-              href="https://wa.me/5492954535676"
+              href="https://wa.me"
               target="_blank"
               rel="noopener noreferrer"
               style={{ backgroundColor: '#25d366', color: '#ffffff', padding: '14px 26px', borderRadius: '10px', fontWeight: '700', textDecoration: 'none', fontSize: '16px', boxShadow: '0 4px 12px rgba(37,211,102,0.3)' }}
             >
               💬 Consultar por WhatsApp
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: '#ffffff', padding: '14px 26px', borderRadius: '10px', fontWeight: '700', textDecoration: 'none', fontSize: '16px', boxShadow: '0 4px 12px rgba(220,39,67,0.3)' }}
+            >
+              📸 Seguir en Instagram
             </a>
           </div>
         </div>
