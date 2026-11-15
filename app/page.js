@@ -197,3 +197,51 @@ export default function Home() {
                         <h4 style={{ fontSize: '17px', fontWeight: '800', color: m.color }}>{m.nombre}</h4>
                       </div>
                     </div>
+<p style={{ fontSize: '14px', color: '#475569', lineHeight: '1.4', marginBottom: '16px' }}>
+                      {m.descripcion}
+                    </p>
+                  </div>
+
+                  <a
+                    href="https://wa.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ display: 'block', textAlign: 'center', backgroundColor: '#0f172a', color: '#ffffff', padding: '10px 14px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '14px' }}
+                  >
+                    Pedir este modelo por WhatsApp
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '16px', border: '1px solid #cbd5e1', maxWidth: '500px', margin: '20px auto 0', textAlign: 'center', boxShadow: '0 4px 16px rgba(0,0,0,0.05)' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '8px' }}>¿Ya tienes tu placa TapPlus?</h3>
+          <p style={{ color: '#64748b', fontSize: '14px', marginBottom: '20px' }}>
+            Ingresa el número impreso en tu calco o placa para activarla o cambiar su enlace de destino.
+          </p>
+          <form onSubmit={handleConfigurar} style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+            <input
+              type="text"
+              placeholder="Ej: 0001"
+              value={codigo}
+              onChange={(e) => setCodigo(e.target.value)}
+              style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid #94a3b8', fontSize: '16px', width: '160px', textAlign: 'center', fontWeight: '600' }}
+            />
+            <button
+              type="submit"
+              style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '12px 22px', borderRadius: '8px', fontWeight: '700', border: 'none', cursor: 'pointer', fontSize: '16px' }}
+            >
+              Configurar
+            </button>
+          </form>
+        </div>
+      </main>
+
+      <footer style={{ textAlign: 'center', padding: '24px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #e2e8f0', marginTop: '40px' }}>
+        © 2026 TapPlus Argentina • tapplus.com.ar
+      </footer>
+    </div>
+  );
+}
