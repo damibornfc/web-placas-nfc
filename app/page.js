@@ -204,7 +204,7 @@ export default function Home() {
                   </div>
 
                   <a
-                    href={'https://wa.me' + encodeURIComponent('Hola TapPlus! Quiero encargar el ' + tituloFormato + ' - Modelo: ' + m.nombre)}
+                    href={'https://wa.me/5492954535676?text=' + encodeURIComponent('Hola TapPlus! Quiero encargar el ' + tituloFormato + ' - Modelo: ' + m.nombre)}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ display: 'block', textAlign: 'center', backgroundColor: '#0f172a', color: '#ffffff', padding: '10px 14px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '14px' }}
