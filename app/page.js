@@ -15,51 +15,127 @@ export default function Home() {
     }
   };
 
-  const modelos = [
+  const modelosCalco = [
     {
-      nombre: 'Reseñas de Google',
-      icono: '⭐',
+      nombre: 'Reseñas de Google • Modelo 1',
+      imagen: '/WhatsApp Image calco reseña google 2026-11-15 at 22.40.33.jpeg',
       color: '#ea4335',
-      fondo: '#fef2f2',
-      descripcion: 'Lleva al cliente directo a dejar 5 estrellas en tu perfil de Google Maps.'
+      descripcion: 'Lleva al cliente directo a dejar 5 estrellas en Google Maps.'
     },
     {
-      nombre: 'Instagram',
-      icono: '📸',
+      nombre: 'Reseñas de Google • Modelo 2',
+      imagen: '/WhatsApp Image calco reseña 2 026-11-15 at 22.40.34.jpeg',
+      color: '#ea4335',
+      descripcion: 'Diseño alternativo para sumar opiniones positivas en tu local.'
+    },
+    {
+      nombre: 'Reseñas de Google • Modelo 3',
+      imagen: '/WhatsApp Image calco reseña 3 2026-11-15 at 22.40.34.jpeg',
+      color: '#ea4335',
+      descripcion: 'Ideal para vidrieras, cajas y mostradores de atención.'
+    },
+    {
+      nombre: 'Instagram • Modelo 1',
+      imagen: '/WhatsApp Image calco instagran 2026-11-15 at 22.40.33.jpeg',
       color: '#dc2743',
-      fondo: '#fdf2f8',
-      descripcion: 'Abre tu perfil de Instagram al instante para sumar seguidores reales.'
+      descripcion: 'Abre tu perfil de Instagram al instante para sumar seguidores.'
     },
     {
-      nombre: 'WhatsApp Directo',
-      icono: '💬',
+      nombre: 'Instagram • Modelo 2',
+      imagen: '/WhatsApp Image calco instagran 2 2026-11-15 at 22.40.33.jpeg',
+      color: '#dc2743',
+      descripcion: 'Segundo diseño de alto impacto visual para tu cuenta de Instagram.'
+    },
+    {
+      nombre: 'WhatsApp Directo • Modelo 1',
+      imagen: '/WhatsApp Image wasap 2026-11-15 at 22.40.33.jpeg',
       color: '#16a34a',
-      fondo: '#f0fdf4',
-      descripcion: 'Inicia un chat directo con tu negocio sin tener que agendar el número.'
+      descripcion: 'Inicia un chat directo con tu negocio sin agendar el número.'
+    },
+    {
+      nombre: 'WhatsApp Directo • Modelo 2',
+      imagen: '/WhatsApp Image calco wasap2026-11-15 at 22.40.34.jpeg',
+      color: '#16a34a',
+      descripcion: 'Diseño alternativo para consultas rápidas por WhatsApp.'
     },
     {
       nombre: 'TikTok',
-      icono: '🎵',
+      imagen: '/WhatsApp Image tik tok2026-11-15 at 22.40.33 (1).jpeg',
       color: '#0f172a',
-      fondo: '#f1f5f9',
-      descripcion: 'Dirige a tus clientes a tu cuenta o video destacado de TikTok.'
+      descripcion: 'Dirige a tus clientes a tu perfil o videos de TikTok.'
     },
     {
-      nombre: 'Menú Restaurant',
-      icono: '🍽️',
+      nombre: 'Menú Digital',
+      imagen: '/WhatsApp Image calco menu digital 2026-11-15 at 22.40.33.jpeg',
       color: '#d97706',
-      fondo: '#fffbeb',
-      descripcion: 'Ideal para mesas y barras: abre tu carta digital o PDF con un toque.'
+      descripcion: 'Ideal para mesas y barras: abre tu carta digital con un toque.'
     },
     {
-      nombre: 'Conexión WiFi',
-      icono: '📶',
+      nombre: 'Tienda Online',
+      imagen: '/WhatsApp Image calco tienda online 2026-11-15 at 22.40.33.jpeg',
       color: '#0284c7',
-      fondo: '#f0f9ff',
-      descripcion: 'Conecta a tus clientes al WiFi del local sin dictar contraseñas.'
+      descripcion: 'Lleva a tus clientes directo a tu catálogo web para comprar.'
     }
   ];
 
+  const modelosPlaca = [
+    {
+      nombre: 'Reseñas de Google • Modelo 1',
+      imagen: '/WhatsApp Image placas resseña 2026-11-16 at 10.44.52.jpeg',
+      color: '#ea4335',
+      descripcion: 'Expositor de mostrador para sumar reseñas de 5 estrellas.'
+    },
+    {
+      nombre: 'Reseñas de Google • Modelo 2',
+      imagen: '/WhatsApp Image placas reseñas 2 2026-11-16 at 10.44.52.jpeg',
+      color: '#ea4335',
+      descripcion: 'Segundo diseño vertical para cajas y escritorios.'
+    },
+    {
+      nombre: 'Reseñas de Google • Modelo 3',
+      imagen: '/WhatsApp Image placas reseñas 3 2026-11-16 at 10.44.52.jpeg',
+      color: '#ea4335',
+      descripcion: 'Tercer estilo de placa expositora para tu negocio.'
+    },
+    {
+      nombre: 'Instagram • Modelo 1',
+      imagen: '/WhatsApp Image placas instagran 2026-11-16 at 10.44.54.jpeg',
+      color: '#dc2743',
+      descripcion: 'Invita a tus clientes a seguirte en Instagram con un toque.'
+    },
+    {
+      nombre: 'Instagram • Modelo 2',
+      imagen: '/WhatsApp Image placas instagran 2 2026-11-16 at 10.44.54.jpeg',
+      color: '#dc2743',
+      descripcion: 'Diseño alternativo para mostrador de Instagram.'
+    },
+    {
+      nombre: 'WhatsApp Directo • Modelo 1',
+      imagen: '/WhatsApp Image placa wasap 2026-11-16 at 10.44.52.jpeg',
+      color: '#16a34a',
+      descripcion: 'Atención al cliente inmediata en WhatsApp con un toque.'
+    },
+    {
+      nombre: 'WhatsApp Directo • Modelo 2',
+      imagen: '/WhatsApp Image placas wasap 22026-11-16 at 10.44.54.jpeg',
+      color: '#16a34a',
+      descripcion: 'Segundo diseño vertical para contacto por WhatsApp.'
+    },
+    {
+      nombre: 'Menú Digital',
+      imagen: '/WhatsApp Image placa menu 2026-11-16 at 10.44.52.jpeg',
+      color: '#d97706',
+      descripcion: 'Expositor para mesas y barras con acceso directo a tu carta.'
+    },
+    {
+      nombre: 'Tienda Online',
+      imagen: '/WhatsApp Image placa tienda online 2026-11-16 at 10.44.52.jpeg',
+      color: '#0284c7',
+      descripcion: 'Muestra tu tienda virtual en el mostrador con un simple toque.'
+    }
+  ];
+
+  const listaActual = formatoActivo === 'calco' ? modelosCalco : modelosPlaca;
   const tituloFormato = formatoActivo === 'calco'
     ? 'Calco NFC + QR (10 × 10 cm)'
     : 'Placa Expositora (10 × 15 cm)';
@@ -75,13 +151,13 @@ export default function Home() {
         </span>
       </header>
 
-      <main style={{ maxWidth: '920px', margin: '0 auto', padding: '40px 20px' }}>
+      <main style={{ maxWidth: '980px', margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h1 style={{ fontSize: '36px', fontWeight: '800', lineHeight: '1.2', marginBottom: '16px', color: '#0f172a' }}>
             Conecta tu negocio con un simple toque
           </h1>
-          <p style={{ fontSize: '18px', color: '#475569', maxWidth: '620px', margin: '0 auto 28px' }}>
-            Calcos y expositores inteligentes con chip NFC y código QR. Tus clientes acercan su celular y van directo a tus Reseñas de Google, Instagram, WhatsApp, TikTok, Menú o WiFi.
+          <p style={{ fontSize: '18px', color: '#475569', maxWidth: '640px', margin: '0 auto 28px' }}>
+            Calcos y expositores inteligentes con chip NFC y código QR. Tus clientes acercan su celular y van directo a tus Reseñas de Google, Instagram, WhatsApp, TikTok, Menú o Tienda Online.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
@@ -138,110 +214,13 @@ export default function Home() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
               <span style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Formato Adhesivo</span>
               <span style={{ fontSize: '12px', backgroundColor: '#e0f2fe', color: '#0369a1', padding: '4px 10px', borderRadius: '12px', fontWeight: '700' }}>
-                {formatoActivo === 'calco' ? 'Ocultar modelos ▲' : 'Ver 6 modelos ▼'}
+                {formatoActivo === 'calco' ? 'Ocultar diseños ▲' : 'Ver 10 modelos ▼'}
               </span>
             </div>
             <h2 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>Calco NFC + QR (10 × 10 cm)</h2>
             <p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.5' }}>
-              Ideal para pegar en vidrieras, mostradores, mesas o espejos. Haz clic aquí para ver los 6 diseños disponibles.
+              Ideal para pegar en vidrieras, mostradores, mesas o espejos. Haz clic aquí para ver los 10 diseños reales disponibles.
             </p>
           </div>
 
           <div
-            onClick={() => setFormatoActivo(formatoActivo === 'placa' ? null : 'placa')}
-            style={{
-              backgroundColor: '#ffffff',
-              padding: '24px',
-              borderRadius: '16px',
-              border: formatoActivo === 'placa' ? '2px solid #0284c7' : '1px solid #e2e8f0',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-              cursor: 'pointer'
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <span style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Formato Mostrador</span>
-              <span style={{ fontSize: '12px', backgroundColor: '#e0f2fe', color: '#0369a1', padding: '4px 10px', borderRadius: '12px', fontWeight: '700' }}>
-                {formatoActivo === 'placa' ? 'Ocultar modelos ▲' : 'Ver 6 modelos ▼'}
-              </span>
-            </div>
-            <h2 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>Placa Expositora (10 × 15 cm)</h2>
-            <p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.5' }}>
-              Impresión full color de alto impacto visual para cajas y escritorios. Haz clic aquí para ver los 6 diseños disponibles.
-            </p>
-          </div>
-        </div>
-
-        {formatoActivo && (
-          <div style={{ backgroundColor: '#ffffff', padding: '28px', borderRadius: '18px', border: '2px solid #bae6fd', marginBottom: '40px', boxShadow: '0 8px 24px rgba(2,132,199,0.08)' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}>
-              <div>
-                <span style={{ fontSize: '12px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Catálogo de Diseños</span>
-                <h3 style={{ fontSize: '24px', fontWeight: '800', color: '#0f172a' }}>Modelos para {tituloFormato}</h3>
-              </div>
-              <button
-                onClick={() => setFormatoActivo(null)}
-                style={{ backgroundColor: '#f1f5f9', color: '#475569', border: 'none', padding: '8px 14px', borderRadius: '8px', fontWeight: '700', cursor: 'pointer' }}
-              >
-                ✕ Cerrar
-              </button>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px' }}>
-              {modelos.map((m) => (
-                <div key={m.nombre} style={{ border: '1px solid #e2e8f0', borderRadius: '14px', padding: '18px', backgroundColor: '#f8fafc', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <span style={{ fontSize: '26px', backgroundColor: m.fondo, padding: '8px', borderRadius: '10px' }}>{m.icono}</span>
-                      <div>
-                        <div style={{ fontSize: '11px', fontWeight: '700', color: '#64748b', textTransform: 'uppercase' }}>{tituloFormato}</div>
-                        <h4 style={{ fontSize: '17px', fontWeight: '800', color: m.color }}>{m.nombre}</h4>
-                      </div>
-                    </div>
-<p style={{ fontSize: '14px', color: '#475569', lineHeight: '1.4', marginBottom: '16px' }}>
-                      {m.descripcion}
-                    </p>
-                  </div>
-
-                  <a
-                    href="https://wa.me"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ display: 'block', textAlign: 'center', backgroundColor: '#0f172a', color: '#ffffff', padding: '10px 14px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '14px' }}
-                  >
-                    Pedir este modelo por WhatsApp
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '16px', border: '1px solid #cbd5e1', maxWidth: '500px', margin: '20px auto 0', textAlign: 'center', boxShadow: '0 4px 16px rgba(0,0,0,0.05)' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '8px' }}>¿Ya tienes tu placa TapPlus?</h3>
-          <p style={{ color: '#64748b', fontSize: '14px', marginBottom: '20px' }}>
-            Ingresa el número impreso en tu calco o placa para activarla o cambiar su enlace de destino.
-          </p>
-          <form onSubmit={handleConfigurar} style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
-            <input
-              type="text"
-              placeholder="Ej: 0001"
-              value={codigo}
-              onChange={(e) => setCodigo(e.target.value)}
-              style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid #94a3b8', fontSize: '16px', width: '160px', textAlign: 'center', fontWeight: '600' }}
-            />
-            <button
-              type="submit"
-              style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '12px 22px', borderRadius: '8px', fontWeight: '700', border: 'none', cursor: 'pointer', fontSize: '16px' }}
-            >
-              Configurar
-            </button>
-          </form>
-        </div>
-      </main>
-
-      <footer style={{ textAlign: 'center', padding: '24px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #e2e8f0', marginTop: '40px' }}>
-        © 2026 TapPlus Argentina • tapplus.com.ar
-      </footer>
-    </div>
-  );
-}
