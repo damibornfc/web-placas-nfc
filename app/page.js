@@ -476,7 +476,6 @@ const modelosCalco = [
   );
 }  
         
-
         {/* Panel Configurador para Clientes */}
         <section id="configurar" style={{ backgroundColor: '#161616', border: '1px solid #333333', borderRadius: '20px', padding: '32px', maxWidth: '520px', margin: '0 auto', textAlign: 'center' }}>
           <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>¿Ya tenés tu placa TapPlus?</h3>
