@@ -166,3 +166,148 @@ export default function Home() {
   const packsFiltrados = filtroPack === 'todos'
     ? packs
     : packs.filter((p) => p.categoria === filtroPack);
+const modelosCalco = [
+    { nombre: 'Reseñas de Google • Mod. 2', imagen: '/WhatsApp Image calco reseña 2 026-11-15 at 22.40.34.jpeg' },
+    { nombre: 'Reseñas de Google • Mod. 3', imagen: '/WhatsApp Image calco reseña 3 2026-11-15 at 22.40.34.jpeg' },
+    { nombre: 'Instagram • Mod. 2', imagen: '/WhatsApp Image calco instagran 2 2026-11-15 at 22.40.33.jpeg' },
+    { nombre: 'WhatsApp Directo • Mod. 1', imagen: '/WhatsApp Image wasap 2026-11-15 at 22.40.33.jpeg' },
+    { nombre: 'WhatsApp Directo • Mod. 2', imagen: '/WhatsApp Image calco wasap2026-11-15 at 22.40.34.jpeg' },
+    { nombre: 'TikTok', imagen: '/WhatsApp Image tik tok2026-11-15 at 22.40.33 (1).jpeg' },
+    { nombre: 'Menú Digital', imagen: '/WhatsApp Image calco menu digital 2026-11-15 at 22.40.33.jpeg' }
+  ];
+
+  const modelosPlaca = [
+    { nombre: 'Reseñas de Google • Mod. 1', imagen: '/WhatsApp Image placas resseña 2026-11-16 at 10.44.52.jpeg' },
+    { nombre: 'Reseñas de Google • Mod. 2', imagen: '/WhatsApp Image placas reseñas 2 2026-11-16 at 10.44.52.jpeg' },
+    { nombre: 'Reseñas de Google • Mod. 3', imagen: '/WhatsApp Image placas reseñas 3 2026-11-16 at 10.44.52.jpeg' },
+    { nombre: 'Instagram • Mod. 2', imagen: '/WhatsApp Image placas instagran 2 2026-11-16 at 10.44.54.jpeg' },
+    { nombre: 'WhatsApp Directo • Mod. 1', imagen: '/WhatsApp Image placa wasap 2026-11-16 at 10.44.52.jpeg' },
+    { nombre: 'WhatsApp Directo • Mod. 2', imagen: '/WhatsApp Image placas wasap 22026-11-16 at 10.44.54.jpeg' },
+    { nombre: 'Menú Digital', imagen: '/WhatsApp Image placa menu 2026-11-16 at 10.44.52.jpeg' }
+  ];
+
+  const listaFotos = catalogoActivo === 'calco' ? modelosCalco : modelosPlaca;
+
+  return (
+    <div style={{ minHeight: '100vh', backgroundColor: '#0a0a0a', color: '#f8fafc', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+      {/* Barra superior */}
+      <header style={{ backgroundColor: '#111111', borderBottom: '1px solid #262626', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50 }}>
+        <div style={{ fontSize: '24px', fontWeight: '900', letterSpacing: '-0.5px' }}>
+          Tap<span style={{ color: '#facc15' }}>Plus</span>
+        </div>
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          <a
+            href="#packs"
+            style={{ backgroundColor: '#facc15', color: '#0a0a0a', padding: '8px 16px', borderRadius: '20px', fontWeight: '800', fontSize: '13px', textDecoration: 'none' }}
+          >
+            Ver Packs
+          </a>
+          <a
+            href="#configurar"
+            style={{ backgroundColor: '#1e293b', color: '#e2e8f0', padding: '8px 14px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', textDecoration: 'none' }}
+          >
+            Configurar mi placa
+          </a>
+        </div>
+      </header>
+
+      <main style={{ maxWidth: '1040px', margin: '0 auto', padding: '44px 20px' }}>
+        {/* Hero Principal */}
+        <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+          <span style={{ display: 'inline-block', backgroundColor: '#1f1f1f', border: '1px solid #333333', color: '#facc15', fontSize: '12px', fontWeight: '800', padding: '6px 14px', borderRadius: '20px', marginBottom: '18px', textTransform: 'uppercase' }}>
+            Tecnología NFC + QR Editable sin Abonos
+          </span>
+          <h1 style={{ fontSize: '42px', fontWeight: '900', lineHeight: '1.12', marginBottom: '18px', color: '#ffffff' }}>
+            Placas y Calcos NFC + QR <br />
+            <span style={{ color: '#facc15' }}>para tu local o para revender.</span>
+          </h1>
+          <p style={{ fontSize: '18px', color: '#a3a3a3', maxWidth: '660px', margin: '0 auto 30px', lineHeight: '1.5' }}>
+            Tus clientes acercan el celular y van directo a tus Reseñas de Google, Instagram, WhatsApp, TikTok, Menú o Tienda Online. Comprá desde 1 unidad o llevá packs mayoristas con margen real.
+          </p>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
+            <a
+              href="#packs"
+              style={{ backgroundColor: '#facc15', color: '#0a0a0a', padding: '15px 28px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}
+            >
+              📦 Ver Packs y Precios
+            </a>
+            <a
+              href="https://mercadopago.com.ar"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ backgroundColor: '#009ee3', color: '#ffffff', padding: '15px 24px', borderRadius: '12px', fontWeight: '700', textDecoration: 'none', fontSize: '16px' }}
+            >
+              💳 Mercado Pago
+            </a>
+            <a
+              href="https://wa.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ backgroundColor: '#25d366', color: '#0a0a0a', padding: '15px 24px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}
+            >
+              💬 WhatsApp
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ backgroundColor: '#1f1f1f', border: '1px solid #333333', color: '#ffffff', padding: '15px 24px', borderRadius: '12px', fontWeight: '700', textDecoration: 'none', fontSize: '16px' }}
+            >
+              📸 @tapplusar
+            </a>
+          </div>
+        </div>
+
+        {/* Cómo funciona en 4 pasos */}
+        <section style={{ marginBottom: '64px' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: '900', textAlign: 'center', marginBottom: '8px' }}>Configurarlo es así de simple</h2>
+          <p style={{ color: '#a3a3a3', textAlign: 'center', marginBottom: '28px', fontSize: '15px' }}>
+            Cada unidad se activa en 1 minuto desde el celular, sin descargar aplicaciones.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '16px' }}>
+            {[
+              { num: '1', titulo: 'Escaneás o acercás', desc: 'Tu cliente acerca su teléfono por NFC o escanea el código QR.' },
+              { num: '2', titulo: 'Pegás tu enlace', desc: 'Cargás el link de Google, Instagram, WhatsApp, TikTok o tu Menú.' },
+              { num: '3', titulo: 'Guardás con tu PIN', desc: 'Protegés tu placa con tu clave personal de 4 dígitos.' },
+              { num: '4', titulo: 'Listo, editable siempre', desc: 'Podés cambiar el link de destino cuando quieras sin reprogramar el chip.' }
+            ].map((paso) => (
+              <div key={paso.num} style={{ backgroundColor: '#161616', border: '1px solid #262626', borderRadius: '16px', padding: '22px' }}>
+                <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#facc15', color: '#0a0a0a', fontWeight: '900', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
+                  {paso.num}
+                </div>
+                <h3 style={{ fontSize: '18px', fontWeight: '800', marginBottom: '6px', color: '#ffffff' }}>{paso.titulo}</h3>
+                <p style={{ fontSize: '14px', color: '#a3a3a3', lineHeight: '1.4' }}>{paso.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Catálogo Visual de Diseños Reales */}
+        <section style={{ marginBottom: '64px' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: '900', textAlign: 'center', marginBottom: '8px' }}>Nuestros Formatos y Diseños</h2>
+          <p style={{ color: '#a3a3a3', textAlign: 'center', marginBottom: '24px', fontSize: '15px' }}>
+            Hacé clic en un formato para ver las fotos reales de nuestros modelos listos para entregar.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '18px', marginBottom: '20px' }}>
+            <div
+              onClick={() => setCatalogoActivo(catalogoActivo === 'calco' ? null : 'calco')}
+              style={{ backgroundColor: '#161616', border: catalogoActivo === 'calco' ? '2px solid #facc15' : '1px solid #262626', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                <span style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase' }}>10 × 10 cm • Adhesivo</span>
+                <span style={{ backgroundColor: '#262626', color: '#facc15', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: '700' }}>
+                  {catalogoActivo === 'calco' ? 'Ocultar fotos ▲' : 'Ver fotos ▼'}
+                </span>
+              </div>
+              <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px' }}>Calco NFC + QR</h3>
+              <p style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: '1.5' }}>
+                Vinilo laminado de alta durabilidad para vidrieras, cajas y mostradores. Desde <strong style={{ color: '#ffffff' }}>$10.000</strong> c/u o <strong style={{ color: '#facc15' }}>$3.500</strong> en pack mayorista.
+              </p>
+            </div>
+
+            <div
+              onClick={() => setCatalogoActivo(catalogoActivo === 'placa' ? null : 'placa')}
+              style={{ backgroundColor: '#161616', border: catalogoActivo === 'placa' ? '2px solid #facc15' : '1px solid #262626', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
