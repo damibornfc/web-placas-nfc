@@ -336,7 +336,7 @@ const modelosCalco = [
                 </div>
               </div>
             ))}
-          </div>
+          </div> </div>
         </section>
 
         {/* Panel Configurador para Clientes */}
