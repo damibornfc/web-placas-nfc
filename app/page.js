@@ -223,4 +223,103 @@ export default function Home() {
             </p>
           </div>
 
-          <div
+         <div
+            onClick={() => setFormatoActivo(formatoActivo === 'placa' ? null : 'placa')}
+            style={{
+              backgroundColor: '#ffffff',
+              padding: '24px',
+              borderRadius: '16px',
+              border: formatoActivo === 'placa' ? '2px solid #0284c7' : '1px solid #e2e8f0',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+              cursor: 'pointer'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+              <span style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Formato Mostrador</span>
+              <span style={{ fontSize: '12px', backgroundColor: '#e0f2fe', color: '#0369a1', padding: '4px 10px', borderRadius: '12px', fontWeight: '700' }}>
+                {formatoActivo === 'placa' ? 'Ocultar diseños ▲' : 'Ver 9 modelos ▼'}
+              </span>
+            </div>
+            <h2 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>Placa Expositora (10 × 15 cm)</h2>
+            <p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.5' }}>
+              Impresión full color de alto impacto visual para cajas y escritorios. Haz clic aquí para ver los 9 diseños reales disponibles.
+            </p>
+          </div>
+        </div>
+
+        {formatoActivo && (
+          <div style={{ backgroundColor: '#ffffff', padding: '28px', borderRadius: '18px', border: '2px solid #bae6fd', marginBottom: '40px', boxShadow: '0 8px 24px rgba(2,132,199,0.08)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}>
+              <div>
+                <span style={{ fontSize: '12px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Catálogo de Diseños Reales</span>
+                <h3 style={{ fontSize: '24px', fontWeight: '800', color: '#0f172a' }}>{tituloFormato}</h3>
+              </div>
+              <button
+                onClick={() => setFormatoActivo(null)}
+                style={{ backgroundColor: '#f1f5f9', color: '#475569', border: 'none', padding: '8px 14px', borderRadius: '8px', fontWeight: '700', cursor: 'pointer' }}
+              >
+                ✕ Cerrar
+              </button>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '18px' }}>
+              {listaActual.map((m) => (
+                <div key={m.nombre} style={{ border: '1px solid #e2e8f0', borderRadius: '14px', padding: '16px', backgroundColor: '#f8fafc', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ marginBottom: '12px', borderRadius: '10px', overflow: 'hidden', border: '1px solid #cbd5e1', backgroundColor: '#ffffff' }}>
+                      <img
+                        src={encodeURI(m.imagen)}
+                        alt={m.nombre}
+                        style={{ width: '100%', height: '240px', objectFit: 'contain', display: 'block' }}
+                      />
+                    </div>
+                    <div style={{ fontSize: '11px', fontWeight: '700', color: '#64748b', textTransform: 'uppercase' }}>{tituloFormato}</div>
+                    <h4 style={{ fontSize: '17px', fontWeight: '800', color: m.color, marginBottom: '6px' }}>{m.nombre}</h4>
+                    <p style={{ fontSize: '14px', color: '#475569', lineHeight: '1.4', marginBottom: '16px' }}>
+                      {m.descripcion}
+                    </p>
+                  </div>
+
+                  <a
+                    href="https://wa.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ display: 'block', textAlign: 'center', backgroundColor: '#0f172a', color: '#ffffff', padding: '10px 14px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '14px' }}
+                  >
+                    Pedir este modelo por WhatsApp
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '16px', border: '1px solid #cbd5e1', maxWidth: '500px', margin: '20px auto 0', textAlign: 'center', boxShadow: '0 4px 16px rgba(0,0,0,0.05)' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '8px' }}>¿Ya tienes tu placa TapPlus?</h3>
+          <p style={{ color: '#64748b', fontSize: '14px', marginBottom: '20px' }}>
+            Ingresa el número impreso en tu calco o placa para activarla o cambiar su enlace de destino.
+          </p>
+          <form onSubmit={handleConfigurar} style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+            <input
+              type="text"
+              placeholder="Ej: 0001"
+              value={codigo}
+              onChange={(e) => setCodigo(e.target.value)}
+              style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid #94a3b8', fontSize: '16px', width: '160px', textAlign: 'center', fontWeight: '600' }}
+            />
+            <button
+              type="submit"
+              style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '12px 22px', borderRadius: '8px', fontWeight: '700', border: 'none', cursor: 'pointer', fontSize: '16px' }}
+            >
+              Configurar
+            </button>
+          </form>
+        </div>
+      </main>
+
+      <footer style={{ textAlign: 'center', padding: '24px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #e2e8f0', marginTop: '40px' }}>
+        © 2026 TapPlus Argentina • tapplus.com.ar
+      </footer>
+    </div>
+  );
+}
