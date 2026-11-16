@@ -310,7 +310,10 @@ const modelosCalco = [
               onClick={() => setCatalogoActivo(catalogoActivo === 'placa' ? null : 'placa')}
               style={{ backgroundColor: '#161616', border: catalogoActivo === 'placa' ? '2px solid #facc15' : '1px solid #262626', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}><p style={{ fontSize: '13px', color: '#d4d4d4', lineHeight: '1.4' }}>
+            
+              
+                  
+                  <p style={{ fontSize: '13px', color: '#d4d4d4', lineHeight: '1.4' }}>
                       ✓ {p.recupero}
                     </p>
                   </div>
@@ -318,7 +321,7 @@ const modelosCalco = [
 
                 <div style={{ padding: '0 22px 22px' }}>
                   <a
-                    href={'https://wa.me' + encodeURIComponent(p.mensaje)}
+                    href={'https://wa.me/542954535676?text=' + encodeURIComponent(p.mensaje)}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ display: 'block', textAlign: 'center', backgroundColor: '#facc15', color: '#0a0a0a', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
@@ -330,6 +333,38 @@ const modelosCalco = [
             ))}
           </div>
         </section>
+
+        {/* Panel Configurador para Clientes */}
+        <section id="configurar" style={{ backgroundColor: '#161616', border: '1px solid #333333', borderRadius: '20px', padding: '32px', maxWidth: '520px', margin: '0 auto', textAlign: 'center' }}>
+          <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>¿Ya tenés tu placa TapPlus?</h3>
+          <p style={{ color: '#a3a3a3', fontSize: '14px', marginBottom: '20px' }}>
+            Ingresá el número impreso en tu calco o placa para activarla o cambiar su enlace de destino.
+          </p>
+          <form onSubmit={handleConfigurar} style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+            <input
+              type="text"
+              placeholder="Ej: 0001"
+              value={codigo}
+              onChange={(e) => setCodigo(e.target.value)}
+              style={{ padding: '12px 16px', borderRadius: '10px', border: '1px solid #404040', backgroundColor: '#0a0a0a', color: '#ffffff', fontSize: '16px', width: '160px', textAlign: 'center', fontWeight: '700' }}
+            />
+            <button
+              type="submit"
+              style={{ backgroundColor: '#facc15', color: '#0a0a0a', padding: '12px 22px', borderRadius: '10px', fontWeight: '800', border: 'none', cursor: 'pointer', fontSize: '16px' }}
+            >
+              Configurar
+            </button>
+          </form>
+        </section>
+      </main>
+
+      <footer style={{ textAlign: 'center', padding: '28px', color: '#737373', fontSize: '13px', borderTop: '1px solid #262626', marginTop: '48px' }}>
+        © 2026 TapPlus Argentina • tapplus.com.ar • Envíos a todo el país
+      </footer>
+    </div>
+  );
+}  
+        
 
         {/* Panel Configurador para Clientes */}
         <section id="configurar" style={{ backgroundColor: '#161616', border: '1px solid #333333', borderRadius: '20px', padding: '32px', maxWidth: '520px', margin: '0 auto', textAlign: 'center' }}>
