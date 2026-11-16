@@ -138,7 +138,20 @@ return (
                 <h4 style={{ fontSize: '20px', fontWeight: '800', color: '#facc15' }}>{catalogoActivo === 'calco' ? 'Diseños reales • Calcos 10 × 10 cm' : 'Diseños reales • Placas 10 × 15 cm'}</h4>
                 <button onClick={() => setCatalogoActivo(null)} style={{ backgroundColor: '#262626', color: '#ffffff', border: 'none', padding: '8px 14px', borderRadius: '8px', fontWeight: '700', cursor: 'pointer' }}>✕ Cerrar</button>
               </div>
-  const listaFotos = catalogoActivo === 'calco' ? modelosCalco : modelosPlaca;<section id="packs" style={{ marginBottom: '64px' }}>
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
+                {listaFotos.map((item) => (
+                  <div key={item.nombre} style={{ backgroundColor: '#1c1c1c', border: '1px solid #2e2e2e', borderRadius: '14px', padding: '14px' }}>
+                    <img src={encodeURI(item.imagen)} alt={item.nombre} style={{ width: '100%', height: '220px', objectFit: 'contain', backgroundColor: '#ffffff', borderRadius: '10px', marginBottom: '12px' }} />
+                    <div style={{ fontWeight: '800', fontSize: '15px', marginBottom: '10px', color: '#ffffff' }}>{item.nombre}</div>
+                    <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', backgroundColor: '#facc15', color: '#0a0a0a', padding: '9px', borderRadius: '8px', fontWeight: '800', textDecoration: 'none', fontSize: '13px' }}>Pedir este modelo</a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+
+        <section id="packs" style={{ marginBottom: '64px' }}>
           <h2 style={{ fontSize: '32px', fontWeight: '900', textAlign: 'center', marginBottom: '8px' }}>Elegí tu Pack TapPlus</h2>
           <p style={{ color: '#a3a3a3', textAlign: 'center', marginBottom: '24px', fontSize: '15px' }}>Cuantas más unidades llevás, menor es el costo unitario y mayor tu margen de ganancia.</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', marginBottom: '30px' }}>
@@ -175,11 +188,11 @@ return (
                   </div>
                 </div>
                 <div style={{ padding: '0 22px 22px' }}>
-                  <a href="https://wa.me/5492954535676" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', backgroundColor: '#facc15', color: '#0a0a0a', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}>Encargar este pack por WhatsApp</a>
+                  <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', backgroundColor: '#facc15', color: '#0a0a0a', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}>Encargar este pack por WhatsApp</a>
                 </div>
               </div>
             ))}
-              </div>
+          </div>
         </section>
 
         <section id="configurar" style={{ backgroundColor: '#161616', border: '1px solid #333333', borderRadius: '20px', padding: '32px', maxWidth: '520px', margin: '0 auto', textAlign: 'center' }}>
