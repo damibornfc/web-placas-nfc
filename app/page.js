@@ -4,7 +4,8 @@ import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [codigo, setCodigo] = useState('');
-  const [formatoActivo, setFormatoActivo] = useState(null);
+  const [filtroPack, setFiltroPack] = useState('todos');
+  const [catalogoActivo, setCatalogoActivo] = useState(null);
   const router = useRouter();
 
   const handleConfigurar = (e) => {
@@ -15,311 +16,153 @@ export default function Home() {
     }
   };
 
-  const modelosCalco = [
+  const packs = [
     {
-      nombre: 'Reseñas de Google • Modelo 1',
-      imagen: '/WhatsApp Image calco reseña google 2026-11-15 at 22.40.33.jpeg',
-      color: '#ea4335',
-      descripcion: 'Lleva al cliente directo a dejar 5 estrellas en Google Maps.'
+      categoria: 'local',
+      badge: 'Ideal para probar',
+      cantidad: '×1',
+      titulo: '1 Calco NFC + QR (10 × 10 cm)',
+      subtitulo: 'Adhesivo de alta resistencia • Editable con PIN',
+      precio: '$10.000',
+      unitario: 'Precio por unidad',
+      ganancia: '',
+      recupero: 'Pégalo en tu vidriera, caja o mostrador en segundos.',
+      mensaje: 'Hola TapPlus! Quiero pedir 1 Calco NFC + QR (10x10 cm) a $10.000'
     },
     {
-      nombre: 'Reseñas de Google • Modelo 2',
-      imagen: '/WhatsApp Image calco reseña 2 026-11-15 at 22.40.34.jpeg',
-      color: '#ea4335',
-      descripcion: 'Diseño alternativo para sumar opiniones positivas en tu local.'
+      categoria: 'local',
+      badge: 'Más elegido por comercios',
+      cantidad: '×1',
+      titulo: '1 Placa Expositora (10 × 15 cm)',
+      subtitulo: 'Con pie de apoyo para mostrador • Editable con PIN',
+      precio: '$25.000',
+      unitario: 'Precio por unidad',
+      ganancia: '',
+      recupero: 'Presencia premium para cajas, recepciones y escritorios.',
+      mensaje: 'Hola TapPlus! Quiero pedir 1 Placa Expositora (10x15 cm) a $25.000'
     },
     {
-      nombre: 'Reseñas de Google • Modelo 3',
-      imagen: '/WhatsApp Image calco reseña 3 2026-11-15 at 22.40.34.jpeg',
-      color: '#ea4335',
-      descripcion: 'Ideal para vidrieras, cajas y mostradores de atención.'
+      categoria: 'local',
+      badge: 'Con tu marca',
+      cantidad: '×1',
+      titulo: 'Personalizado con tu Logo (1 u.)',
+      subtitulo: 'Calco 10×10 ($15.000) o Placa 10×15 ($35.000)',
+      precio: 'Desde $15.000',
+      unitario: 'Diseño incluido con tu logo y colores',
+      ganancia: '',
+      recupero: 'Hacemos el diseño con la identidad visual de tu local.',
+      mensaje: 'Hola TapPlus! Quiero pedir un diseño Personalizado con mi Logo'
     },
     {
-      nombre: 'Instagram • Modelo 1',
-      imagen: '/WhatsApp Image calco instagran 2026-11-15 at 22.40.33.jpeg',
-      color: '#dc2743',
-      descripcion: 'Abre tu perfil de Instagram al instante para sumar seguidores.'
+      categoria: 'local',
+      badge: 'Combo Local × 3',
+      cantidad: '×3',
+      titulo: 'Pack × 3 Unidades (Mismo formato)',
+      subtitulo: '3 Calcos ($25.000) o 3 Placas ($65.000)',
+      precio: 'Desde $25.000',
+      unitario: '$8.333 c/calco • $21.666 c/placa',
+      ganancia: '',
+      recupero: 'Ideal para cubrir caja, vidriera y salón de atención.',
+      mensaje: 'Hola TapPlus! Quiero pedir el Pack x 3 unidades para mi local'
     },
     {
-      nombre: 'Instagram • Modelo 2',
-      imagen: '/WhatsApp Image calco instagran 2 2026-11-15 at 22.40.33.jpeg',
-      color: '#dc2743',
-      descripcion: 'Segundo diseño de alto impacto visual para tu cuenta de Instagram.'
+      categoria: 'local',
+      badge: 'Pack Marca Propia × 5',
+      cantidad: '×5',
+      titulo: 'Pack × 5 Personalizados con Logo',
+      subtitulo: '5 Calcos ($55.000) o 5 Placas ($135.000)',
+      precio: 'Desde $55.000',
+      unitario: '$11.000 c/calco • $27.000 c/placa',
+      ganancia: '',
+      recupero: 'Ahorrás hasta $40.000 con diseño personalizado incluido.',
+      mensaje: 'Hola TapPlus! Quiero pedir el Pack x 5 Personalizados con mi Logo'
     },
     {
-      nombre: 'WhatsApp Directo • Modelo 1',
-      imagen: '/WhatsApp Image wasap 2026-11-15 at 22.40.33.jpeg',
-      color: '#16a34a',
-      descripcion: 'Inicia un chat directo con tu negocio sin agendar el número.'
+      categoria: 'revender',
+      badge: 'Recomendado para empezar',
+      cantidad: '×10',
+      titulo: 'Pack Mayorista × 10 Calcos',
+      subtitulo: '10 Calcos 10×10 cm con NFC + QR editable',
+      precio: '$50.000',
+      unitario: '$5.000 cada uno',
+      ganancia: 'Revendiendo a $10.000 ganás $50.000 limpios',
+      recupero: 'Recuperás tu inversión con solo 5 ventas',
+      mensaje: 'Hola TapPlus! Quiero pedir el Pack Mayorista x 10 Calcos ($50.000)'
     },
     {
-      nombre: 'WhatsApp Directo • Modelo 2',
-      imagen: '/WhatsApp Image calco wasap2026-11-15 at 22.40.34.jpeg',
-      color: '#16a34a',
-      descripcion: 'Diseño alternativo para consultas rápidas por WhatsApp.'
+      categoria: 'revender',
+      badge: 'Alta rentabilidad',
+      cantidad: '×10',
+      titulo: 'Pack Mayorista × 10 Placas',
+      subtitulo: '10 Placas Expositoras 10×15 cm con NFC + QR',
+      precio: '$110.000',
+      unitario: '$11.000 cada una',
+      ganancia: 'Revendiendo a $25.000 ganás $140.000 limpios',
+      recupero: 'Recuperás tu inversión con solo 5 ventas',
+      mensaje: 'Hola TapPlus! Quiero pedir el Pack Mayorista x 10 Placas ($110.000)'
     },
     {
-      nombre: 'TikTok',
-      imagen: '/WhatsApp Image tik tok2026-11-15 at 22.40.33 (1).jpeg',
-      color: '#0f172a',
-      descripcion: 'Dirige a tus clientes a tu perfil o videos de TikTok.'
+      categoria: 'revender',
+      badge: 'Mayor margen',
+      cantidad: '×30',
+      titulo: 'Pack Mayorista × 30 Unidades',
+      subtitulo: '30 Calcos ($120.000) o 30 Placas ($285.000)',
+      precio: 'Desde $120.000',
+      unitario: '$4.000 c/calco • $9.500 c/placa',
+      ganancia: 'Ganancia neta de hasta $465.000 por pack',
+      recupero: 'Recuperás tu inversión vendiendo menos de un tercio',
+      mensaje: 'Hola TapPlus! Quiero pedir el Pack Mayorista x 30 unidades'
     },
     {
-      nombre: 'Menú Digital',
-      imagen: '/WhatsApp Image calco menu digital 2026-11-15 at 22.40.33.jpeg',
-      color: '#d97706',
-      descripcion: 'Ideal para mesas y barras: abre tu carta digital con un toque.'
+      categoria: 'revender',
+      badge: 'Distribuidor • Menor costo',
+      cantidad: '×100',
+      titulo: 'Pack Distribuidor × 100 Unidades',
+      subtitulo: '100 Calcos ($350.000) o 100 Placas ($850.000)',
+      precio: 'Desde $350.000',
+      unitario: '$3.500 c/calco • $8.500 c/placa',
+      ganancia: 'Ganancia neta de hasta $1.650.000 por pack',
+      recupero: 'Máximo margen para revendedores y agencias',
+      mensaje: 'Hola TapPlus! Quiero consultar por el Pack Distribuidor x 100 unidades'
     },
     {
-      nombre: 'Tienda Online',
-      imagen: '/WhatsApp Image calco tienda online 2026-11-15 at 22.40.33.jpeg',
-      color: '#0284c7',
-      descripcion: 'Lleva a tus clientes directo a tu catálogo web para comprar.'
+      categoria: 'mesas',
+      badge: 'Gastronomía • 6 × 9 cm',
+      cantidad: '×10',
+      titulo: 'Pack 10 Mesas • Mini Acrílico Menú',
+      subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR',
+      precio: '$130.000',
+      unitario: '$13.000 cada mesa',
+      ganancia: '',
+      recupero: 'Compacto para mesas de bares, cafés y restaurantes.',
+      mensaje: 'Hola TapPlus! Quiero pedir el Pack 10 Mesas Mini Acrilico Menu 6x9 ($130.000)'
+    },
+    {
+      categoria: 'mesas',
+      badge: 'Gastronomía • 6 × 9 cm',
+      cantidad: '×25',
+      titulo: 'Pack 25 Mesas • Mini Acrílico Menú',
+      subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR',
+      precio: '$290.000',
+      unitario: '$11.600 cada mesa',
+      ganancia: '',
+      recupero: 'Actualizá precios de tu carta online sin reimprimir.',
+      mensaje: 'Hola TapPlus! Quiero pedir el Pack 25 Mesas Mini Acrilico Menu 6x9 ($290.000)'
+    },
+    {
+      categoria: 'mesas',
+      badge: 'Gastronomía • 6 × 9 cm',
+      cantidad: '×50',
+      titulo: 'Pack 50 Mesas • Mini Acrílico Menú',
+      subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR',
+      precio: '$525.000',
+      unitario: '$10.500 cada mesa',
+      ganancia: '',
+      recupero: 'Equipá todo tu salón con diseño personalizado.',
+      mensaje: 'Hola TapPlus! Quiero pedir el Pack 50 Mesas Mini Acrilico Menu 6x9 ($525.000)'
     }
   ];
 
-  const modelosPlaca = [
-    {
-      nombre: 'Reseñas de Google • Modelo 1',
-      imagen: '/WhatsApp Image placas resseña 2026-11-16 at 10.44.52.jpeg',
-      color: '#ea4335',
-      descripcion: 'Expositor de mostrador para sumar reseñas de 5 estrellas.'
-    },
-    {
-      nombre: 'Reseñas de Google • Modelo 2',
-      imagen: '/WhatsApp Image placas reseñas 2 2026-11-16 at 10.44.52.jpeg',
-      color: '#ea4335',
-      descripcion: 'Segundo diseño vertical para cajas y escritorios.'
-    },
-    {
-      nombre: 'Reseñas de Google • Modelo 3',
-      imagen: '/WhatsApp Image placas reseñas 3 2026-11-16 at 10.44.52.jpeg',
-      color: '#ea4335',
-      descripcion: 'Tercer estilo de placa expositora para tu negocio.'
-    },
-    {
-      nombre: 'Instagram • Modelo 1',
-      imagen: '/WhatsApp Image placas instagran 2026-11-16 at 10.44.54.jpeg',
-      color: '#dc2743',
-      descripcion: 'Invita a tus clientes a seguirte en Instagram con un toque.'
-    },
-    {
-      nombre: 'Instagram • Modelo 2',
-      imagen: '/WhatsApp Image placas instagran 2 2026-11-16 at 10.44.54.jpeg',
-      color: '#dc2743',
-      descripcion: 'Diseño alternativo para mostrador de Instagram.'
-    },
-    {
-      nombre: 'WhatsApp Directo • Modelo 1',
-      imagen: '/WhatsApp Image placa wasap 2026-11-16 at 10.44.52.jpeg',
-      color: '#16a34a',
-      descripcion: 'Atención al cliente inmediata en WhatsApp con un toque.'
-    },
-    {
-      nombre: 'WhatsApp Directo • Modelo 2',
-      imagen: '/WhatsApp Image placas wasap 22026-11-16 at 10.44.54.jpeg',
-      color: '#16a34a',
-      descripcion: 'Segundo diseño vertical para contacto por WhatsApp.'
-    },
-    {
-      nombre: 'Menú Digital',
-      imagen: '/WhatsApp Image placa menu 2026-11-16 at 10.44.52.jpeg',
-      color: '#d97706',
-      descripcion: 'Expositor para mesas y barras con acceso directo a tu carta.'
-    },
-    {
-      nombre: 'Tienda Online',
-      imagen: '/WhatsApp Image placa tienda online 2026-11-16 at 10.44.52.jpeg',
-      color: '#0284c7',
-      descripcion: 'Muestra tu tienda virtual en el mostrador con un simple toque.'
-    }
-  ];
-
-  const listaActual = formatoActivo === 'calco' ? modelosCalco : modelosPlaca;
-  const tituloFormato = formatoActivo === 'calco'
-    ? 'Calco NFC + QR (10 × 10 cm)'
-    : 'Placa Expositora (10 × 15 cm)';
-
-  return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc', color: '#0f172a', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-      <header style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '-0.5px' }}>
-          Tap<span style={{ color: '#38bdf8' }}>Plus</span>
-        </div>
-        <span style={{ fontSize: '13px', backgroundColor: '#1e293b', padding: '6px 12px', borderRadius: '20px', color: '#94a3b8' }}>
-          Tecnología NFC + QR
-        </span>
-      </header>
-
-      <main style={{ maxWidth: '980px', margin: '0 auto', padding: '40px 20px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <h1 style={{ fontSize: '36px', fontWeight: '800', lineHeight: '1.2', marginBottom: '16px', color: '#0f172a' }}>
-            Conecta tu negocio con un simple toque
-          </h1>
-          <p style={{ fontSize: '18px', color: '#475569', maxWidth: '640px', margin: '0 auto 28px' }}>
-            Calcos y expositores inteligentes con chip NFC y código QR. Tus clientes acercan su celular y van directo a tus Reseñas de Google, Instagram, WhatsApp, TikTok, Menú o Tienda Online.
-          </p>
-
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
-            <a
-              href="https://mercadopago.com.ar"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ backgroundColor: '#009ee3', color: '#ffffff', padding: '14px 26px', borderRadius: '10px', fontWeight: '700', textDecoration: 'none', fontSize: '16px', boxShadow: '0 4px 12px rgba(0,158,227,0.3)' }}
-            >
-              💳 Pagar con Mercado Pago
-            </a>
-
-            <a
-              href="https://mercadolibre.com.ar"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ backgroundColor: '#ffe600', color: '#1e293b', padding: '14px 26px', borderRadius: '10px', fontWeight: '700', textDecoration: 'none', fontSize: '16px', boxShadow: '0 4px 12px rgba(255,230,0,0.3)' }}
-            >
-              🛒 Comprar en MercadoLibre
-            </a>
-
-            <a
-              href="https://wa.me"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ backgroundColor: '#25d366', color: '#ffffff', padding: '14px 26px', borderRadius: '10px', fontWeight: '700', textDecoration: 'none', fontSize: '16px', boxShadow: '0 4px 12px rgba(37,211,102,0.3)' }}
-            >
-              💬 Consultar por WhatsApp
-            </a>
-
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: '#ffffff', padding: '14px 26px', borderRadius: '10px', fontWeight: '700', textDecoration: 'none', fontSize: '16px', boxShadow: '0 4px 12px rgba(220,39,67,0.3)' }}
-            >
-              📸 Seguir en Instagram
-            </a>
-          </div>
-        </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '24px' }}>
-          <div
-            onClick={() => setFormatoActivo(formatoActivo === 'calco' ? null : 'calco')}
-            style={{
-              backgroundColor: '#ffffff',
-              padding: '24px',
-              borderRadius: '16px',
-              border: formatoActivo === 'calco' ? '2px solid #0284c7' : '1px solid #e2e8f0',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-              cursor: 'pointer'
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <span style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Formato Adhesivo</span>
-              <span style={{ fontSize: '12px', backgroundColor: '#e0f2fe', color: '#0369a1', padding: '4px 10px', borderRadius: '12px', fontWeight: '700' }}>
-                {formatoActivo === 'calco' ? 'Ocultar diseños ▲' : 'Ver 10 modelos ▼'}
-              </span>
-            </div>
-            <h2 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>Calco NFC + QR (10 × 10 cm)</h2>
-            <p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.5' }}>
-              Ideal para pegar en vidrieras, mostradores, mesas o espejos. Haz clic aquí para ver los 10 diseños reales disponibles.
-            </p>
-          </div>
-
-         <div
-            onClick={() => setFormatoActivo(formatoActivo === 'placa' ? null : 'placa')}
-            style={{
-              backgroundColor: '#ffffff',
-              padding: '24px',
-              borderRadius: '16px',
-              border: formatoActivo === 'placa' ? '2px solid #0284c7' : '1px solid #e2e8f0',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-              cursor: 'pointer'
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <span style={{ fontSize: '13px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Formato Mostrador</span>
-              <span style={{ fontSize: '12px', backgroundColor: '#e0f2fe', color: '#0369a1', padding: '4px 10px', borderRadius: '12px', fontWeight: '700' }}>
-                {formatoActivo === 'placa' ? 'Ocultar diseños ▲' : 'Ver 9 modelos ▼'}
-              </span>
-            </div>
-            <h2 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>Placa Expositora (10 × 15 cm)</h2>
-            <p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.5' }}>
-              Impresión full color de alto impacto visual para cajas y escritorios. Haz clic aquí para ver los 9 diseños reales disponibles.
-            </p>
-          </div>
-        </div>
-
-        {formatoActivo && (
-          <div style={{ backgroundColor: '#ffffff', padding: '28px', borderRadius: '18px', border: '2px solid #bae6fd', marginBottom: '40px', boxShadow: '0 8px 24px rgba(2,132,199,0.08)' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}>
-              <div>
-                <span style={{ fontSize: '12px', fontWeight: '700', color: '#0284c7', textTransform: 'uppercase' }}>Catálogo de Diseños Reales</span>
-                <h3 style={{ fontSize: '24px', fontWeight: '800', color: '#0f172a' }}>{tituloFormato}</h3>
-              </div>
-              <button
-                onClick={() => setFormatoActivo(null)}
-                style={{ backgroundColor: '#f1f5f9', color: '#475569', border: 'none', padding: '8px 14px', borderRadius: '8px', fontWeight: '700', cursor: 'pointer' }}
-              >
-                ✕ Cerrar
-              </button>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '18px' }}>
-              {listaActual.map((m) => (
-                <div key={m.nombre} style={{ border: '1px solid #e2e8f0', borderRadius: '14px', padding: '16px', backgroundColor: '#f8fafc', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    <div style={{ marginBottom: '12px', borderRadius: '10px', overflow: 'hidden', border: '1px solid #cbd5e1', backgroundColor: '#ffffff' }}>
-                      <img
-                        src={encodeURI(m.imagen)}
-                        alt={m.nombre}
-                        style={{ width: '100%', height: '240px', objectFit: 'contain', display: 'block' }}
-                      />
-                    </div>
-                    <div style={{ fontSize: '11px', fontWeight: '700', color: '#64748b', textTransform: 'uppercase' }}>{tituloFormato}</div>
-                    <h4 style={{ fontSize: '17px', fontWeight: '800', color: m.color, marginBottom: '6px' }}>{m.nombre}</h4>
-                    <p style={{ fontSize: '14px', color: '#475569', lineHeight: '1.4', marginBottom: '16px' }}>
-                      {m.descripcion}
-                    </p>
-                  </div>
-
-                  <a
-                    href="https://wa.me"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ display: 'block', textAlign: 'center', backgroundColor: '#0f172a', color: '#ffffff', padding: '10px 14px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '14px' }}
-                  >
-                    Pedir este modelo por WhatsApp
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div style={{ backgroundColor: '#ffffff', padding: '30px', borderRadius: '16px', border: '1px solid #cbd5e1', maxWidth: '500px', margin: '20px auto 0', textAlign: 'center', boxShadow: '0 4px 16px rgba(0,0,0,0.05)' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '8px' }}>¿Ya tienes tu placa TapPlus?</h3>
-          <p style={{ color: '#64748b', fontSize: '14px', marginBottom: '20px' }}>
-            Ingresa el número impreso en tu calco o placa para activarla o cambiar su enlace de destino.
-          </p>
-          <form onSubmit={handleConfigurar} style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
-            <input
-              type="text"
-              placeholder="Ej: 0001"
-              value={codigo}
-              onChange={(e) => setCodigo(e.target.value)}
-              style={{ padding: '12px 16px', borderRadius: '8px', border: '1px solid #94a3b8', fontSize: '16px', width: '160px', textAlign: 'center', fontWeight: '600' }}
-            />
-            <button
-              type="submit"
-              style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '12px 22px', borderRadius: '8px', fontWeight: '700', border: 'none', cursor: 'pointer', fontSize: '16px' }}
-            >
-              Configurar
-            </button>
-          </form>
-        </div>
-      </main>
-
-      <footer style={{ textAlign: 'center', padding: '24px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #e2e8f0', marginTop: '40px' }}>
-        © 2026 TapPlus Argentina • tapplus.com.ar
-      </footer>
-    </div>
-  );
-}
+  const packsFiltrados = filtroPack === 'todos'
+    ? packs
+    : packs.filter((p) => p.categoria === filtroPack);
