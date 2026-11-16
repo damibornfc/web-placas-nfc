@@ -428,7 +428,23 @@ const modelosCalco = [
                     )}
                     <p style={{ fontSize: '13px', color: '#d4d4d4', lineHeight: '1.4' }}>
                       ✓ {p.recupero}
+</div>
+                </div>
 
+                <div style={{ padding: '0 22px 22px' }}>
+                  <a
+                    href="https://wa.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ display: 'block', textAlign: 'center', backgroundColor: '#facc15', color: '#0a0a0a', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
+                  >
+                    Encargar este pack por WhatsApp
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
         {/* Panel Configurador para Clientes */}
         <section id="configurar" style={{ backgroundColor: '#161616', border: '1px solid #333333', borderRadius: '20px', padding: '32px', maxWidth: '520px', margin: '0 auto', textAlign: 'center' }}>
           <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>¿Ya tenés tu placa TapPlus?</h3>
