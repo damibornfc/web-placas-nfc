@@ -329,7 +329,7 @@ const modelosCalco = [
                     Encargar este pack por WhatsApp
                   </a>
                 </div>
-              </div>
+            
             ))}
           </div>
         </section>
