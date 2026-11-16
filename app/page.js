@@ -299,21 +299,26 @@ const modelosCalco = [
                 <span style={{ backgroundColor: '#262626', color: '#facc15', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: '700' }}>
                   {catalogoActivo === 'calco' ? 'Ocultar fotos ▲' : 'Ver fotos ▼'}
                 </span>
-              </div>
-              <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px' }}>Calco NFC + QR</h3>
-              <p style={{ color: '#a3a3a3', fontSize: '14px', lineHeight: '1.5' }}>
-                Vinilo laminado de alta durabilidad para vidrieras, cajas y mostradores. Desde <strong style={{ color: '#ffffff' }}>$10.000</strong> c/u o <strong style={{ color: '#facc15' }}>$3.500</strong> en pack mayorista.
-              </p>
-            </div>
-
-            <div
-              onClick={() => setCatalogoActivo(catalogoActivo === 'placa' ? null : 'placa')}
-              style={{ backgroundColor: '#161616', border: catalogoActivo === 'placa' ? '2px solid #facc15' : '1px solid #262626', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
-            >
-            
-              
-                  
-                  <p style={{ fontSize: '13px', color: '#d4d4d4', lineHeight: '1.4' }}>
+            {packsFiltrados.map((p) => (
+              <div key={p.titulo} style={{ backgroundColor: '#161616', border: '1px solid #2a2a2a', borderRadius: '20px', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ backgroundColor: '#1f2937', padding: '14px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontSize: '12px', fontWeight: '800', color: '#facc15', textTransform: 'uppercase' }}>{p.badge}</span>
+                    <span style={{ fontSize: '22px', fontWeight: '900', color: '#ffffff' }}>{p.cantidad}</span>
+                  </div>
+                  <div style={{ padding: '22px' }}>
+                    <h3 style={{ fontSize: '20px', fontWeight: '800', color: '#ffffff', marginBottom: '6px' }}>{p.titulo}</h3>
+                    <p style={{ fontSize: '13px', color: '#a3a3a3', marginBottom: '16px' }}>{p.subtitulo}</p>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '14px' }}>
+                      <span style={{ fontSize: '32px', fontWeight: '900', color: '#facc15' }}>{p.precio}</span>
+                      <span style={{ fontSize: '13px', color: '#38bdf8', fontWeight: '700' }}>{p.unitario}</span>
+                    </div>
+                    {p.ganancia && (
+                      <div style={{ backgroundColor: '#052e16', border: '1px solid #166534', color: '#4ade80', padding: '8px 12px', borderRadius: '10px', fontSize: '13px', fontWeight: '700', marginBottom: '10px' }}>
+                        💰 {p.ganancia}
+                      </div>
+                    )}
+                    <p style={{ fontSize: '13px', color: '#d4d4d4', lineHeight: '1.4' }}>
                       ✓ {p.recupero}
                     </p>
                   </div>
@@ -321,7 +326,7 @@ const modelosCalco = [
 
                 <div style={{ padding: '0 22px 22px' }}>
                   <a
-                    href={'https://wa.me/542954535676?text=' + encodeURIComponent(p.mensaje)}
+                    href="https://wa.me"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ display: 'block', textAlign: 'center', backgroundColor: '#facc15', color: '#0a0a0a', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
@@ -329,7 +334,7 @@ const modelosCalco = [
                     Encargar este pack por WhatsApp
                   </a>
                 </div>
-            
+              </div>
             ))}
           </div>
         </section>
