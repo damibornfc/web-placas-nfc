@@ -159,7 +159,10 @@ export default function Home() {
     { nombre: 'WhatsApp Directo • Mod. 1', imagen: '/WhatsApp Image wasap 2026-11-15 at 22.40.33.jpeg' },
     { nombre: 'WhatsApp Directo • Mod. 2', imagen: '/WhatsApp Image calco wasap2026-11-15 at 22.40.34.jpeg' },
     { nombre: 'TikTok', imagen: '/WhatsApp Image tik tok2026-11-15 at 22.40.33 (1).jpeg' },
-    { nombre: 'Menú Digital', imagen: '/WhatsApp Image calco menu digital 2026-11-15 at 22.40.33.jpeg' }
+    { nombre: 'Menú Digital', imagen: '/WhatsApp Image calco menu digital 2026-11-15 at 22.40.33.jpeg' },
+    { nombre: 'Reseñas de Google', imagen: '/calco reseña.jpeg' },
+{ nombre: 'Instagram', imagen: '/calco instagran 1.jpeg' },
+{ nombre: 'Tienda Online', imagen: '/calco teinda online.jpeg' },
   ];
 
   const modelosPlaca = [
