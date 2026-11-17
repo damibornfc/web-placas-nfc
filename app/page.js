@@ -221,6 +221,4 @@ export default function Home() {
     </div>
   );
 }
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '20px' }}>
-            {packsFiltrados.map((p) => (
+         
