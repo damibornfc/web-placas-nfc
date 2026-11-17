@@ -169,7 +169,7 @@ export default function Home() {
     { nombre: 'Instagram • Mod. 2', imagen: '/WhatsApp Image placas instagran 2 2026-11-16 at 10.44.54.jpeg' },
     { nombre: 'WhatsApp Directo • Mod. 1', imagen: '/WhatsApp Image placa wasap 2026-11-16 at 10.44.52.jpeg' },
     { nombre: 'WhatsApp Directo • Mod. 2', imagen: '/WhatsApp Image placas wasap 22026-11-16 at 10.44.54.jpeg' },
-    { nombre: 'Menú Digital', imagen: '/WhatsApp Image placa menu 2026-11-16 at 10.44.52.jpeg' }
+    { nombre: 'Menú Digital', imagen: '/WhatsApp Image placa menu 2026-11-16 at 10.44.52.jpeg' },
     { nombre: 'Wi-Fi • Mod. 1', imagen: '/wifi tarjeta 1.jpeg' },
 { nombre: 'Wi-Fi • Mod. 2', imagen: '/wifi tarjeta 2.jpeg' },
 { nombre: 'Tienda Web', imagen: '/tienda web tarjeta.jpeg' },
