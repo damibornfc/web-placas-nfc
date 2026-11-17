@@ -91,3 +91,93 @@ export default function Home() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
             <a href="#packs" style={{ backgroundColor: '#38bdf8', color: '#090d16', padding: '15px 28px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>📦 Ver Packs y Precios</a>
             <a href="https://mercadopago.com.ar" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#ffffff', color: '#090d16', padding: '15px 24px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>💳 Mercado Pago</a>
+<a href="https://mercadopago.com.ar" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#ffffff', color: '#090d16', padding: '15px 24px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>💳 Mercado Pago</a>
+            <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#25d366', color: '#090d16', padding: '15px 24px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>💬 WhatsApp</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#0f172a', border: '1px solid #38bdf8', color: '#ffffff', padding: '15px 24px', borderRadius: '12px', fontWeight: '700', textDecoration: 'none', fontSize: '16px' }}>📸 @tapplusar</a>
+          </div>
+        </div>
+
+        <section style={{ marginBottom: '64px' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: '900', textAlign: 'center', marginBottom: '8px', color: '#ffffff' }}>Configurarlo es así de simple</h2>
+          <p style={{ color: '#94a3b8', textAlign: 'center', marginBottom: '28px', fontSize: '15px' }}>Cada unidad se activa en 1 minuto desde el celular, sin descargar aplicaciones.</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '16px' }}>
+            {[
+              { num: '1', titulo: 'Escaneás o acercás', desc: 'Tu cliente acerca su teléfono por NFC o escanea el código QR.' },
+              { num: '2', titulo: 'Pegás tu enlace', desc: 'Cargás el link de Google, Instagram, WhatsApp, TikTok o tu Menú.' },
+              { num: '3', titulo: 'Guardás con tu PIN', desc: 'Protegés tu placa con tu clave personal de 4 dígitos.' },
+              { num: '4', titulo: 'Listo, editable siempre', desc: 'Podés cambiar el link de destino cuando quieras sin reprogramar el chip.' }
+            ].map((paso) => (
+              <div key={paso.num} style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '16px', padding: '22px' }}>
+                <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#38bdf8', color: '#090d16', fontWeight: '900', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>{paso.num}</div>
+                <h3 style={{ fontSize: '18px', fontWeight: '800', marginBottom: '6px', color: '#ffffff' }}>{paso.titulo}</h3>
+                <p style={{ fontSize: '14px', color: '#cbd5e1', lineHeight: '1.4' }}>{paso.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section style={{ marginBottom: '64px' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: '900', textAlign: 'center', marginBottom: '8px', color: '#ffffff' }}>Nuestros Formatos y Diseños</h2>
+          <p style={{ color: '#94a3b8', textAlign: 'center', marginBottom: '24px', fontSize: '15px' }}>Hacé clic en un formato para ver nuestros modelos listos para entregar.</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '18px', marginBottom: '20px' }}>
+            <div onClick={() => setCatalogoActivo(catalogoActivo === 'calco' ? null : 'calco')} style={{ backgroundColor: '#111827', border: catalogoActivo === 'calco' ? '2px solid #38bdf8' : '1px solid #1e293b', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                <span style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase' }}>10 × 10 cm • Adhesivo</span>
+                <span style={{ backgroundColor: '#1e293b', color: '#38bdf8', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: '700' }}>{catalogoActivo === 'calco' ? 'Ocultar fotos ▲' : 'Ver fotos ▼'}</span>
+              </div>
+              <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Calco NFC + QR</h3>
+              <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>Vinilo laminado de alta durabilidad para vidrieras, cajas y mostradores. Desde <strong style={{ color: '#ffffff' }}>$10.000</strong> c/u o <strong style={{ color: '#38bdf8' }}>$3.500</strong> en pack mayorista.</p>
+            </div>
+            <div onClick={() => setCatalogoActivo(catalogoActivo === 'placa' ? null : 'placa')} style={{ backgroundColor: '#111827', border: catalogoActivo === 'placa' ? '2px solid #38bdf8' : '1px solid #1e293b', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                <span style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase' }}>10 × 15 cm • Con Pie</span>
+                <span style={{ backgroundColor: '#1e293b', color: '#38bdf8', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: '700' }}>{catalogoActivo === 'placa' ? 'Ocultar fotos ▲' : 'Ver fotos ▼'}</span>
+              </div>
+              <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Placa Expositora Mostrador</h3>
+              <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>Expositor vertical con pie de apoyo para recepción y caja. Desde <strong style={{ color: '#ffffff' }}>$25.000</strong> c/u o <strong style={{ color: '#38bdf8' }}>$8.500</strong> en pack mayorista.</p>
+            </div>
+            <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '18px', padding: '24px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                <span style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase' }}>6 × 9 cm • Acrílico Mesa</span>
+                <span style={{ backgroundColor: '#1e293b', color: '#ffffff', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: '700' }}>Gastronomía</span>
+              </div>
+              <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Mini Acrílico Menú Mesas</h3>
+              <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>Portarretratos acrílico compacto 6×9 cm con el logo de tu restaurant y QR/NFC directo a tu carta digital. Packs de 10, 25 y 50 mesas.</p>
+            </div>
+          </div>
+          {catalogoActivo && (
+            <div style={{ backgroundColor: '#0f172a', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
+                <h4 style={{ fontSize: '20px', fontWeight: '800', color: '#38bdf8' }}>{catalogoActivo === 'calco' ? 'Diseños reales • Calcos 10 × 10 cm' : 'Diseños reales • Placas 10 × 15 cm'}</h4>
+                <button onClick={() => setCatalogoActivo(null)} style={{ backgroundColor: '#1e293b', color: '#ffffff', border: 'none', padding: '8px 14px', borderRadius: '8px', fontWeight: '700', cursor: 'pointer' }}>✕ Cerrar</button>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
+                {listaFotos.map((item) => (
+                  <div key={item.nombre} style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '14px', padding: '14px' }}>
+                    <img src={encodeURI(item.imagen)} alt={item.nombre} style={{ width: '100%', height: '220px', objectFit: 'contain', backgroundColor: '#ffffff', borderRadius: '10px', marginBottom: '12px' }} />
+                    <div style={{ fontWeight: '800', fontSize: '15px', marginBottom: '10px', color: '#ffffff' }}>{item.nombre}</div>
+                    <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '9px', borderRadius: '8px', fontWeight: '800', textDecoration: 'none', fontSize: '13px' }}>Pedir este modelo</a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+
+        <section id="packs" style={{ marginBottom: '64px' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '900', textAlign: 'center', marginBottom: '8px', color: '#ffffff' }}>Elegí tu Pack TapPlus</h2>
+          <p style={{ color: '#94a3b8', textAlign: 'center', marginBottom: '24px', fontSize: '15px' }}>Cuantas más unidades llevás, menor es el costo unitario y mayor tu margen de ganancia.</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', marginBottom: '30px' }}>
+            {[
+              { id: 'todos', label: 'Todos los packs' },
+              { id: 'revender', label: 'Para Revender (Mayorista)' },
+              { id: 'local', label: 'Para mi Local / Personalizados' },
+              { id: 'mesas', label: 'Menú Mesas 6×9 cm' }
+            ].map((tab) => (
+              <button key={tab.id} onClick={() => setFiltroPack(tab.id)} style={{ backgroundColor: filtroPack === tab.id ? '#38bdf8' : '#111827', color: filtroPack === tab.id ? '#090d16' : '#ffffff', border: '1px solid #334155', padding: '10px 18px', borderRadius: '24px', fontWeight: '800', cursor: 'pointer', fontSize: '14px' }}>
+                {tab.label}
+              </button>
+            ))}
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '20px' }}>
+            {packsFiltrados.map((p) => (
