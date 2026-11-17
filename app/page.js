@@ -17,20 +17,139 @@ export default function Home() {
   };
 
   const packs = [
-    { categoria: 'local', badge: 'Ideal para probar', cantidad: '×1', titulo: '1 Calco NFC + QR (10 × 10 cm)', subtitulo: 'Adhesivo de alta resistencia • Editable con PIN', precio: '$10.000', unitario: 'Precio por unidad', ganancia: '', recupero: 'Pégalo en tu vidriera, caja o mostrador en segundos.' },
-    { categoria: 'local', badge: 'Más elegido por comercios', cantidad: '×1', titulo: '1 Placa Expositora (10 × 15 cm)', subtitulo: 'Con pie de apoyo para mostrador • Editable con PIN', precio: '$25.000', unitario: 'Precio por unidad', ganancia: '', recupero: 'Presencia premium para cajas, recepciones y escritorios.' },
-    { categoria: 'local', badge: 'Con tu marca', cantidad: '×1', titulo: 'Personalizado con tu Logo (1 u.)', subtitulo: 'Calco 10×10 ($15.000) o Placa 10×15 ($35.000)', precio: 'Desde $15.000', unitario: 'Diseño incluido con tu logo y colores', ganancia: '', recupero: 'Hacemos el diseño con la identidad visual de tu local.' },
-    { categoria: 'local', badge: 'Combo Local × 3', cantidad: '×3', titulo: 'Pack × 3 Unidades (Mismo formato)', subtitulo: '3 Calcos ($25.000) o 3 Placas ($65.000)', precio: 'Desde $25.000', unitario: '$8.333 c/calco • $21.666 c/placa', ganancia: '', recupero: 'Ideal para cubrir caja, vidriera y salón de atención.' },
-    { categoria: 'local', badge: 'Pack Marca Propia × 5', cantidad: '×5', titulo: 'Pack × 5 Personalizados con Logo', subtitulo: '5 Calcos ($65.000) o 5 Placas ($135.000)', precio: 'Desde $65.000', unitario: '$13.000 c/calco • $27.000 c/placa', ganancia: '', recupero: 'Diseño personalizado incluido con el logo de tu negocio.' },
-    { categoria: 'revender', badge: 'Recomendado para empezar', cantidad: '×10', titulo: 'Pack Mayorista × 10 Calcos', subtitulo: '10 Calcos 10×10 cm con NFC + QR editable', precio: '$50.000', unitario: '$5.000 cada uno', ganancia: 'Revendiendo a $10.000 ganás $50.000 limpios', recupero: 'Recuperás tu inversión con solo 5 ventas.' },
-    { categoria: 'revender', badge: 'Alta rentabilidad', cantidad: '×10', titulo: 'Pack Mayorista × 10 Placas', subtitulo: '10 Placas Expositoras 10×15 cm con NFC + QR', precio: '$110.000', unitario: '$11.000 cada una', ganancia: 'Revendiendo a $25.000 ganás $140.000 limpios', recupero: 'Recuperás tu inversión con solo 5 ventas.' },
-    { categoria: 'revender', badge: 'Mayor margen', cantidad: '×30', titulo: 'Pack Mayorista × 30 Unidades', subtitulo: '30 Calcos ($120.000) o 30 Placas ($285.000)', precio: 'Desde $120.000', unitario: '$4.000 c/calco • $9.500 c/placa', ganancia: 'Ganancia neta de hasta $465.000 por pack', recupero: 'Recuperás tu inversión vendiendo menos de un tercio.' },
-    { categoria: 'revender', badge: 'Distribuidor • Menor costo', cantidad: '×100', titulo: 'Pack Distribuidor × 100 Unidades', subtitulo: '100 Calcos ($350.000) o 100 Placas ($850.000)', precio: 'Desde $350.000', unitario: '$3.500 c/calco • $8.500 c/placa', ganancia: 'Ganancia neta de hasta $1.650.000 por pack', recupero: 'Máximo margen para revendedores y agencias.' },
-    { categoria: 'mesas', badge: 'Gastronomía • 6 × 9 cm', cantidad: '×10', titulo: 'Pack 10 Mesas • Mini Acrílico Menú', subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR', precio: '$130.000', unitario: '$13.000 cada mesa', ganancia: '', recupero: 'Compacto para mesas de bares, cafés y restaurantes.' },
-    { categoria: 'mesas', badge: 'Gastronomía • 6 × 9 cm', cantidad: '×25', titulo: 'Pack 25 Mesas • Mini Acrílico Menú', subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR', precio: '$290.000', unitario: '$11.600 cada mesa', ganancia: '', recupero: 'Actualizá precios de tu carta online sin reimprimir.' },
-    { categoria: 'mesas', badge: 'Gastronomía • 6 × 9 cm', cantidad: '×50', titulo: 'Pack 50 Mesas • Mini Acrílico Menú', subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR', precio: '$525.000', unitario: '$10.500 cada mesa', ganancia: '', recupero: 'Equipá todo tu salón con diseño personalizado.' }
+    {
+      categoria: 'local',
+      badge: 'Ideal para probar',
+      cantidad: '×1',
+      titulo: '1 Calco NFC + QR (10 × 10 cm)',
+      subtitulo: 'Adhesivo de alta resistencia • Editable con PIN',
+      precio: '$10.000',
+      unitario: 'Precio por unidad',
+      ganancia: '',
+      recupero: 'Pégalo en tu vidriera, caja o mostrador en segundos.'
+    },
+    {
+      categoria: 'local',
+      badge: 'Más elegido por comercios',
+      cantidad: '×1',
+      titulo: '1 Placa Expositora (10 × 15 cm)',
+      subtitulo: 'Con pie de apoyo para mostrador • Editable con PIN',
+      precio: '$25.000',
+      unitario: 'Precio por unidad',
+      ganancia: '',
+      recupero: 'Presencia premium para cajas, recepciones y escritorios.'
+    },
+    {
+      categoria: 'local',
+      badge: 'Con tu marca',
+      cantidad: '×1',
+      titulo: 'Personalizado con tu Logo (1 u.)',
+      subtitulo: 'Calco 10×10 ($15.000) o Placa 10×15 ($35.000)',
+      precio: 'Desde $15.000',
+      unitario: 'Diseño incluido con tu logo y colores',
+      ganancia: '',
+      recupero: 'Hacemos el diseño con la identidad visual de tu local.'
+    },
+    {
+      categoria: 'local',
+      badge: 'Combo Local × 3',
+      cantidad: '×3',
+      titulo: 'Pack × 3 Unidades (Mismo formato)',
+      subtitulo: '3 Calcos ($25.000) o 3 Placas ($65.000)',
+      precio: 'Desde $25.000',
+      unitario: '$8.333 c/calco • $21.666 c/placa',
+      ganancia: '',
+      recupero: 'Ideal para cubrir caja, vidriera y salón de atención.'
+    },
+    {
+      categoria: 'local',
+      badge: 'Pack Marca Propia × 5',
+      cantidad: '×5',
+      titulo: 'Pack × 5 Personalizados con Logo',
+      subtitulo: '5 Calcos ($65.000) o 5 Placas ($135.000)',
+      precio: 'Desde $65.000',
+      unitario: '$13.000 c/calco • $27.000 c/placa',
+      ganancia: '',
+      recupero: 'Diseño personalizado incluido con el logo de tu negocio.'
+    },
+    {
+      categoria: 'revender',
+      badge: 'Recomendado para empezar',
+      cantidad: '×10',
+      titulo: 'Pack Mayorista × 10 Calcos',
+      subtitulo: '10 Calcos 10×10 cm con NFC + QR editable',
+      precio: '$50.000',
+      unitario: '$5.000 cada uno',
+      ganancia: 'Revendiendo a $10.000 ganás $50.000 limpios',
+      recupero: 'Recuperás tu inversión con solo 5 ventas.'
+    },
+    {
+      categoria: 'revender',
+      badge: 'Alta rentabilidad',
+      cantidad: '×10',
+      titulo: 'Pack Mayorista × 10 Placas',
+      subtitulo: '10 Placas Expositoras 10×15 cm con NFC + QR',
+      precio: '$110.000',
+      unitario: '$11.000 cada una',
+      ganancia: 'Revendiendo a $25.000 ganás $140.000 limpios',
+      recupero: 'Recuperás tu inversión con solo 5 ventas.'
+    },
+    {
+      categoria: 'revender',
+      badge: 'Mayor margen',
+      cantidad: '×30',
+      titulo: 'Pack Mayorista × 30 Unidades',
+      subtitulo: '30 Calcos ($120.000) o 30 Placas ($285.000)',
+      precio: 'Desde $120.000',
+      unitario: '$4.000 c/calco • $9.500 c/placa',
+      ganancia: 'Ganancia neta de hasta $465.000 por pack',
+      recupero: 'Recuperás tu inversión vendiendo menos de un tercio.'
+    },
+    {
+      categoria: 'revender',
+      badge: 'Distribuidor • Menor costo',
+      cantidad: '×100',
+      titulo: 'Pack Distribuidor × 100 Unidades',
+      subtitulo: '100 Calcos ($350.000) o 100 Placas ($850.000)',
+      precio: 'Desde $350.000',
+      unitario: '$3.500 c/calco • $8.500 c/placa',
+      ganancia: 'Ganancia neta de hasta $1.650.000 por pack',
+      recupero: 'Máximo margen para revendedores y agencias.'
+    },
+    {
+      categoria: 'mesas',
+      badge: 'Gastronomía • 6 × 9 cm',
+      cantidad: '×10',
+      titulo: 'Pack 10 Mesas • Mini Acrílico Menú',
+      subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR',
+      precio: '$130.000',
+      unitario: '$13.000 cada mesa',
+      ganancia: '',
+      recupero: 'Compacto para mesas de bares, cafés y restaurantes.'
+    },
+    {
+      categoria: 'mesas',
+      badge: 'Gastronomía • 6 × 9 cm',
+      cantidad: '×25',
+      titulo: 'Pack 25 Mesas • Mini Acrílico Menú',
+      subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR',
+      precio: '$290.000',
+      unitario: '$11.600 cada mesa',
+      ganancia: '',
+      recupero: 'Actualizá precios de tu carta online sin reimprimir.'
+    },
+    {
+      categoria: 'mesas',
+      badge: 'Gastronomía • 6 × 9 cm',
+      cantidad: '×50',
+      titulo: 'Pack 50 Mesas • Mini Acrílico Menú',
+      subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR',
+      precio: '$525.000',
+      unitario: '$10.500 cada mesa',
+      ganancia: '',
+      recupero: 'Equipá todo tu salón con diseño personalizado.'
+    }
   ];
-
   const packsFiltrados = filtroPack === 'todos' ? packs : packs.filter((p) => p.categoria === filtroPack);
 
   const modelosCalco = [
@@ -56,7 +175,7 @@ export default function Home() {
   const listaFotos = catalogoActivo === 'calco' ? modelosCalco : modelosPlaca;
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#090d16', color: '#ffffff', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#090d16', color: '#ffffff', fontFamily: 'system-ui, sans-serif' }}>
       <header style={{ backgroundColor: '#0f172a', borderBottom: '1px solid #1e293b', padding: '14px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#090d16', border: '1.5px solid #38bdf8', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
@@ -64,109 +183,137 @@ export default function Home() {
               <path d="M4 9C8.5 5 15.5 5 20 9" stroke="#38bdf8" strokeWidth="2.2" strokeLinecap="round" />
               <path d="M7.5 11C10.2 8.8 13.8 8.8 16.5 11" stroke="#38bdf8" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
-            <span style={{ fontSize: '8px', fontWeight: '900', color: '#ffffff', letterSpacing: '-0.3px', marginTop: '-1px' }}>TapPlus</span>
+            <span style={{ fontSize: '8px', fontWeight: '900', color: '#ffffff' }}>TapPlus</span>
           </div>
-          <div style={{ fontSize: '23px', fontWeight: '900', letterSpacing: '-0.5px', color: '#ffffff' }}>
+          <div style={{ fontSize: '23px', fontWeight: '900', color: '#ffffff' }}>
             Tap<span style={{ color: '#38bdf8' }}>Plus</span>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-          <a href="#packs" style={{ backgroundColor: '#38bdf8', color: '#090d16', padding: '8px 16px', borderRadius: '20px', fontWeight: '800', fontSize: '13px', textDecoration: 'none' }}>Ver Packs</a>
-          <a href="#configurar" style={{ backgroundColor: '#1e293b', color: '#ffffff', border: '1px solid #334155', padding: '8px 14px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', textDecoration: 'none' }}>Configurar mi placa</a>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <a href="#packs" style={{ backgroundColor: '#38bdf8', color: '#090d16', padding: '8px 16px', borderRadius: '20px', fontWeight: '800', fontSize: '13px', textDecoration: 'none' }}>
+            Ver Packs
+          </a>
+          <a href="#configurar" style={{ backgroundColor: '#1e293b', color: '#ffffff', border: '1px solid #334155', padding: '8px 14px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', textDecoration: 'none' }}>
+            Configurar
+          </a>
         </div>
       </header>
 
       <main style={{ maxWidth: '1040px', margin: '0 auto', padding: '44px 20px' }}>
         <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-          <span style={{ display: 'inline-block', backgroundColor: '#0f172a', border: '1px solid #38bdf8', color: '#38bdf8', fontSize: '12px', fontWeight: '800', padding: '6px 14px', borderRadius: '20px', marginBottom: '18px', textTransform: 'uppercase' }}>
-            Tecnología NFC + QR Editable sin Abonos
+          <span style={{ display: 'inline-block', backgroundColor: '#0f172a', border: '1px solid #38bdf8', color: '#38bdf8', fontSize: '12px', fontWeight: '800', padding: '6px 14px', borderRadius: '20px', marginBottom: '18px' }}>
+            TECNOLOGÍA NFC + QR EDITABLE SIN ABONOS
           </span>
-          <h1 style={{ fontSize: '42px', fontWeight: '900', lineHeight: '1.12', marginBottom: '18px', color: '#ffffff' }}>
+          <h1 style={{ fontSize: '40px', fontWeight: '900', lineHeight: '1.15', marginBottom: '18px', color: '#ffffff' }}>
             Más reseñas y seguidores <br />
             <span style={{ color: '#38bdf8' }}>con un simple toque.</span>
           </h1>
-          <p style={{ fontSize: '18px', color: '#cbd5e1', maxWidth: '660px', margin: '0 auto 30px', lineHeight: '1.5' }}>
-            Apoyan el celular y califican en Google, siguen tu Instagram, abren tu WhatsApp, TikTok o Menú Digital. Comprá desde 1 unidad, personalizadas con tu logo o en packs mayoristas.
+          <p style={{ fontSize: '17px', color: '#cbd5e1', maxWidth: '640px', margin: '0 auto 30px', lineHeight: '1.5' }}>
+            Apoyan el celular y califican en Google, siguen tu Instagram, abren tu WhatsApp, TikTok o Menú Digital.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
-            <a href="#packs" style={{ backgroundColor: '#38bdf8', color: '#090d16', padding: '15px 28px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>📦 Ver Packs y Precios</a>
-            <a href="https://mercadopago.com.ar" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#ffffff', color: '#090d16', padding: '15px 24px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>💳 Mercado Pago</a>
-<a href="https://mercadopago.com.ar" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#ffffff', color: '#090d16', padding: '15px 24px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>💳 Mercado Pago</a>
-            <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#25d366', color: '#090d16', padding: '15px 24px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>💬 WhatsApp</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#0f172a', border: '1px solid #38bdf8', color: '#ffffff', padding: '15px 24px', borderRadius: '12px', fontWeight: '700', textDecoration: 'none', fontSize: '16px' }}>📸 @tapplusar</a>
+            <a href="#packs" style={{ backgroundColor: '#38bdf8', color: '#090d16', padding: '14px 26px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none' }}>
+              Ver Packs y Precios
+            </a>
+            <a href="https://mercadopago.com.ar" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#ffffff', color: '#090d16', padding: '14px 22px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none' }}>
+              Mercado Pago
+            </a>
+            <a href="https://wa.me/5492954535676" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#25d366', color: '#090d16', padding: '14px 22px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none' }}>
+              WhatsApp
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#0f172a', border: '1px solid #38bdf8', color: '#ffffff', padding: '14px 22px', borderRadius: '12px', fontWeight: '700', textDecoration: 'none' }}>
+              @tapplusar
+            </a>
           </div>
         </div>
-
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={{ fontSize: '28px', fontWeight: '900', textAlign: 'center', marginBottom: '8px', color: '#ffffff' }}>Configurarlo es así de simple</h2>
-          <p style={{ color: '#94a3b8', textAlign: 'center', marginBottom: '28px', fontSize: '15px' }}>Cada unidad se activa en 1 minuto desde el celular, sin descargar aplicaciones.</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '16px' }}>
-            {[
-              { num: '1', titulo: 'Escaneás o acercás', desc: 'Tu cliente acerca su teléfono por NFC o escanea el código QR.' },
-              { num: '2', titulo: 'Pegás tu enlace', desc: 'Cargás el link de Google, Instagram, WhatsApp, TikTok o tu Menú.' },
-              { num: '3', titulo: 'Guardás con tu PIN', desc: 'Protegés tu placa con tu clave personal de 4 dígitos.' },
-              { num: '4', titulo: 'Listo, editable siempre', desc: 'Podés cambiar el link de destino cuando quieras sin reprogramar el chip.' }
-            ].map((paso) => (
-              <div key={paso.num} style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '16px', padding: '22px' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#38bdf8', color: '#090d16', fontWeight: '900', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>{paso.num}</div>
-                <h3 style={{ fontSize: '18px', fontWeight: '800', marginBottom: '6px', color: '#ffffff' }}>{paso.titulo}</h3>
-                <p style={{ fontSize: '14px', color: '#cbd5e1', lineHeight: '1.4' }}>{paso.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={{ fontSize: '28px', fontWeight: '900', textAlign: 'center', marginBottom: '8px', color: '#ffffff' }}>Nuestros Formatos y Diseños</h2>
-          <p style={{ color: '#94a3b8', textAlign: 'center', marginBottom: '24px', fontSize: '15px' }}>Hacé clic en un formato para ver nuestros modelos listos para entregar.</p>
+<section style={{ marginBottom: '64px' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: '900', textAlign: 'center', marginBottom: '24px', color: '#ffffff' }}>
+            Nuestros Formatos y Diseños
+          </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '18px', marginBottom: '20px' }}>
-            <div onClick={() => setCatalogoActivo(catalogoActivo === 'calco' ? null : 'calco')} style={{ backgroundColor: '#111827', border: catalogoActivo === 'calco' ? '2px solid #38bdf8' : '1px solid #1e293b', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-                <span style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase' }}>10 × 10 cm • Adhesivo</span>
-                <span style={{ backgroundColor: '#1e293b', color: '#38bdf8', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: '700' }}>{catalogoActivo === 'calco' ? 'Ocultar fotos ▲' : 'Ver fotos ▼'}</span>
+            <div
+              onClick={() => setCatalogoActivo(catalogoActivo === 'calco' ? null : 'calco')}
+              style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
+            >
+              <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
+                10 × 10 CM • ADHESIVO ({catalogoActivo === 'calco' ? 'OCULTAR FOTOS' : 'VER FOTOS'})
               </div>
               <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Calco NFC + QR</h3>
-              <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>Vinilo laminado de alta durabilidad para vidrieras, cajas y mostradores. Desde <strong style={{ color: '#ffffff' }}>$10.000</strong> c/u o <strong style={{ color: '#38bdf8' }}>$3.500</strong> en pack mayorista.</p>
+              <p style={{ color: '#cbd5e1', fontSize: '14px' }}>
+                Vinilo laminado para vidrieras y mostradores. Desde $10.000 c/u o $3.500 en pack mayorista.
+              </p>
             </div>
-            <div onClick={() => setCatalogoActivo(catalogoActivo === 'placa' ? null : 'placa')} style={{ backgroundColor: '#111827', border: catalogoActivo === 'placa' ? '2px solid #38bdf8' : '1px solid #1e293b', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-                <span style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase' }}>10 × 15 cm • Con Pie</span>
-                <span style={{ backgroundColor: '#1e293b', color: '#38bdf8', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: '700' }}>{catalogoActivo === 'placa' ? 'Ocultar fotos ▲' : 'Ver fotos ▼'}</span>
+
+            <div
+              onClick={() => setCatalogoActivo(catalogoActivo === 'placa' ? null : 'placa')}
+              style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
+            >
+              <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
+                10 × 15 CM • CON PIE ({catalogoActivo === 'placa' ? 'OCULTAR FOTOS' : 'VER FOTOS'})
               </div>
               <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Placa Expositora Mostrador</h3>
-              <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>Expositor vertical con pie de apoyo para recepción y caja. Desde <strong style={{ color: '#ffffff' }}>$25.000</strong> c/u o <strong style={{ color: '#38bdf8' }}>$8.500</strong> en pack mayorista.</p>
+              <p style={{ color: '#cbd5e1', fontSize: '14px' }}>
+                Expositor vertical con pie de apoyo. Desde $25.000 c/u o $8.500 en pack mayorista.
+              </p>
             </div>
+
             <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '18px', padding: '24px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-                <span style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', textTransform: 'uppercase' }}>6 × 9 cm • Acrílico Mesa</span>
-                <span style={{ backgroundColor: '#1e293b', color: '#ffffff', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: '700' }}>Gastronomía</span>
+              <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
+                6 × 9 CM • ACRÍLICO MESA
               </div>
               <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Mini Acrílico Menú Mesas</h3>
-              <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>Portarretratos acrílico compacto 6×9 cm con el logo de tu restaurant y QR/NFC directo a tu carta digital. Packs de 10, 25 y 50 mesas.</p>
+              <p style={{ color: '#cbd5e1', fontSize: '14px' }}>
+                Portarretratos acrílico 6×9 cm con tu logo y QR/NFC a tu carta digital. Packs de 10, 25 y 50 mesas.
+              </p>
             </div>
           </div>
+
           {catalogoActivo && (
             <div style={{ backgroundColor: '#0f172a', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
-                <h4 style={{ fontSize: '20px', fontWeight: '800', color: '#38bdf8' }}>{catalogoActivo === 'calco' ? 'Diseños reales • Calcos 10 × 10 cm' : 'Diseños reales • Placas 10 × 15 cm'}</h4>
-                <button onClick={() => setCatalogoActivo(null)} style={{ backgroundColor: '#1e293b', color: '#ffffff', border: 'none', padding: '8px 14px', borderRadius: '8px', fontWeight: '700', cursor: 'pointer' }}>✕ Cerrar</button>
+                <h4 style={{ fontSize: '18px', fontWeight: '800', color: '#38bdf8' }}>
+                  {catalogoActivo === 'calco' ? 'Modelos Calcos 10 × 10 cm' : 'Modelos Placas 10 × 15 cm'}
+                </h4>
+                <button
+                  onClick={() => setCatalogoActivo(null)}
+                  style={{ backgroundColor: '#1e293b', color: '#ffffff', border: 'none', padding: '8px 14px', borderRadius: '8px', cursor: 'pointer' }}
+                >
+                  Cerrar
+                </button>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '16px' }}>
                 {listaFotos.map((item) => (
                   <div key={item.nombre} style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '14px', padding: '14px' }}>
-                    <img src={encodeURI(item.imagen)} alt={item.nombre} style={{ width: '100%', height: '220px', objectFit: 'contain', backgroundColor: '#ffffff', borderRadius: '10px', marginBottom: '12px' }} />
-                    <div style={{ fontWeight: '800', fontSize: '15px', marginBottom: '10px', color: '#ffffff' }}>{item.nombre}</div>
-                    <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '9px', borderRadius: '8px', fontWeight: '800', textDecoration: 'none', fontSize: '13px' }}>Pedir este modelo</a>
+                    <img
+                      src={encodeURI(item.imagen)}
+                      alt={item.nombre}
+                      style={{ width: '100%', height: '210px', objectFit: 'contain', backgroundColor: '#ffffff', borderRadius: '10px', marginBottom: '10px' }}
+                    />
+                    <div style={{ fontWeight: '800', fontSize: '14px', marginBottom: '10px', color: '#ffffff' }}>
+                      {item.nombre}
+                    </div>
+                    <a
+                      href="https://wa.me/5492954535676"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '9px', borderRadius: '8px', fontWeight: '800', textDecoration: 'none', fontSize: '13px' }}
+                    >
+                      Pedir este modelo
+                    </a>
                   </div>
                 ))}
               </div>
             </div>
           )}
         </section>
+<section id="packs" style={{ marginBottom: '64px' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '900', textAlign: 'center', marginBottom: '8px', color: '#ffffff' }}>
+            Elegí tu Pack TapPlus
+          </h2>
+          <p style={{ color: '#94a3b8', textAlign: 'center', marginBottom: '24px', fontSize: '15px' }}>
+            Cuantas más unidades llevás, menor es el costo unitario y mayor tu margen de ganancia.
+          </p>
 
-        <section id="packs" style={{ marginBottom: '64px' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: '900', textAlign: 'center', marginBottom: '8px', color: '#ffffff' }}>Elegí tu Pack TapPlus</h2>
-          <p style={{ color: '#94a3b8', textAlign: 'center', marginBottom: '24px', fontSize: '15px' }}>Cuantas más unidades llevás, menor es el costo unitario y mayor tu margen de ganancia.</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', marginBottom: '30px' }}>
             {[
               { id: 'todos', label: 'Todos los packs' },
@@ -174,11 +321,31 @@ export default function Home() {
               { id: 'local', label: 'Para mi Local / Personalizados' },
               { id: 'mesas', label: 'Menú Mesas 6×9 cm' }
             ].map((tab) => (
-              <button key={tab.id} onClick={() => setFiltroPack(tab.id)} style={{ backgroundColor: filtroPack === tab.id ? '#38bdf8' : '#111827', color: filtroPack === tab.id ? '#090d16' : '#ffffff', border: '1px solid #334155', padding: '10px 18px', borderRadius: '24px', fontWeight: '800', cursor: 'pointer', fontSize: '14px' }}>
+              <button
+                key={tab.id}
+                onClick={() => setFiltroPack(tab.id)}
+                style={{
+                  backgroundColor: filtroPack === tab.id ? '#38bdf8' : '#111827',
+                  color: filtroPack === tab.id ? '#090d16' : '#ffffff',
+                  border: '1px solid #334155',
+                  padding: '10px 18px',
+                  borderRadius: '24px',
+                  fontWeight: '800',
+                  cursor: 'pointer',
+                  fontSize: '14px'
+                }}
+              >
                 {tab.label}
               </button>
             ))}
-<div key={p.titulo} style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '20px', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '20px' }}>
+            {packsFiltrados.map((p) => (
+              <div
+                key={p.titulo}
+                style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '20px', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+              >
                 <div>
                   <div style={{ backgroundColor: '#1e293b', padding: '14px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontSize: '12px', fontWeight: '800', color: '#38bdf8', textTransform: 'uppercase' }}>{p.badge}</span>
@@ -192,27 +359,49 @@ export default function Home() {
                       <span style={{ fontSize: '13px', color: '#ffffff', fontWeight: '700' }}>{p.unitario}</span>
                     </div>
                     {p.ganancia && (
-                      <div style={{ backgroundColor: '#052e16', border: '1px solid #166534', color: '#4ade80', padding: '8px 12px', borderRadius: '10px', fontSize: '13px', fontWeight: '700', marginBottom: '10px' }}>💰 {p.ganancia}</div>
+                      <div style={{ backgroundColor: '#052e16', border: '1px solid #166534', color: '#4ade80', padding: '8px 12px', borderRadius: '10px', fontSize: '13px', fontWeight: '700', marginBottom: '10px' }}>
+                        💰 {p.ganancia}
+                      </div>
                     )}
                     <p style={{ fontSize: '13px', color: '#e2e8f0', lineHeight: '1.4' }}>✓ {p.recupero}</p>
                   </div>
-              </div>
+                </div>
                 <div style={{ padding: '0 22px 22px' }}>
-<a href="https://wa.me75492954535676">
+                  <a
+                    href="https://wa.me/5492954535676"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
+                  >
                     Encargar este pack por WhatsApp
                   </a>
                 </div>
-              </div> </div>
+              </div>
             ))}
           </div>
         </section>
 
         <section id="configurar" style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '20px', padding: '32px', maxWidth: '520px', margin: '0 auto', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>¿Ya tenés tu placa TapPlus?</h3>
-          <p style={{ color: '#cbd5e1', fontSize: '14px', marginBottom: '20px' }}>Ingresá el número impreso en tu calco o placa para activarla o cambiar su enlace de destino.</p>
+          <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>
+            ¿Ya tenés tu placa TapPlus?
+          </h3>
+          <p style={{ color: '#cbd5e1', fontSize: '14px', marginBottom: '20px' }}>
+            Ingresá el número impreso en tu calco o placa para activarla o cambiar su enlace de destino.
+          </p>
           <form onSubmit={handleConfigurar} style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
-            <input type="text" placeholder="Ej: 0001" value={codigo} onChange={(e) => setCodigo(e.target.value)} style={{ padding: '12px 16px', borderRadius: '10px', border: '1px solid #334155', backgroundColor: '#090d16', color: '#ffffff', fontSize: '16px', width: '160px', textAlign: 'center', fontWeight: '700' }} />
-            <button type="submit" style={{ backgroundColor: '#38bdf8', color: '#090d16', padding: '12px 22px', borderRadius: '10px', fontWeight: '800', border: 'none', cursor: 'pointer', fontSize: '16px' }}>Configurar</button>
+            <input
+              type="text"
+              placeholder="Ej: 0001"
+              value={codigo}
+              onChange={(e) => setCodigo(e.target.value)}
+              style={{ padding: '12px 16px', borderRadius: '10px', border: '1px solid #334155', backgroundColor: '#090d16', color: '#ffffff', fontSize: '16px', width: '160px', textAlign: 'center', fontWeight: '700' }}
+            />
+            <button
+              type="submit"
+              style={{ backgroundColor: '#38bdf8', color: '#090d16', padding: '12px 22px', borderRadius: '10px', fontWeight: '800', border: 'none', cursor: 'pointer', fontSize: '16px' }}
+            >
+              Configurar
+            </button>
           </form>
         </section>
       </main>
@@ -223,4 +412,3 @@ export default function Home() {
     </div>
   );
 }
-         
