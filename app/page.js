@@ -203,7 +203,7 @@ export default function Home() {
                     Encargar este pack por WhatsApp
                   </a>
                 </div>
-              </div>
+              </div> </div>
             ))}
           </div>
         </section>
