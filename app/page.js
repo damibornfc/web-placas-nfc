@@ -178,6 +178,49 @@ export default function Home() {
                 {tab.label}
               </button>
             ))}
+<div key={p.titulo} style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '20px', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ backgroundColor: '#1e293b', padding: '14px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontSize: '12px', fontWeight: '800', color: '#38bdf8', textTransform: 'uppercase' }}>{p.badge}</span>
+                    <span style={{ fontSize: '22px', fontWeight: '900', color: '#ffffff' }}>{p.cantidad}</span>
+                  </div>
+                  <div style={{ padding: '22px' }}>
+                    <h3 style={{ fontSize: '20px', fontWeight: '800', color: '#ffffff', marginBottom: '6px' }}>{p.titulo}</h3>
+                    <p style={{ fontSize: '13px', color: '#94a3b8', marginBottom: '16px' }}>{p.subtitulo}</p>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '14px' }}>
+                      <span style={{ fontSize: '32px', fontWeight: '900', color: '#38bdf8' }}>{p.precio}</span>
+                      <span style={{ fontSize: '13px', color: '#ffffff', fontWeight: '700' }}>{p.unitario}</span>
+                    </div>
+                    {p.ganancia && (
+                      <div style={{ backgroundColor: '#052e16', border: '1px solid #166534', color: '#4ade80', padding: '8px 12px', borderRadius: '10px', fontSize: '13px', fontWeight: '700', marginBottom: '10px' }}>💰 {p.ganancia}</div>
+                    )}
+                    <p style={{ fontSize: '13px', color: '#e2e8f0', lineHeight: '1.4' }}>✓ {p.recupero}</p>
+                  </div>
+                </div>
+                <div style={{ padding: '0 22px 22px' }}>
+                  <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}>Encargar este pack por WhatsApp</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="configurar" style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '20px', padding: '32px', maxWidth: '520px', margin: '0 auto', textAlign: 'center' }}>
+          <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>¿Ya tenés tu placa TapPlus?</h3>
+          <p style={{ color: '#cbd5e1', fontSize: '14px', marginBottom: '20px' }}>Ingresá el número impreso en tu calco o placa para activarla o cambiar su enlace de destino.</p>
+          <form onSubmit={handleConfigurar} style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+            <input type="text" placeholder="Ej: 0001" value={codigo} onChange={(e) => setCodigo(e.target.value)} style={{ padding: '12px 16px', borderRadius: '10px', border: '1px solid #334155', backgroundColor: '#090d16', color: '#ffffff', fontSize: '16px', width: '160px', textAlign: 'center', fontWeight: '700' }} />
+            <button type="submit" style={{ backgroundColor: '#38bdf8', color: '#090d16', padding: '12px 22px', borderRadius: '10px', fontWeight: '800', border: 'none', cursor: 'pointer', fontSize: '16px' }}>Configurar</button>
+          </form>
+        </section>
+      </main>
+
+      <footer style={{ textAlign: 'center', padding: '28px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #1e293b', marginTop: '48px' }}>
+        © 2026 TapPlus Argentina • tapplus.com.ar • Envíos a todo el país
+      </footer>
+    </div>
+  );
+}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '20px' }}>
             {packsFiltrados.map((p) => (
