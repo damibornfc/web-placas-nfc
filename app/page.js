@@ -196,14 +196,11 @@ export default function Home() {
                     )}
                     <p style={{ fontSize: '13px', color: '#e2e8f0', lineHeight: '1.4' }}>✓ {p.recupero}</p>
                   </div>
-                </div>
+              </div>
                 <div style={{ padding: '0 22px 22px' }}>
-<a href="https://wa.me/5492954535676" target="_blank" rel="noopener noreferrer"
-                    style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}>
-                    Encargar este pack por WhatsApp
-                  </a>
+                  <a href="https://wa.me/5492954535676" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}>Encargar este pack por WhatsApp</a>
                 </div>
-              </div> </div>
+              </div>
             ))}
           </div>
         </section>
