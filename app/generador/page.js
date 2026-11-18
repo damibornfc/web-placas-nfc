@@ -8,8 +8,7 @@ export default function GeneradorQR() {
   const [generando, setGenerando] = useState(false);
   const canvasRef = useRef(null);
 
-  const urlCompleta = https://tapplus.com.ar{codigo.trim() || '0001'};
-
+ const urlCompleta = 'https://tapplus.com.ar' + (codigo.trim() || '0001');
   const generarYDescargar = async () => {
     setGenerando(true);
     try {
@@ -20,7 +19,7 @@ export default function GeneradorQR() {
       const ctx = canvas.getContext('2d');
 
       const qrApiUrl = https://qrserver.com{size}x${size}&ecc=H&margin=2&color=${colorQR.replace('#', '')}&data=${encodeURIComponent(urlCompleta)};
-
+const qrApiUrl = 'https://qrserver.com' + size + 'x' + size + '&ecc=H&margin=2&color=' + colorQR.replace('#', '') + '&data=' + encodeURIComponent(urlCompleta);
       const qrImg = new Image();
       qrImg.crossOrigin = 'anonymous';
       await new Promise((resolve, reject) => {
@@ -112,7 +111,7 @@ export default function GeneradorQR() {
       enlaceDescarga.click();
     } catch (err) {
       alert('Error al generar el QR. Verificá tu conexión.');
-    }
+    enlaceDescarga.download = 'QR-' + codigo.trim() + '-' + logoTipo.toUpperCase() + '-TapPlus.png';
     setGenerando(false);
   };
 
