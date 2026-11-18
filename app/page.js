@@ -383,8 +383,7 @@ return (
         💬 WhatsApp
       </a>
 
-      <footer style={{ textAlign: 'center', padding: '28px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #1e293b', marginTop: '48px' }}>
-        © 2026 TapPlus Argentina • ://tapplus.com.ar • Envíos a todo el país
+      
      <footer style={{ textAlign: 'center', padding: '32px 20px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #1e293b', marginTop: '48px' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', justifyContent: 'center', marginBottom: '16px' }}>
           <a href="https://wa.me/5492954535676" target="_blank" rel="noopener noreferrer" style={{ color: '#cbd5e1', textDecoration: 'underline', fontWeight: '700' }}>
