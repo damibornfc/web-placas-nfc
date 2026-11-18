@@ -6,9 +6,8 @@ export default function GeneradorQR() {
   const [logoTipo, setLogoTipo] = useState('wifi');
   const [colorQR, setColorQR] = useState('#000000');
 
-  const urlCompleta = 'https:' + '//://tapplus.com.ar/p/' + (codigo.trim() || '0001');
-  const qrVistaPrevia = 'https:' + '//://qrserver.com' + colorQR.replace('#', '') + '&data=' + encodeURIComponent(urlCompleta);
-
+ const urlCompleta = 'https:' + '//www.' + 'tapplus.com.ar/p/' + (codigo.trim() || '0001');
+  const qrVistaPrevia = 'https:' + '//api.' + '://qrserver.com' + colorQR.replace('#', '') + '&data=' + encodeURIComponent(urlCompleta);
   const descargarQR = async () => {
     try {
       const size = 2000;
@@ -17,7 +16,7 @@ export default function GeneradorQR() {
       canvas.height = size;
       const ctx = canvas.getContext('2d');
 
-     const qrUrl = 'https:' + '//://qrserver.com' + colorQR.replace('#', '') + '&data=' + encodeURIComponent(urlCompleta);
+    const qrUrl = 'https:' + '//' + 'api.' + 'qrserver.' + 'com/v1/create-qr-code/?size=2000x2000&ecc=H&margin=2&color=' + colorQR.replace('#', '') + '&data=' + encodeURIComponent(urlCompleta);
       const img = new Image();
       img.crossOrigin = 'anonymous';
       await new Promise((res, rej) => {
