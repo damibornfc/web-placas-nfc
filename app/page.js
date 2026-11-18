@@ -168,7 +168,9 @@ const modelosCalco = [
     { nombre: 'Reseñas de Google • Mod. 1', imagen: '/WhatsApp Image placas resseña 2026-11-16 at 10.44.52.jpeg' },
     { nombre: 'Reseñas de Google • Mod. 2', imagen: '/WhatsApp Image placas reseñas 2 2026-11-16 at 10.44.52.jpeg' },
     { nombre: 'Reseñas de Google • Mod. 3', imagen: '/WhatsApp Image placas reseñas 3 2026-11-16 at 10.44.52.jpeg' },
+    
     { nombre: 'Instagram • Mod. 2', imagen: '/WhatsApp Image placas instagran 2 2026-11-16 at 10.44.54.jpeg' },
+    { nombre: 'Instagram • Mod. 3', imagen: '/instagran tarjeta 1.jpeg' },
     { nombre: 'WhatsApp Directo • Mod. 1', imagen: '/WhatsApp Image placa wasap 2026-11-16 at 10.44.52.jpeg' },
     { nombre: 'WhatsApp Directo • Mod. 2', imagen: '/WhatsApp Image placas wasap 22026-11-16 at 10.44.54.jpeg' },
     { nombre: 'Menú Digital', imagen: '/WhatsApp Image placa menu 2026-11-16 at 10.44.52.jpeg' },
@@ -234,7 +236,7 @@ const listaFotos = catalogoActivo === 'calco' ? modelosCalco : catalogoActivo ==
             <a href="https://wa.me/5492954535676" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#25d366', color: '#090d16', padding: '14px 22px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none' }}>
               WhatsApp
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#0f172a', border: '1px solid #38bdf8', color: '#ffffff', padding: '14px 22px', borderRadius: '12px', fontWeight: '700', textDecoration: 'none' }}>
+           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: '#ffffff', padding: '14px 22px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none' }}>
               @tapplusar
             </a>
           </div>
