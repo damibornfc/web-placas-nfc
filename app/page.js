@@ -261,7 +261,7 @@ const listaFotos = catalogoActivo === 'calco' ? modelosCalco : catalogoActivo ==
 
             <div
               onClick={() => setCatalogoActivo(catalogoActivo === 'placa' ? null : 'placa')}
-              style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
+              style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}>
            <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
   10 × 15 CM • CON PIE <span style={{ color: '#facc15' }}>({catalogoActivo === 'placa' ? 'OCULTAR FOTOS' : 'VER FOTOS'})</span>
 </div>
