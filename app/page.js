@@ -178,7 +178,15 @@ export default function Home() {
 { nombre: 'Tienda Web', imagen: '/tienda web tarjeta.jpeg' },
   ];
 
-  const listaFotos = catalogoActivo === 'calco' ? modelosCalco : modelosPlaca;
+  const modelosAcrilico = [
+  { nombre: 'Menú 6x9 • Mod. 1', imagen: '/6x9 tarjeta menú 1.png' },
+  { nombre: 'Menú 6x9 • Mod. 2', imagen: '/6x9 tarjeta menú 2.png' },
+  { nombre: 'Menú 6x9 • Mod. 3', imagen: '/6x9 tarjeta menú 3.png' },
+  { nombre: 'Menú 6x9 • Mod. 4', imagen: '/6x9 tarjeta menu 4.png' },
+  { nombre: 'Menú 6x9 • Mod. 5', imagen: '/6x9 tarjeta menu 5.png' },
+];
+
+const listaFotos = catalogoActivo === 'calco' ? modelosCalco : catalogoActivo === 'placa' ? modelosPlaca : modelosAcrilico;
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#090d16', color: '#ffffff', fontFamily: 'system-ui, sans-serif' }}>
@@ -241,7 +249,7 @@ export default function Home() {
               onClick={() => setCatalogoActivo(catalogoActivo === 'calco' ? null : 'calco')}
               style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
             >
-              <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
+              <div style={{ color: '#facc15', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
                 10 × 10 CM • ADHESIVO ({catalogoActivo === 'calco' ? 'OCULTAR FOTOS' : 'VER FOTOS'})
               </div>
               <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Calco NFC + QR</h3>
@@ -254,7 +262,7 @@ export default function Home() {
               onClick={() => setCatalogoActivo(catalogoActivo === 'placa' ? null : 'placa')}
               style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
             >
-              <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
+              <div style={{ color: '#facc15', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
                 10 × 15 CM • CON PIE ({catalogoActivo === 'placa' ? 'OCULTAR FOTOS' : 'VER FOTOS'})
               </div>
               <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Placa Expositora Mostrador</h3>
@@ -262,11 +270,14 @@ export default function Home() {
                 Expositor vertical con pie de apoyo. Desde $25.000 c/u o $8.500 en pack mayorista.
               </p>
             </div>
-
-            <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '18px', padding: '24px' }}>
-              <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
-                6 × 9 CM • ACRÍLICO MESA
-              </div>
+<div
+  onClick={() => setCatalogoActivo(catalogoActivo === 'acrilico' ? null : 'acrilico')}
+  style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
+>
+  <div style={{ color: '#facc15', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
+    6 × 9 CM • ACRÍLICO MESA ({catalogoActivo === 'acrilico' ? 'OCULTAR FOTOS' : 'VER FOTOS'})
+  </div>
+           
               <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Mini Acrílico Menú Mesas</h3>
               <p style={{ color: '#cbd5e1', fontSize: '14px' }}>
                 Portarretratos acrílico 6×9 cm con tu logo y QR/NFC a tu carta digital. Packs de 10, 25 y 50 mesas.
@@ -278,7 +289,7 @@ export default function Home() {
             <div style={{ backgroundColor: '#0f172a', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: '800', color: '#38bdf8' }}>
-                  {catalogoActivo === 'calco' ? 'Modelos Calcos 10 × 10 cm' : 'Modelos Placas 10 × 15 cm'}
+                 {catalogoActivo === 'calco' ? 'Modelos Calcos 10 × 10 cm' : catalogoActivo === 'placa' ? 'Modelos Placas 10 × 15 cm' : 'Modelos Mini Acrílico 6 × 9 cm'}
                 </h4>
                 <button
                   onClick={() => setCatalogoActivo(null)}
