@@ -152,19 +152,18 @@ export default function Home() {
   ];
   const packsFiltrados = filtroPack === 'todos' ? packs : packs.filter((p) => p.categoria === filtroPack);
 
-  const modelosCalco = [
-    { nombre: 'Reseñas de Google • Mod. 2', imagen: '/WhatsApp Image calco reseña 2 026-11-15 at 22.40.34.jpeg' },
-    { nombre: 'Reseñas de Google • Mod. 3', imagen: '/WhatsApp Image calco reseña 3 2026-11-15 at 22.40.34.jpeg' },
-    { nombre: 'Instagram • Mod. 2', imagen: '/WhatsApp Image calco instagran 2 2026-11-15 at 22.40.33.jpeg' },
-    { nombre: 'WhatsApp Directo • Mod. 1', imagen: '/WhatsApp Image wasap 2026-11-15 at 22.40.33.jpeg' },
-    { nombre: 'WhatsApp Directo • Mod. 2', imagen: '/WhatsApp Image calco wasap2026-11-15 at 22.40.34.jpeg' },
-    { nombre: 'TikTok', imagen: '/WhatsApp Image tik tok2026-11-15 at 22.40.33 (1).jpeg' },
-    { nombre: 'Menú Digital', imagen: '/WhatsApp Image calco menu digital 2026-11-15 at 22.40.33.jpeg' },
-    { nombre: 'Reseñas de Google', imagen: '/calco reseña.jpeg' },
-{ nombre: 'Instagram', imagen: '/calco instagran 1.jpeg' },
-{ nombre: 'Tienda Online', imagen: '/calco teinda online.jpeg' },
-  ];
-
+const modelosCalco = [
+  { nombre: 'Reseñas de Google • Mod. 1', imagen: '/calco reseña.jpeg' },
+  { nombre: 'Reseñas de Google • Mod. 2', imagen: '/WhatsApp Image calco reseña 2 026-11-15 at 22.40.34.jpeg' },
+  { nombre: 'Reseñas de Google • Mod. 3', imagen: '/WhatsApp Image calco reseña 3 2026-11-15 at 22.40.34.jpeg' },
+  { nombre: 'Instagram • Mod. 1', imagen: '/calco instagran 1.jpeg' },
+  { nombre: 'Instagram • Mod. 2', imagen: '/WhatsApp Image calco instagran 2 2026-11-15 at 22.40.33.jpeg' },
+  { nombre: 'WhatsApp Directo • Mod. 1', imagen: '/WhatsApp Image wasap 2026-11-15 at 22.40.33.jpeg' },
+  { nombre: 'WhatsApp Directo • Mod. 2', imagen: '/WhatsApp Image calco wasap2026-11-15 at 22.40.34.jpeg' },
+  { nombre: 'TikTok', imagen: '/WhatsApp Image tik tok2026-11-15 at 22.40.33 (1).jpeg' },
+  { nombre: 'Menú Digital', imagen: '/WhatsApp Image calco menu digital 2026-11-15 at 22.40.33.jpeg' },
+  { nombre: 'Tienda Online', imagen: '/calco teinda online.jpeg' },
+];
   const modelosPlaca = [
     { nombre: 'Reseñas de Google • Mod. 1', imagen: '/WhatsApp Image placas resseña 2026-11-16 at 10.44.52.jpeg' },
     { nombre: 'Reseñas de Google • Mod. 2', imagen: '/WhatsApp Image placas reseñas 2 2026-11-16 at 10.44.52.jpeg' },
@@ -178,12 +177,12 @@ export default function Home() {
 { nombre: 'Tienda Web', imagen: '/tienda web tarjeta.jpeg' },
   ];
 
-  const modelosAcrilico = [
-  { nombre: 'Menú 6x9 • Mod. 1', imagen: '/6x9 tarjeta menú 1.png' },
-  { nombre: 'Menú 6x9 • Mod. 2', imagen: '/6x9 tarjeta menú 2.png' },
-  { nombre: 'Menú 6x9 • Mod. 3', imagen: '/6x9 tarjeta menú 3.png' },
-  { nombre: 'Menú 6x9 • Mod. 4', imagen: '/6x9 tarjeta menu 4.png' },
-  { nombre: 'Menú 6x9 • Mod. 5', imagen: '/6x9 tarjeta menu 5.png' },
+ const modelosAcrilico = [
+  { nombre: 'Menú 6x9 • Mod. 1', imagen: '/6x9 tarjeta menu 1.jpeg' },
+  { nombre: 'Menú 6x9 • Mod. 2', imagen: '/6x9 tarjeta menu 2.jpeg' },
+  { nombre: 'Menú 6x9 • Mod. 3', imagen: '/6x9 tarjeta menu 3.jpeg' },
+  { nombre: 'Menú 6x9 • Mod. 4', imagen: '/6x9 tarjeta menu 4.jpeg' },
+  { nombre: 'Menú 6x9 • Mod. 5', imagen: '/6x9 tarjeta menu 5.jpeg' },
 ];
 
 const listaFotos = catalogoActivo === 'calco' ? modelosCalco : catalogoActivo === 'placa' ? modelosPlaca : modelosAcrilico;
