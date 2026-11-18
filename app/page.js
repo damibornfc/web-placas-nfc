@@ -422,6 +422,53 @@ const listaFotos = catalogoActivo === 'calco' ? modelosCalco : catalogoActivo ==
             </button>
           </form>
         </section>
+        {/* SECCIÓN PREGUNTAS FRECUENTES (SEO + CLIENTES) */}
+        <section style={{ marginTop: '60px', marginBottom: '20px' }}>
+          <h2 style={{ fontSize: '26px', fontWeight: '800', marginBottom: '8px', textAlign: 'center' }}>
+            Preguntas frecuentes sobre placas y tarjetas NFC + QR
+          </h2>
+          <p style={{ color: '#94a3b8', textAlign: 'center', marginBottom: '28px', fontSize: '15px' }}>
+            Todo lo que necesitás saber para sumar reseñas en Google y conectar con tus clientes en Argentina.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
+            <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '16px', padding: '20px' }}>
+              <h3 style={{ color: '#38bdf8', fontSize: '17px', fontWeight: '800', marginTop: 0, marginBottom: '8px' }}>
+                ¿Cómo funcionan las placas NFC y QR para reseñas de Google?
+              </h3>
+              <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                Tu cliente acerca el celular al chip NFC o escanea el código QR y se abre directo el formulario para dejarte 5 estrellas en Google, seguir tu Instagram o abrir tu menú sin descargar aplicaciones.
+              </p>
+            </div>
+
+            <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '16px', padding: '20px' }}>
+              <h3 style={{ color: '#38bdf8', fontSize: '17px', fontWeight: '800', marginTop: 0, marginBottom: '8px' }}>
+                ¿Tienen abono mensual o vencimiento?
+              </h3>
+              <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                No. Pagás una sola vez por tus calcos, placas expositoras o porta menú acrílicos y funcionan de por vida, sin suscripciones ni costos ocultos.
+              </p>
+            </div>
+
+            <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '16px', padding: '20px' }}>
+              <h3 style={{ color: '#38bdf8', fontSize: '17px', fontWeight: '800', marginTop: 0, marginBottom: '8px' }}>
+                ¿Se puede cambiar el enlace después de comprar?
+              </h3>
+              <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                Sí. Cada producto incluye acceso con tu código único para editar o actualizar el enlace de destino cuando quieras desde cualquier celular.
+              </p>
+            </div>
+
+            <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '16px', padding: '20px' }}>
+              <h3 style={{ color: '#38bdf8', fontSize: '17px', fontWeight: '800', marginTop: 0, marginBottom: '8px' }}>
+                ¿Hacen diseños personalizados y envíos a toda Argentina?
+              </h3>
+              <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                Sí, personalizamos cada pieza con el logo y los colores de tu negocio y realizamos envíos rápidos a todo el país desde Santa Rosa, La Pampa.
+              </p>
+            </div>
+          </div>
+        </section>        
       </main>
 
       <footer style={{ textAlign: 'center', padding: '28px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #1e293b', marginTop: '48px' }}>
