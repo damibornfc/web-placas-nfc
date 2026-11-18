@@ -177,3 +177,4 @@ enlaceDescarga.download = 'QR-' + codigo.trim() + '-' + logoTipo.toUpperCase() +
     </main>
   );
 }
+}
