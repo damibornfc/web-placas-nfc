@@ -385,6 +385,26 @@ return (
 
       <footer style={{ textAlign: 'center', padding: '28px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #1e293b', marginTop: '48px' }}>
         © 2026 TapPlus Argentina • ://tapplus.com.ar • Envíos a todo el país
+     <footer style={{ textAlign: 'center', padding: '32px 20px', color: '#94a3b8', fontSize: '13px', borderTop: '1px solid #1e293b', marginTop: '48px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', justifyContent: 'center', marginBottom: '16px' }}>
+          <a href="https://wa.me/5492954535676" target="_blank" rel="noopener noreferrer" style={{ color: '#cbd5e1', textDecoration: 'underline', fontWeight: '700' }}>
+            Botón de Arrepentimiento
+          </a>
+          <span>•</span>
+          <a href="https://wa.me/5492954535676" target="_blank" rel="noopener noreferrer" style={{ color: '#cbd5e1', textDecoration: 'underline', fontWeight: '700' }}>
+            Botón de Baja de Servicio
+          </a>
+          <span>•</span>
+          <a href="#faq" style={{ color: '#cbd5e1', textDecoration: 'underline', fontWeight: '700' }}>
+            Condiciones de Uso y Garantía
+          </a>
+        </div>
+        <p style={{ marginBottom: '6px', color: '#cbd5e1', fontWeight: '600' }}>
+          © 2026 TapPlus • ://tapplus.com.ar • Envíos a toda la Argentina y Latinoamérica
+        </p>
+        <p style={{ fontSize: '11px', color: '#64748b', maxWidth: '720px', margin: '0 auto' }}>
+          Las placas y calcos personalizados con logo a medida no admiten devolución por arrepentimiento una vez aprobada su producción (Art. 1116 CCyC). Las membresías mensuales o anuales pueden cancelarse en cualquier momento sin penalidad.
+        </p>
       </footer>
     </div>
   );
