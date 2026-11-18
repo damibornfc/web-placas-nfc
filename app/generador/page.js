@@ -18,7 +18,7 @@ const urlCompleta = 'https://tapplus.com.ar' + '/p/' + (codigo.trim() || '0001')
       canvas.height = size;
       const ctx = canvas.getContext('2d');
 
-    const qrApiUrl = 'https://api.' + '://qrserver.com' + size + 'x' + size + '&ecc=H&margin=2&color=' + colorQR.replace('#', '') + '&data=' + encodeURIComponent(urlCompleta);
+   const qrApiUrl = 'https://api.' + 'qrserver.' + 'com/v1/create-qr-code/?size=' + size + 'x' + size + '&ecc=H&margin=2&color=' + colorQR.replace('#', '') + '&data=' + encodeURIComponent(urlCompleta);
       const qrImg = new Image();
       qrImg.crossOrigin = 'anonymous';
       await new Promise((resolve, reject) => {
