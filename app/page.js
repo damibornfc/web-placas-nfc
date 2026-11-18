@@ -249,9 +249,10 @@ const listaFotos = catalogoActivo === 'calco' ? modelosCalco : catalogoActivo ==
               onClick={() => setCatalogoActivo(catalogoActivo === 'calco' ? null : 'calco')}
               style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
             >
-              <div style={{ color: '#facc15', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
-                10 × 10 CM • ADHESIVO ({catalogoActivo === 'calco' ? 'OCULTAR FOTOS' : 'VER FOTOS'})
-              </div>
+             <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
+  10 × 10 CM • ADHESIVO <span style={{ color: '#facc15' }}>({catalogoActivo === 'calco' ? 'OCULTAR FOTOS' : 'VER FOTOS'})</span>
+</div>
+                
               <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Calco NFC + QR</h3>
               <p style={{ color: '#cbd5e1', fontSize: '14px' }}>
                 Vinilo laminado para vidrieras y mostradores. Desde $10.000 c/u o $3.500 en pack mayorista.
@@ -261,10 +262,9 @@ const listaFotos = catalogoActivo === 'calco' ? modelosCalco : catalogoActivo ==
             <div
               onClick={() => setCatalogoActivo(catalogoActivo === 'placa' ? null : 'placa')}
               style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
-            >
-              <div style={{ color: '#facc15', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
-                10 × 15 CM • CON PIE ({catalogoActivo === 'placa' ? 'OCULTAR FOTOS' : 'VER FOTOS'})
-              </div>
+           <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
+  10 × 15 CM • CON PIE <span style={{ color: '#facc15' }}>({catalogoActivo === 'placa' ? 'OCULTAR FOTOS' : 'VER FOTOS'})</span>
+</div>
               <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Placa Expositora Mostrador</h3>
               <p style={{ color: '#cbd5e1', fontSize: '14px' }}>
                 Expositor vertical con pie de apoyo. Desde $25.000 c/u o $8.500 en pack mayorista.
@@ -274,9 +274,9 @@ const listaFotos = catalogoActivo === 'calco' ? modelosCalco : catalogoActivo ==
   onClick={() => setCatalogoActivo(catalogoActivo === 'acrilico' ? null : 'acrilico')}
   style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}
 >
-  <div style={{ color: '#facc15', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
-    6 × 9 CM • ACRÍLICO MESA ({catalogoActivo === 'acrilico' ? 'OCULTAR FOTOS' : 'VER FOTOS'})
-  </div>
+ <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
+  6 × 9 CM • ACRÍLICO MESA <span style={{ color: '#facc15' }}>({catalogoActivo === 'acrilico' ? 'OCULTAR FOTOS' : 'VER FOTOS'})</span>
+</div>
            
               <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Mini Acrílico Menú Mesas</h3>
               <p style={{ color: '#cbd5e1', fontSize: '14px' }}>
