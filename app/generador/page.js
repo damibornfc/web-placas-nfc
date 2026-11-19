@@ -125,10 +125,13 @@ export default function GeneradorQR() {
         </label>
         <label style={{ display: 'block', marginBottom: '14px', fontWeight: '700' }}>
           Logo central del QR:
-          <select value={logoTipo} onChange={(e) => setLogoTipo(e.target.value)} style={{ width: '100%', padding: '12px', marginTop: '6px', borderRadius: '10px', border: '1px solid #334155', backgroundColor: '#090d16', color: '#fff', fontSize: '15px', fontWeight: '700' }}>
-            <option value="wifi">Wi-Fi (Placa #0001)</option>
-            <option value="google">Google Reseñas (Placa #0002)</option>
-            <option value="instagram">Instagram (Calco 40x40 #0003)</option>
+         <option value="wifi">Wi-Fi</option>
+            <option value="google">Google Reseñas</option>
+            <option value="instagram">Instagram</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="tienda">Tienda Online</option>
+            <option value="menu">Menú Digital</option>
+            <option value="tiktok">TikTok</option>
             <option value="whatsapp">WhatsApp</option>
           </select>
         </label>
