@@ -53,8 +53,15 @@ const packs = [
     { nombre: 'Menú Digital', imagen: '/WhatsApp Image placa menu 2026-11-16 at 10.44.52.jpeg' }
   ];
 
-  const listaFotos = catalogoActivo === 'calco' ? modelosCalco : modelosPlaca;
+  const modelosMenu = [
+    { nombre: 'Menú Mesa • Mod. 1', imagen: '/6x9 tarjeta menu 1.jpeg' },
+    { nombre: 'Menú Mesa • Mod. 2', imagen: '/6x9 tarjeta menu 2.jpeg' },
+    { nombre: 'Menú Mesa • Mod. 3', imagen: '/6x9 tarjeta menu 3.jpeg' },
+    { nombre: 'Menú Mesa • Mod. 4', imagen: '/6x9 tarjeta menu 4.jpeg' },
+    { nombre: 'Menú Mesa • Mod. 5', imagen: '/6x9 tarjeta menu 5.jpeg' },
+  ];
 
+  const listaFotos = catalogoActivo === 'calco' ? modelosCalco : catalogoActivo === 'placa' ? modelosPlaca : modelosMenu;
   const faqs = [
     {
       pregunta: '¿Tengo que pagar algún abono mensual obligatorio?',
@@ -181,22 +188,22 @@ return (
               </p>
             </div>
 
-            <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '18px', padding: '24px' }}>
-              <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
-                6 × 9 CM • ACRÍLICO MESA
-              </div>
-              <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Mini Acrílico Menú Mesas</h3>
-              <p style={{ color: '#cbd5e1', fontSize: '14px' }}>
-                Portarretratos acrílico 6×9 cm con tu logo y QR/NFC a tu carta digital. Packs de 10, 25 y 50 mesas.
-              </p>
+           <div onClick={() => setCatalogoActivo(catalogoActivo === 'menu' ? null : 'menu')} style={{ backgroundColor: '#111827', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px', cursor: 'pointer' }}>
+            <div style={{ color: '#38bdf8', fontSize: '12px', fontWeight: '800', marginBottom: '8px' }}>
+              6 × 9 CM • ACRÍLICO MESA ({catalogoActivo === 'menu' ? 'OCULTAR FOTOS' : 'VER FOTOS'})
             </div>
+            <h3 style={{ fontSize: '22px', fontWeight: '800', marginBottom: '8px', color: '#ffffff' }}>Mini Acrílico Menú Mesas</h3>
+            <p style={{ color: '#cbd5e1', fontSize: '14px' }}>
+              Portarretratos acrílico 6×9 cm con tu logo y QR/NFC a tu carta digital. Packs de 10, 25 y 50 mesas.
+            </p>
+          </div>
           </div>
 
           {catalogoActivo && (
             <div style={{ backgroundColor: '#0f172a', border: '1px solid #38bdf8', borderRadius: '18px', padding: '24px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: '800', color: '#38bdf8' }}>
-                  {catalogoActivo === 'calco' ? 'Modelos Calcos 10 × 10 cm' : 'Modelos Placas 10 × 15 cm'}
+                {catalogoActivo === 'calco' ? 'Modelos Calcos 10 × 10 cm' : catalogoActivo === 'placa' ? 'Modelos Placas 10 × 15 cm' : 'Modelos Menú Mesa 6 × 9 cm'}
                 </h4>
                 <button onClick={() => setCatalogoActivo(null)} style={{ backgroundColor: '#1e293b', color: '#ffffff', border: 'none', padding: '8px 14px', borderRadius: '8px', cursor: 'pointer' }}>
                   Cerrar
