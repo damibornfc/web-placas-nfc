@@ -203,8 +203,7 @@ return (
               Portarretratos acrílico 6×9 cm con tu logo y QR/NFC a tu carta digital. Packs de 10, 25 y 50 mesas.
             </p>
           </div>
-            </p>
-          </div>
+            
           </div>
 
           {catalogoActivo && (
