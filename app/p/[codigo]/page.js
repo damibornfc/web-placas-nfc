@@ -199,21 +199,24 @@ const formatearUrl = (u) => {
     );
   }
 
-  if (placa.activada && !autenticado) {
-    return (
-      <main style={{ fontFamily: 'sans-serif', maxWidth: '400px', margin: '40px auto', padding: '24px', textAlign: 'center' }}>
-        <h2>Panel de Dueño • Placa #{codigo}</h2>
-        <p style={{ color: '#555' }}>Ingresá tu PIN de 4 dígitos para ver estadísticas o cambiar el destino.</p>
-        <form onSubmit={verificarPin} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <input type="password" maxLength={6} placeholder="PIN" value={pinIngresado} onChange={(e) => setPinIngresado(e.target.value)} style={{ padding: '12px', fontSize: '1.2rem', textAlign: 'center', borderRadius: '8px', border: '1px solid #ccc' }} />
-          <button type="submit" style={{ padding: '12px', backgroundColor: '#2563eb', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 'bold', cursor: 'pointer' }}>
-            Ingresar
-          </button>
-        </form>
-        {mensaje && <p style={{ color: 'red', marginTop: '12px' }}>{mensaje}</p>}
-      </main>
-    );
-  }
+  {!placa.activada && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <label style={{ fontWeight: '700', fontSize: '14px' }}>
+              Creá tu PIN secreto (o generá uno automático):
+            </label>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <input type="text" required maxLength={6} placeholder="Ej: 1234" value={nuevoPin} onChange={(e) => setNuevoPin(e.target.value)} style={{ flex: 1, padding: '12px', borderRadius: '8px', border: '1px solid #ccc', fontSize: '16px', fontWeight: '700', textAlign: 'center' }} />
+              <button
+                type="button"
+                onClick={() => setNuevoPin(String(Math.floor(1000 + Math.random() * 9000)))}
+                style={{ padding: '0 14px', backgroundColor: '#0f172a', color: '#38bdf8', border: '1px solid #38bdf8', borderRadius: '8px', fontWeight: '800', fontSize: '12px', cursor: 'pointer' }}
+              >
+                🎲 Generar PIN
+              </button>
+            </div>
+            <small style={{ color: '#64748b' }}>Anotalo o sacale captura. Incluye 30 días gratis de TapPlus Pro al activar.</small>
+          </div>
+        )}
 
   return (
     <main style={{ fontFamily: 'system-ui, sans-serif', maxWidth: '480px', margin: '30px auto', padding: '24px', border: '1px solid #e2e8f0', borderRadius: '16px' }}>
