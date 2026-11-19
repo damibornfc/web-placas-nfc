@@ -70,13 +70,33 @@ export default function GeneradorQR() {
       ctx.beginPath(); ctx.arc(c, c, 62 * esc, 0, Math.PI * 2); ctx.stroke();
       ctx.fillStyle = '#ffffff';
       ctx.beginPath(); ctx.arc(c + 78 * esc, c - 78 * esc, 16 * esc, 0, Math.PI * 2); ctx.fill();
-    } else if (logoTipo === 'whatsapp') {
+   } else if (logoTipo === 'whatsapp') {
       ctx.beginPath(); ctx.arc(c, c, 130 * esc, 0, Math.PI * 2); ctx.fillStyle = '#25d366'; ctx.fill();
       ctx.font = '900 ' + Math.round(130 * esc) + 'px Arial, sans-serif';
       ctx.fillStyle = '#ffffff';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText('WA', c, c + 6 * esc);
+    } else if (logoTipo === 'tienda') {
+      ctx.beginPath(); ctx.arc(c, c, 130 * esc, 0, Math.PI * 2); ctx.fillStyle = '#f59e0b'; ctx.fill();
+      ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 18 * esc;
+      ctx.strokeRect(c - 65 * esc, c - 35 * esc, 130 * esc, 100 * esc);
+      ctx.beginPath(); ctx.arc(c, c - 35 * esc, 38 * esc, Math.PI, 0); ctx.stroke();
+    } else if (logoTipo === 'menu') {
+      ctx.beginPath(); ctx.arc(c, c, 130 * esc, 0, Math.PI * 2); ctx.fillStyle = '#ef4444'; ctx.fill();
+      ctx.font = '900 ' + Math.round(92 * esc) + 'px Arial, sans-serif';
+      ctx.fillStyle = '#ffffff';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('MENÚ', c, c + 4 * esc);
+    } else if (logoTipo === 'tiktok') {
+      ctx.beginPath(); ctx.arc(c, c, 130 * esc, 0, Math.PI * 2); ctx.fillStyle = '#090d16'; ctx.fill();
+      ctx.font = '900 ' + Math.round(135 * esc) + 'px Arial, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#25F4EE'; ctx.fillText('♪', c - 6 * esc, c + 2 * esc);
+      ctx.fillStyle = '#FE2C55'; ctx.fillText('♪', c + 6 * esc, c + 8 * esc);
+      ctx.fillStyle = '#ffffff'; ctx.fillText('♪', c, c + 5 * esc);
     }
   };
 
