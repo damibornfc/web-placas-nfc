@@ -123,16 +123,16 @@ export default function GeneradorQR() {
           Número de placa / chip (ej: 0001):
           <input type="text" value={codigo} onChange={(e) => setCodigo(e.target.value)} style={{ width: '100%', padding: '12px', marginTop: '6px', borderRadius: '10px', border: '1px solid #334155', backgroundColor: '#090d16', color: '#fff', fontSize: '18px', fontWeight: '800', textAlign: 'center' }} />
         </label>
-        <label style={{ display: 'block', marginBottom: '14px', fontWeight: '700' }}>
+      <label style={{ display: 'block', marginBottom: '14px', fontWeight: '700' }}>
           Logo central del QR:
-         <option value="wifi">Wi-Fi</option>
+          <select value={logoTipo} onChange={(e) => setLogoTipo(e.target.value)} style={{ width: '100%', padding: '12px', marginTop: '6px', borderRadius: '10px', border: '1px solid #334155', backgroundColor: '#090d16', color: '#fff', fontSize: '15px', fontWeight: '700' }}>
+            <option value="wifi">Wi-Fi</option>
             <option value="google">Google Reseñas</option>
             <option value="instagram">Instagram</option>
             <option value="whatsapp">WhatsApp</option>
             <option value="tienda">Tienda Online</option>
             <option value="menu">Menú Digital</option>
             <option value="tiktok">TikTok</option>
-            <option value="whatsapp">WhatsApp</option>
           </select>
         </label>
         <label style={{ display: 'block', marginBottom: '16px', fontWeight: '700' }}>
