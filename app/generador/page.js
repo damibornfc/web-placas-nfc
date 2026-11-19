@@ -1,91 +1,96 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import QRCode from 'qrcode';
 
 export default function GeneradorQR() {
   const [codigo, setCodigo] = useState('0001');
   const [logoTipo, setLogoTipo] = useState('wifi');
   const [colorQR, setColorQR] = useState('#000000');
+  const previewRef = useRef(null);
 
- const urlCompleta = 'https:' + '//www.' + 'tapplus.com.ar/p/' + (codigo.trim() || '0001');
-  const qrVistaPrevia = 'https:' + '//api.' + '://qrserver.com' + colorQR.replace('#', '') + '&data=' + encodeURIComponent(urlCompleta);
-  const descargarQR = async () => {
-    try {
-      const size = 2000;
-      const canvas = document.createElement('canvas');
-      canvas.width = size;
-      canvas.height = size;
-      const ctx = canvas.getContext('2d');
+  const urlCompleta = 'https:' + '//' + 'www.' + 'tapplus.' + 'com.ar/p/' + (codigo.trim() || '0001');
 
-    const qrUrl = 'https:' + '//' + 'api.' + 'qrserver.' + 'com/v1/create-qr-code/?size=2000x2000&ecc=H&margin=2&color=' + colorQR.replace('#', '') + '&data=' + encodeURIComponent(urlCompleta);
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      await new Promise((res, rej) => {
-        img.onload = res;
-        img.onerror = rej;
-        img.src = qrUrl;
-      });
+  const dibujarQR = async (canvas, size) => {
+    await QRCode.toCanvas(canvas, urlCompleta, {
+      width: size,
+      margin: 2,
+      errorCorrectionLevel: 'H',
+      color: { dark: colorQR, light: '#ffffff' }
+    });
 
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(0, 0, size, size);
-      ctx.drawImage(img, 0, 0, size, size);
+    const ctx = canvas.getContext('2d');
+    const c = size / 2;
+    const esc = size / 2000;
 
-      const c = size / 2;
+    ctx.beginPath();
+    ctx.arc(c, c, 260 * esc, 0, Math.PI * 2);
+    ctx.fillStyle = '#ffffff';
+    ctx.fill();
+    ctx.lineWidth = 14 * esc;
+    ctx.strokeStyle = '#e2e8f0';
+    ctx.stroke();
+
+    if (logoTipo === 'wifi') {
+      ctx.strokeStyle = '#0284c7';
+      ctx.fillStyle = '#0284c7';
+      ctx.lineCap = 'round';
+      ctx.lineWidth = 28 * esc;
+      ctx.beginPath(); ctx.arc(c, c + 85 * esc, 65 * esc, Math.PI * 1.22, Math.PI * 1.78); ctx.stroke();
+      ctx.beginPath(); ctx.arc(c, c + 85 * esc, 110 * esc, Math.PI * 1.22, Math.PI * 1.78); ctx.stroke();
+      ctx.beginPath(); ctx.arc(c, c + 85 * esc, 155 * esc, Math.PI * 1.22, Math.PI * 1.78); ctx.stroke();
+      ctx.beginPath(); ctx.arc(c, c + 85 * esc, 22 * esc, 0, Math.PI * 2); ctx.fill();
+    } else if (logoTipo === 'google') {
+      const r = 115 * esc;
+      ctx.lineWidth = 48 * esc;
+      ctx.lineCap = 'butt';
+      ctx.strokeStyle = '#EA4335';
+      ctx.beginPath(); ctx.arc(c, c, r, Math.PI * 1.15, Math.PI * 1.78); ctx.stroke();
+      ctx.strokeStyle = '#FBBC05';
+      ctx.beginPath(); ctx.arc(c, c, r, Math.PI * 0.85, Math.PI * 1.15); ctx.stroke();
+      ctx.strokeStyle = '#34A853';
+      ctx.beginPath(); ctx.arc(c, c, r, Math.PI * 0.22, Math.PI * 0.85); ctx.stroke();
+      ctx.strokeStyle = '#4285F4';
+      ctx.beginPath(); ctx.arc(c, c, r, 0, Math.PI * 0.22); ctx.stroke();
+      ctx.fillStyle = '#4285F4';
+      ctx.fillRect(c - 10 * esc, c - 24 * esc, r + 34 * esc, 48 * esc);
+    } else if (logoTipo === 'instagram') {
+      const b = 250 * esc;
+      const x = c - b / 2;
+      const y = c - b / 2;
+      const g = ctx.createLinearGradient(x, y + b, x + b, y);
+      g.addColorStop(0, '#f09433');
+      g.addColorStop(0.5, '#dc2743');
+      g.addColorStop(1, '#bc1888');
+      ctx.fillStyle = g;
       ctx.beginPath();
-      ctx.arc(c, c, 260, 0, Math.PI * 2);
-      ctx.fillStyle = '#ffffff';
+      ctx.roundRect(x, y, b, b, 60 * esc);
       ctx.fill();
-      ctx.lineWidth = 14;
-      ctx.strokeStyle = '#e2e8f0';
-      ctx.stroke();
-
-      if (logoTipo === 'wifi') {
-        ctx.strokeStyle = '#0284c7';
-        ctx.fillStyle = '#0284c7';
-        ctx.lineCap = 'round';
-        ctx.lineWidth = 28;
-        ctx.beginPath(); ctx.arc(c, c + 85, 65, Math.PI * 1.22, Math.PI * 1.78); ctx.stroke();
-        ctx.beginPath(); ctx.arc(c, c + 85, 110, Math.PI * 1.22, Math.PI * 1.78); ctx.stroke();
-        ctx.beginPath(); ctx.arc(c, c + 85, 155, Math.PI * 1.22, Math.PI * 1.78); ctx.stroke();
-        ctx.beginPath(); ctx.arc(c, c + 85, 22, 0, Math.PI * 2); ctx.fill();
-      } else if (logoTipo === 'google') {
-        ctx.font = '900 260px Arial, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillStyle = '#4285F4';
-        ctx.fillText('G', c, c + 14);
-      } else if (logoTipo === 'instagram') {
-        const b = 250;
-        const x = c - b / 2;
-        const y = c - b / 2;
-        const g = ctx.createLinearGradient(x, y + b, x + b, y);
-        g.addColorStop(0, '#f09433');
-        g.addColorStop(0.5, '#dc2743');
-        g.addColorStop(1, '#bc1888');
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.roundRect(x, y, b, b, 60);
-        ctx.fill();
-        ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 20;
-        ctx.beginPath(); ctx.arc(c, c, 62, 0, Math.PI * 2); ctx.stroke();
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath(); ctx.arc(c + 78, c - 78, 16, 0, Math.PI * 2); ctx.fill();
-      } else if (logoTipo === 'whatsapp') {
-        ctx.beginPath(); ctx.arc(c, c, 130, 0, Math.PI * 2); ctx.fillStyle = '#25d366'; ctx.fill();
-        ctx.font = '900 130px Arial, sans-serif';
-        ctx.fillStyle = '#ffffff';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('WA', c, c + 6);
-      }
-
-      const a = document.createElement('a');
-      a.download = 'QR-' + codigo.trim() + '-' + logoTipo.toUpperCase() + '-TapPlus.png';
-      a.href = canvas.toDataURL('image/png');
-      a.click();
-    } catch (e) {
-      alert('No se pudo descargar el QR. Revisá tu conexión.');
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 20 * esc;
+      ctx.beginPath(); ctx.arc(c, c, 62 * esc, 0, Math.PI * 2); ctx.stroke();
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath(); ctx.arc(c + 78 * esc, c - 78 * esc, 16 * esc, 0, Math.PI * 2); ctx.fill();
+    } else if (logoTipo === 'whatsapp') {
+      ctx.beginPath(); ctx.arc(c, c, 130 * esc, 0, Math.PI * 2); ctx.fillStyle = '#25d366'; ctx.fill();
+      ctx.font = '900 ' + Math.round(130 * esc) + 'px Arial, sans-serif';
+      ctx.fillStyle = '#ffffff';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('WA', c, c + 6 * esc);
     }
+  };
+
+  useEffect(() => {
+    if (previewRef.current) dibujarQR(previewRef.current, 320);
+  }, [codigo, logoTipo, colorQR]);
+
+  const descargarQR = async () => {
+    const canvas = document.createElement('canvas');
+    await dibujarQR(canvas, 2000);
+    const a = document.createElement('a');
+    a.download = 'QR-' + (codigo.trim() || '0001') + '-' + logoTipo.toUpperCase() + '-TapPlus.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
   };
 
   return (
@@ -112,7 +117,7 @@ export default function GeneradorQR() {
           <input type="color" value={colorQR} onChange={(e) => setColorQR(e.target.value)} style={{ width: '100%', height: '42px', marginTop: '6px', borderRadius: '10px', border: '1px solid #334155', backgroundColor: '#090d16' }} />
         </label>
         <div style={{ textAlign: 'center', backgroundColor: '#ffffff', padding: '14px', borderRadius: '12px', marginBottom: '16px' }}>
-          <img src={qrVistaPrevia} alt="Vista previa QR" style={{ width: '180px', height: '180px', margin: '0 auto' }} />
+          <canvas ref={previewRef} style={{ margin: '0 auto', maxWidth: '220px', height: 'auto' }} />
           <div style={{ color: '#090d16', fontSize: '12px', fontWeight: '700', marginTop: '8px' }}>{urlCompleta}</div>
         </div>
         <button onClick={descargarQR} style={{ width: '100%', padding: '15px', backgroundColor: '#38bdf8', color: '#090d16', fontWeight: '900', fontSize: '16px', border: 'none', borderRadius: '12px', cursor: 'pointer' }}>
