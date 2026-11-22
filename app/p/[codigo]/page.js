@@ -232,5 +232,102 @@ function ContenidoPlaca() {
     );
   }
 
-  return (
+ return (
     <main style={{ fontFamily: 'system-ui, sans-serif', maxWidth: '480px', margin: '30px auto', padding: '24px', border: '1px solid #e2e8f0', borderRadius: '16px' }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '6px' }}>
+        {placa.activada ? 'Configurar Placa #' + codigo : 'Activar tu Placa TapPlus #' + codigo}
+      </h2>
+
+      {placa.activada && (
+        <div style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '16px', borderRadius: '12px', marginBottom: '18px', textAlign: 'center' }}>
+          <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: '800', textTransform: 'uppercase' }}>Estadísticas de tu Placa</div>
+          <div style={{ fontSize: '32px', fontWeight: '900', margin: '4px 0' }}>{placa.clics || 0} <span style={{ fontSize: '14px', fontWeight: '600', color: '#94a3b8' }}>toques / escaneos</span></div>
+          {proVigente ? (
+            <div style={{ fontSize: '12px', color: '#4ade80', fontWeight: '700' }}>✓ TapPlus Pro activo ({diasRestantes} días restantes)</div>
+          ) : (
+            <div style={{ marginTop: '8px' }}>
+              <div style={{ fontSize: '12px', color: '#f87171', marginBottom: '6px' }}>Período de prueba Pro finalizado (Modo Free activo)</div>
+              <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', backgroundColor: '#38bdf8', color: '#090d16', padding: '6px 14px', borderRadius: '20px', fontSize: '12px', fontWeight: '800', textDecoration: 'none' }}>
+                Renovar TapPlus Pro ($2.500/mes)
+              </a>
+            </div>
+          )}
+        </div>
+      )}
+
+      <form onSubmit={guardarCambios} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+        <label style={{ fontWeight: '700', fontSize: '14px' }}>
+          ¿Qué querés que abra al acercar el celular?
+          <select value={tipoDestino} onChange={(e) => setTipoDestino(e.target.value)} style={{ width: '100%', padding: '12px', marginTop: '6px', borderRadius: '8px', border: '1px solid #ccc' }}>
+            <option value="url">Enlace directo (Google Reseñas, Instagram, WhatsApp, Web)</option>
+            <option value="multi">Multi-enlace Pro (Botones: Google + IG + WhatsApp + Menú)</option>
+            <option value="wifi">Red Wi-Fi del local</option>
+          </select>
+        </label>
+
+        {tipoDestino === 'url' && (
+          <label style={{ fontWeight: '700', fontSize: '14px' }}>
+            Pegá tu enlace de destino:
+            <input type="text" required placeholder="https://g.page" value={urlDestino} onChange={(e) => setUrlDestino(e.target.value)} style={{ width: '100%', padding: '12px', marginTop: '6px', borderRadius: '8px', border: '1px solid #ccc' }} />
+          </label>
+        )}
+
+        {tipoDestino === 'multi' && (
+          <div style={{ backgroundColor: '#f8fafc', padding: '14px', borderRadius: '10px', border: '1px solid #cbd5e1', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ fontSize: '12px', fontWeight: '800', color: '#0284c7' }}>Completá los botones que quieras mostrar (los vacíos se ocultan):</div>
+            <input type="text" placeholder="Link Reseñas de Google (opcional)" value={linkGoogle} onChange={(e) => setLinkGoogle(e.target.value)} style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }} />
+            <input type="text" placeholder="Link de Instagram (opcional)" value={linkInstagram} onChange={(e) => setLinkInstagram(e.target.value)} style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }} />
+            <input type="text" placeholder="Link de WhatsApp ej: wa.me/549... (opcional)" value={linkWhatsapp} onChange={(e) => setLinkWhatsapp(e.target.value)} style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }} />
+            <input type="text" placeholder="Link de Menú Digital o Web (opcional)" value={linkMenu} onChange={(e) => setLinkMenu(e.target.value)} style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }} />
+            <input type="text" placeholder="Link de respaldo cuando venza Pro (ej: Google)" value={urlDestino} onChange={(e) => setUrlDestino(e.target.value)} style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }} />
+          </div>
+        )}
+
+        {tipoDestino === 'wifi' && (
+          <>
+            <label style={{ fontWeight: '700', fontSize: '14px' }}>
+              Nombre de la red Wi-Fi:
+              <input type="text" required placeholder="Ej: Cafe_Clientes" value={wifiSsid} onChange={(e) => setWifiSsid(e.target.value)} style={{ width: '100%', padding: '12px', marginTop: '6px', borderRadius: '8px', border: '1px solid #ccc' }} />
+            </label>
+            <label style={{ fontWeight: '700', fontSize: '14px' }}>
+              Contraseña del Wi-Fi:
+              <input type="text" required placeholder="Contraseña" value={wifiPassword} onChange={(e) => setWifiPassword(e.target.value)} style={{ width: '100%', padding: '12px', marginTop: '6px', borderRadius: '8px', border: '1px solid #ccc' }} />
+            </label>
+          </>
+        )}
+
+        {!placa.activada && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <label style={{ fontWeight: '700', fontSize: '14px' }}>
+              Creá tu PIN secreto (o generá uno automático):
+            </label>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <input type="text" required maxLength={6} placeholder="Ej: 1234" value={nuevoPin} onChange={(e) => setNuevoPin(e.target.value)} style={{ flex: 1, padding: '12px', borderRadius: '8px', border: '1px solid #ccc', fontSize: '16px', fontWeight: '700', textAlign: 'center' }} />
+              <button
+                type="button"
+                onClick={() => setNuevoPin(String(Math.floor(1000 + Math.random() * 9000)))}
+                style={{ padding: '0 14px', backgroundColor: '#0f172a', color: '#38bdf8', border: '1px solid #38bdf8', borderRadius: '8px', fontWeight: '800', fontSize: '12px', cursor: 'pointer' }}
+              >
+                🎲 Generar PIN
+              </button>
+            </div>
+            <small style={{ color: '#64748b' }}>Anotalo o sacale captura. Incluye 30 días gratis de TapPlus Pro al activar.</small>
+          </div>
+        )}
+
+        <button type="submit" style={{ padding: '14px', backgroundColor: '#2563eb', color: '#fff', fontWeight: 'bold', border: 'none', borderRadius: '8px', fontSize: '1rem', cursor: 'pointer' }}>
+          Guardar y Activar Placa
+        </button>
+      </form>
+      {mensaje && <p style={{ color: 'red', textAlign: 'center', marginTop: '12px' }}>{mensaje}</p>}
+    </main>
+  );
+}
+
+export default function PaginaPlaca() {
+  return (
+    <Suspense fallback={<div style={{ textAlign: 'center', marginTop: '50px', fontFamily: 'sans-serif' }}>Cargando...</div>}>
+      <ContenidoPlaca />
+    </Suspense>
+  );
+}
