@@ -514,8 +514,7 @@ return (
               </div>
               <a
                 href={cicloPlan === 'mensual' ? 'https://mpago.la' : 'https://mpago.la'}
-                target="_blank"
-                rel="noopener noreferrer"
+                
                 style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
               >
                 Activar Plan Pro
@@ -536,8 +535,7 @@ return (
               </div>
               <a
                 href={cicloPlan === 'mensual' ? 'https://mpago.la' : 'https://mpago.la'}
-                target="_blank"
-                rel="noopener noreferrer"
+               
                 style={{ display: 'block', textAlign: 'center', backgroundColor: '#1e293b', border: '1px solid #38bdf8', color: '#ffffff', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
               >
                 Activar Full Care
