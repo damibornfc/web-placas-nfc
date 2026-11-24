@@ -191,6 +191,7 @@ const packs = [
         { texto: 'Comprar 50 Mini Acrílicos ($525.000)', url: 'https://mpago.la' }
       ]
     }
+  ];
  const packsFiltrados = filtroPack === 'todos' ? packs : packs.filter((p) => p.categoria === filtroPack);
 
  const modelosCalco = [
