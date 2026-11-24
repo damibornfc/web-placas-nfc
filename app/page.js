@@ -466,8 +466,84 @@ return (
           </div>
         </section>
 
-       <section id="membresias" style={{ marginBottom: '64px' }}>
-          {/* Sección de Planes y Membresías: TapPlus Free, Pro y Full Care con toggle mensual/anual */}
+    <section id="membresias" style={{ marginBottom: '64px' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '900', textAlign: 'center', marginBottom: '8px', color: '#ffffff' }}>
+            Planes y Membresías Opcionales
+          </h2>
+          <p style={{ color: '#94a3b8', textAlign: 'center', marginBottom: '22px', fontSize: '15px' }}>
+            Tu placa funciona de por vida sin abonos. Si querés estadísticas, multi-enlaces o seguro contra roturas, elegí un plan opcional.
+          </p>
+
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '28px' }}>
+            <button onClick={() => setCicloPlan('mensual')} style={{ backgroundColor: cicloPlan === 'mensual' ? '#38bdf8' : '#111827', color: cicloPlan === 'mensual' ? '#090d16' : '#ffffff', border: '1px solid #334155', padding: '10px 20px', borderRadius: '24px', fontWeight: '800', cursor: 'pointer', fontSize: '14px' }}>
+              Pago Mensual
+            </button>
+            <button onClick={() => setCicloPlan('anual')} style={{ backgroundColor: cicloPlan === 'anual' ? '#38bdf8' : '#111827', color: cicloPlan === 'anual' ? '#090d16' : '#ffffff', border: '1px solid #38bdf8', padding: '10px 20px', borderRadius: '24px', fontWeight: '800', cursor: 'pointer', fontSize: '14px' }}>
+              Pago Anual (2 meses gratis)
+            </button>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+            <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '20px', padding: '26px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span style={{ fontSize: '12px', fontWeight: '800', color: '#94a3b8', textTransform: 'uppercase' }}>Incluido de serie</span>
+                <h3 style={{ fontSize: '24px', fontWeight: '900', color: '#ffffff', margin: '6px 0' }}>TapPlus Free</h3>
+                <div style={{ fontSize: '34px', fontWeight: '900', color: '#ffffff', marginBottom: '16px' }}>
+                  $0 <span style={{ fontSize: '14px', color: '#94a3b8', fontWeight: '600' }}>/ de por vida</span>
+                </div>
+                <p style={{ fontSize: '14px', color: '#cbd5e1', marginBottom: '10px' }}>✓ 1 enlace directo editable con PIN</p>
+                <p style={{ fontSize: '14px', color: '#cbd5e1', marginBottom: '10px' }}>✓ Cambios ilimitados sin vencimiento</p>
+                <p style={{ fontSize: '14px', color: '#cbd5e1', marginBottom: '20px' }}>✓ Compatible con NFC y código QR</p>
+              </div>
+              <a href="#packs" style={{ display: 'block', textAlign: 'center', backgroundColor: '#1e293b', color: '#ffffff', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}>
+                Incluido con tu placa
+              </a>
+            </div>
+
+            <div style={{ backgroundColor: '#111827', border: '2px solid #38bdf8', borderRadius: '20px', padding: '26px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span style={{ fontSize: '12px', fontWeight: '800', color: '#38bdf8', textTransform: 'uppercase' }}>Más elegido • 1er mes gratis</span>
+                <h3 style={{ fontSize: '24px', fontWeight: '900', color: '#ffffff', margin: '6px 0' }}>TapPlus Pro</h3>
+                <div style={{ fontSize: '34px', fontWeight: '900', color: '#38bdf8', marginBottom: '16px' }}>
+                  {cicloPlan === 'mensual' ? '$2.500' : '$25.000'} <span style={{ fontSize: '14px', color: '#cbd5e1', fontWeight: '600' }}>{cicloPlan === 'mensual' ? '/ mes' : '/ año'}</span>
+                </div>
+                <p style={{ fontSize: '14px', color: '#ffffff', marginBottom: '10px' }}>✓ Pantalla Multi-enlace (Google, IG, WhatsApp, Menú, Wi-Fi)</p>
+                <p style={{ fontSize: '14px', color: '#ffffff', marginBottom: '10px' }}>✓ Estadísticas de toques NFC y escaneos QR</p>
+                <p style={{ fontSize: '14px', color: '#ffffff', marginBottom: '10px' }}>✓ Filtro inteligente de reseñas (4-5★ a Google)</p>
+                <p style={{ fontSize: '14px', color: '#ffffff', marginBottom: '20px' }}>✓ 30% OFF en reposición de placas</p>
+              </div>
+              <a
+                href={cicloPlan === 'mensual' ? 'https://mpago.la' : 'https://mpago.la'}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
+              >
+                Activar Plan Pro
+              </a>
+            </div>
+
+            <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '20px', padding: '26px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span style={{ fontSize: '12px', fontWeight: '800', color: '#4ade80', textTransform: 'uppercase' }}>Protección Total</span>
+                <h3 style={{ fontSize: '24px', fontWeight: '900', color: '#ffffff', margin: '6px 0' }}>TapPlus Full Care</h3>
+                <div style={{ fontSize: '34px', fontWeight: '900', color: '#ffffff', marginBottom: '16px' }}>
+                  {cicloPlan === 'mensual' ? '$6.000' : '$60.000'} <span style={{ fontSize: '14px', color: '#94a3b8', fontWeight: '600' }}>{cicloPlan === 'mensual' ? '/ mes' : '/ año'}</span>
+                </div>
+                <p style={{ fontSize: '14px', color: '#cbd5e1', marginBottom: '10px' }}>✓ Todo lo incluido en TapPlus Pro</p>
+                <p style={{ fontSize: '14px', color: '#cbd5e1', marginBottom: '10px' }}>✓ Seguro contra rotura o extravío (hasta 2 reposiciones/año)</p>
+                <p style={{ fontSize: '14px', color: '#cbd5e1', marginBottom: '10px' }}>✓ Envío gratis a todo el país (desde 3er mes o día 1 en plan anual)</p>
+                <p style={{ fontSize: '14px', color: '#cbd5e1', marginBottom: '20px' }}>✓ Soporte prioritario por WhatsApp</p>
+              </div>
+              <a
+                href={cicloPlan === 'mensual' ? 'https://mpago.la' : 'https://mpago.la'}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'block', textAlign: 'center', backgroundColor: '#1e293b', border: '1px solid #38bdf8', color: '#ffffff', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
+              >
+                Activar Full Care
+              </a>
+            </div>
+          </div>
         </section>
 
         <section id="faq" style={{ marginBottom: '64px', maxWidth: '800px', margin: '0 auto 64px' }}>
