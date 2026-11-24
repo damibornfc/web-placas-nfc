@@ -18,19 +18,179 @@ export default function Home() {
     }
   };
 const packs = [
-    { categoria: 'local', badge: 'Ideal para probar', cantidad: '×1', titulo: '1 Calco NFC + QR (10 × 10 cm)', subtitulo: 'Adhesivo de alta resistencia • Editable con PIN', precio: '$10.000', unitario: 'Precio por unidad', ganancia: '', recupero: 'Pégalo en tu vidriera, caja o mostrador en segundos.' },
-    { categoria: 'local', badge: 'Más elegido por comercios', cantidad: '×1', titulo: '1 Placa Expositora (10 × 15 cm)', subtitulo: 'Con pie de apoyo para mostrador • Editable con PIN', precio: '$25.000', unitario: 'Precio por unidad', ganancia: '', recupero: 'Presencia premium para cajas, recepciones y escritorios.' },
-    { categoria: 'local', badge: 'Con tu marca', cantidad: '×1', titulo: 'Personalizado con tu Logo (1 u.)', subtitulo: 'Calco 10×10 ($15.000) o Placa 10×15 ($35.000)', precio: 'Desde $15.000', unitario: 'Diseño incluido con tu logo y colores', ganancia: '', recupero: 'Hacemos el diseño con la identidad visual de tu local.' },
-    { categoria: 'local', badge: 'Combo Local × 3', cantidad: '×3', titulo: 'Pack × 3 Unidades (Mismo formato)', subtitulo: '3 Calcos ($25.000) o 3 Placas ($65.000)', precio: 'Desde $25.000', unitario: '$8.333 c/calco • $21.666 c/placa', ganancia: '', recupero: 'Ideal para cubrir caja, vidriera y salón de atención.' },
-    { categoria: 'local', badge: 'Pack Marca Propia × 5', cantidad: '×5', titulo: 'Pack × 5 Personalizados con Logo', subtitulo: '5 Calcos ($65.000) o 5 Placas ($135.000)', precio: 'Desde $65.000', unitario: '$13.000 c/calco • $27.000 c/placa', ganancia: '', recupero: 'Diseño personalizado incluido con el logo de tu negocio.' },
-   { categoria: 'revender', badge: 'Recomendado para empezar', cantidad: '×10', titulo: 'Pack Mayorista × 10 Calcos', subtitulo: '10 Calcos 10×10 cm con NFC + QR editable', precio: '$50.000', unitario: '$5.000 cada uno', ganancia: 'Ganás $50.000 por venta + 20% a 30% mensual por membresías', recupero: 'Recuperás tu inversión con 5 ventas y sumás ingresos recurrentes.' },
-    { categoria: 'revender', badge: 'Alta rentabilidad', cantidad: '×10', titulo: 'Pack Mayorista × 10 Placas', subtitulo: '10 Placas Expositoras 10×15 cm con NFC + QR', precio: '$110.000', unitario: '$11.000 cada una', ganancia: 'Ganás $140.000 por venta + 20% a 30% mensual por membresías', recupero: 'Recuperás tu inversión con 5 ventas y ganás comisiones todos los meses.' },
-    { categoria: 'revender', badge: 'Mayor margen', cantidad: '×30', titulo: 'Pack Mayorista × 30 Unidades', subtitulo: '30 Calcos ($120.000) o 30 Placas ($285.000)', precio: 'Desde $120.000', unitario: '$4.000 c/calco • $9.500 c/placa', ganancia: 'Hasta $465.000 por venta + hasta $54.000/mes en membresías activas', recupero: 'Armá tu cartera de comercios con ingresos fijos recurrentes.' },
-    { categoria: 'revender', badge: 'Distribuidor • Menor costo', cantidad: '×100', titulo: 'Pack Distribuidor × 100 Unidades', subtitulo: '100 Calcos ($350.000) o 100 Placas ($850.000)', precio: 'Desde $350.000', unitario: '$3.500 c/calco • $8.500 c/placa', ganancia: 'Hasta $1.650.000 por venta + hasta $180.000/mes en membresías activas', recupero: 'Máximo margen mayorista y renta mensual por tu red de locales.' },
-    { categoria: 'mesas', badge: 'Gastronomía • 6 × 9 cm', cantidad: '×10', titulo: 'Pack 10 Mesas • Mini Acrílico Menú', subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR', precio: '$130.000', unitario: '$13.000 cada mesa', ganancia: '', recupero: 'Compacto para mesas de bares, cafés y restaurantes.' },
-    { categoria: 'mesas', badge: 'Gastronomía • 6 × 9 cm', cantidad: '×25', titulo: 'Pack 25 Mesas • Mini Acrílico Menú', subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR', precio: '$290.000', unitario: '$11.600 cada mesa', ganancia: '', recupero: 'Actualizá precios de tu carta online sin reimprimir.' },
-    { categoria: 'mesas', badge: 'Gastronomía • 6 × 9 cm', cantidad: '×50', titulo: 'Pack 50 Mesas • Mini Acrílico Menú', subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR', precio: '$525.000', unitario: '$10.500 cada mesa', ganancia: '', recupero: 'Equipá todo tu salón con diseño personalizado.' }
-  ];
+    {
+      categoria: 'local',
+      badge: 'Ideal para probar',
+      cantidad: '×1',
+      titulo: '1 Calco NFC + QR (10 × 10 cm)',
+      subtitulo: 'Adhesivo de alta resistencia • Editable con PIN',
+      precio: '$10.000',
+      unitario: 'Precio por unidad',
+      ganancia: '',
+      recupero: 'Pégalo en tu vidriera, caja o mostrador en segundos.',
+      botones: [
+        { texto: 'Comprar en Mercado Pago ($10.000)', url: 'https://mpago.la' }
+      ]
+    },
+    {
+      categoria: 'local',
+      badge: 'Más elegido por comercios',
+      cantidad: '×1',
+      titulo: '1 Placa Expositora (10 × 15 cm)',
+      subtitulo: 'Con pie de apoyo para mostrador • Editable con PIN',
+      precio: '$25.000',
+      unitario: 'Precio por unidad',
+      ganancia: '',
+      recupero: 'Presencia premium para cajas, recepciones y escritorios.',
+      botones: [
+        { texto: 'Comprar en Mercado Pago ($25.000)', url: 'https://mpago.la' }
+      ]
+    },
+    {
+      categoria: 'local',
+      badge: 'Con tu marca',
+      cantidad: '×1',
+      titulo: 'Personalizado con tu Logo (1 u.)',
+      subtitulo: 'Calco 10×10 ($15.000) o Placa 10×15 ($35.000)',
+      precio: 'Desde $15.000',
+      unitario: 'Diseño incluido con tu logo y colores',
+      ganancia: '',
+      recupero: 'Hacemos el diseño con la identidad visual de tu local.',
+      botones: [
+        { texto: 'Comprar Calco Pers. ($15.000)', url: 'https://mpago.la' },
+        { texto: 'Comprar Placa Pers. ($35.000)', url: 'https://mpago.la', secundario: true }
+      ]
+    },
+    {
+      categoria: 'local',
+      badge: 'Combo Local × 3',
+      cantidad: '×3',
+      titulo: 'Pack × 3 Unidades (Mismo formato)',
+      subtitulo: '3 Calcos ($25.000) o 3 Placas ($65.000)',
+      precio: 'Desde $25.000',
+      unitario: '$8.333 c/calco • $21.666 c/placa',
+      ganancia: '',
+      recupero: 'Ideal para cubrir caja, vidriera y salón de atención.',
+      botones: [
+        { texto: 'Comprar 3 Calcos ($25.000)', url: 'https://mpago.la' },
+        { texto: 'Comprar 3 Placas ($65.000)', url: 'https://mpago.la', secundario: true }
+      ]
+    },
+    {
+      categoria: 'local',
+      badge: 'Pack Marca Propia × 5',
+      cantidad: '×5',
+      titulo: 'Pack × 5 Personalizados con Logo',
+      subtitulo: '5 Calcos ($65.000) o 5 Placas ($135.000)',
+      precio: 'Desde $65.000',
+      unitario: '$13.000 c/calco • $27.000 c/placa',
+      ganancia: '',
+      recupero: 'Diseño personalizado incluido con el logo de tu negocio.',
+      botones: [
+        { texto: 'Comprar 5 Calcos Pers. ($65.000)', url: 'https://mpago.la' },
+        { texto: 'Comprar 5 Placas Pers. ($135.000)', url: 'https://mpago.la', secundario: true }
+      ]
+    },
+    {
+      categoria: 'revender',
+      badge: 'Recomendado para empezar',
+      cantidad: '×10',
+      titulo: 'Pack Mayorista × 10 Calcos',
+      subtitulo: '10 Calcos 10×10 cm con NFC + QR editable',
+      precio: '$50.000',
+      unitario: '$5.000 cada uno',
+      ganancia: 'Ganás $50.000 por venta + 20% a 30% mensual por membresías',
+      recupero: 'Recuperás tu inversión con 5 ventas y sumás ingresos recurrentes.',
+      botones: [
+        { texto: 'Comprar 10 Calcos ($50.000)', url: 'https://mpago.la' }
+      ]
+    },
+    {
+      categoria: 'revender',
+      badge: 'Alta rentabilidad',
+      cantidad: '×10',
+      titulo: 'Pack Mayorista × 10 Placas',
+      subtitulo: '10 Placas Expositoras 10×15 cm con NFC + QR',
+      precio: '$110.000',
+      unitario: '$11.000 cada una',
+      ganancia: 'Ganás $140.000 por venta + 20% a 30% mensual por membresías',
+      recupero: 'Recuperás tu inversión con 5 ventas y ganás comisiones todos los meses.',
+      botones: [
+        { texto: 'Comprar 10 Placas ($110.000)', url: 'https://mpago.la' }
+      ]
+    },
+    {
+      categoria: 'revender',
+      badge: 'Mayor margen',
+      cantidad: '×30',
+      titulo: 'Pack Mayorista × 30 Unidades',
+      subtitulo: '30 Calcos ($120.000) o 30 Placas ($285.000)',
+      precio: 'Desde $120.000',
+      unitario: '$4.000 c/calco • $9.500 c/placa',
+      ganancia: 'Hasta $465.000 por venta + hasta $54.000/mes en membresías activas',
+      recupero: 'Armá tu cartera de comercios con ingresos fijos recurrentes.',
+      botones: [
+        { texto: 'Comprar 30 Calcos ($120.000)', url: 'https://mpago.la' },
+        { texto: 'Comprar 30 Placas ($285.000)', url: 'https://mpago.la', secundario: true }
+      ]
+    },
+    {
+      categoria: 'revender',
+      badge: 'Distribuidor • Menor costo',
+      cantidad: '×100',
+      titulo: 'Pack Distribuidor × 100 Unidades',
+      subtitulo: '100 Calcos ($350.000) o 100 Placas ($850.000)',
+      precio: 'Desde $350.000',
+      unitario: '$3.500 c/calco • $8.500 c/placa',
+      ganancia: 'Hasta $1.650.000 por venta + hasta $180.000/mes en membresías activas',
+      recupero: 'Máximo margen mayorista y renta mensual por tu red de locales.',
+      botones: [
+        { texto: 'Comprar 100 Calcos ($350.000)', url: 'https://mpago.la' },
+        { texto: 'Comprar 100 Placas ($850.000)', url: 'https://mpago.la', secundario: true }
+      ]
+    },
+    {
+      categoria: 'mesas',
+      badge: 'Gastronomía • 6 × 9 cm',
+      cantidad: '×10',
+      titulo: 'Pack 10 Mesas • Mini Acrílico Menú',
+      subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR',
+      precio: '$130.000',
+      unitario: '$13.000 cada mesa',
+      ganancia: '',
+      recupero: 'Compacto para mesas de bares, cafés y restaurantes.',
+      botones: [
+        { texto: 'Comprar 10 Mini Acrílicos ($130.000)', url: 'https://mpago.la' }
+      ]
+    },
+    {
+      categoria: 'mesas',
+      badge: 'Gastronomía • 6 × 9 cm',
+      cantidad: '×25',
+      titulo: 'Pack 25 Mesas • Mini Acrílico Menú',
+      subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR',
+      precio: '$290.000',
+      unitario: '$11.600 cada mesa',
+      ganancia: '',
+      recupero: 'Actualizá precios de tu carta online sin reimprimir.',
+      botones: [
+        { texto: 'Comprar 25 Mini Acrílicos ($290.000)', url: 'https://mpago.la' }
+      ]
+    },
+    {
+      categoria: 'mesas',
+      badge: 'Gastronomía • 6 × 9 cm',
+      cantidad: '×50',
+      titulo: 'Pack 50 Mesas • Mini Acrílico Menú',
+      subtitulo: 'Portarretratos acrílico 6×9 cm con logo + NFC + QR',
+      precio: '$525.000',
+      unitario: '$10.500 cada mesa',
+      ganancia: '',
+      recupero: 'Equipá todo tu salón con diseño personalizado.',
+      botones: [
+        { texto: 'Comprar 50 Mini Acrílicos ($525.000)', url: 'https://mpago.la' }
+      ]
+    }
  const packsFiltrados = filtroPack === 'todos' ? packs : packs.filter((p) => p.categoria === filtroPack);
 
  const modelosCalco = [
@@ -276,10 +436,29 @@ return (
                     <p style={{ fontSize: '13px', color: '#e2e8f0', lineHeight: '1.4' }}>✓ {p.recupero}</p>
                   </div>
                 </div>
-                <div style={{ padding: '0 22px 22px' }}>
-                  <a href="https://wa.me/5492954535676" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}>
-                    Encargar este pack por WhatsApp
-                  </a>
+              <div style={{ padding: '0 22px 22px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  {p.botones.map((btn) => (
+                    <a
+                      key={btn.url}
+                      href={btn.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'block',
+                        textAlign: 'center',
+                        backgroundColor: btn.secundario ? '#1e293b' : '#38bdf8',
+                        color: btn.secundario ? '#38bdf8' : '#090d16',
+                        border: btn.secundario ? '1px solid #38bdf8' : 'none',
+                        padding: '12px',
+                        borderRadius: '12px',
+                        fontWeight: '800',
+                        textDecoration: 'none',
+                        fontSize: '14px'
+                      }}
+                    >
+                      {btn.texto}
+                    </a>
+                  ))}
                 </div>
               </div>
             ))}
