@@ -520,6 +520,9 @@ return (
               >
                 Activar Plan Pro
               </a>
+                  <p style={{ fontSize: '12px', color: '#94a3b8', textAlign: 'center', marginTop: '10px', lineHeight: '1.4' }}>
+  ¿Desde el celular? Si te abre el inicio de la app, mantén presionado el botón y elige <b>"Abrir en una pestaña nueva"</b>.
+</p>
             </div>
 
             <div style={{ backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '20px', padding: '26px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -542,6 +545,9 @@ return (
               >
                 Activar Full Care
               </a>
+                  <p style={{ fontSize: '12px', color: '#94a3b8', textAlign: 'center', marginTop: '10px', lineHeight: '1.4' }}>
+  ¿Desde el celular? Si te abre el inicio de la app, mantén presionado el botón y elige <b>"Abrir en una pestaña nueva"</b>.
+</p>
             </div>
           </div>
         </section>
