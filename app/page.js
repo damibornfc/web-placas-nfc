@@ -514,6 +514,7 @@ return (
               </div>
               <a
               href={cicloPlan === 'mensual' ? 'https://mpago.la/2VF5bHy' : 'https://mpago.la/1o49CC2'}
+                target="_blank" rel="noopener noreferrer"
                 
                 style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
               >
@@ -535,6 +536,7 @@ return (
               </div>
               <a
               href={cicloPlan === 'mensual' ? 'https://mpago.la/2btdwWr' : 'https://mpago.la/2N7kYyE'}
+                target="_blank" rel="noopener noreferrer"
                
                 style={{ display: 'block', textAlign: 'center', backgroundColor: '#1e293b', border: '1px solid #38bdf8', color: '#ffffff', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
               >
