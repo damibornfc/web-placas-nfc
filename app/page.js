@@ -513,7 +513,7 @@ return (
                 <p style={{ fontSize: '14px', color: '#ffffff', marginBottom: '20px' }}>✓ 30% OFF en reposición de placas</p>
               </div>
               <a
-               href={cicloPlan === 'mensual' ? 'https://mercadopago.com.ar' : 'https://mercadopago.com.ar'} 
+              href={cicloPlan === 'mensual' ? 'https://mpago.la/2VF5bHy' : 'https://mpago.la/1o49CC2'}
                 
                 style={{ display: 'block', textAlign: 'center', backgroundColor: '#38bdf8', color: '#090d16', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
               >
@@ -534,7 +534,7 @@ return (
                 <p style={{ fontSize: '14px', color: '#cbd5e1', marginBottom: '20px' }}>✓ Soporte prioritario por WhatsApp</p>
               </div>
               <a
-                href={cicloPlan === 'mensual' ? 'https://mercadopago.com.ar' : 'https://mercadopago.com.ar'}
+              href={cicloPlan === 'mensual' ? 'https://mpago.la/2btdwWr' : 'https://mpago.la/2N7kYyE'}
                
                 style={{ display: 'block', textAlign: 'center', backgroundColor: '#1e293b', border: '1px solid #38bdf8', color: '#ffffff', padding: '12px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '14px' }}
               >
